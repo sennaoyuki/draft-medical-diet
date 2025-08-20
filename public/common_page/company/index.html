@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運営者情報</title>
+    <meta name="description" content="運営者情報についてご案内いたします。">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 12px 0;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .site-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1f2937;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .site-title:hover {
+            opacity: 0.7;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #1f2937;
+        }
+        
+        main {
+            flex: 1;
+            padding: 60px 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            color: #6b7280;
+            font-size: 16px;
+        }
+        
+        .content-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        
+        .info-table tr {
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .info-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .info-table th,
+        .info-table td {
+            padding: 24px 0;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        .info-table th {
+            width: 180px;
+            font-weight: 600;
+            color: #4b5563;
+            font-size: 14px;
+        }
+        
+        .info-table td {
+            color: #1f2937;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        
+        .info-table a {
+            color: #4b5563;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        
+        .info-table a:hover {
+            color: #1f2937;
+        }
+        
+        footer {
+            background: #fff;
+            border-top: 1px solid #e5e7eb;
+            padding: 30px 0;
+            margin-top: auto;
+        }
+        
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #1f2937;
+        }
+        
+        .copyright {
+            color: #9ca3af;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 20px;
+            }
+            
+            h1 {
+                font-size: 26px;
+            }
+            
+            .content-card {
+                padding: 25px;
+            }
+            
+            .info-table th {
+                width: 100%;
+                display: block;
+                padding-bottom: 8px;
+            }
+            
+            .info-table td {
+                display: block;
+                padding-top: 0;
+            }
+            
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="javascript:void(0)" onclick="history.back()" class="site-title">矯正歯科おすすめ比較.com</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>運営者情報</h1>
+                <p class="subtitle">Company Information</p>
+            </div>
+            
+            <div class="content-card">
+                <table class="info-table">
+                    <tr>
+                        <th>サイト運営者</th>
+                        <td>矯正歯科おすすめ比較.com運営事務局</td>
+                    </tr>
+                    <tr>
+                        <th>お問い合わせ</th>
+                        <td><a href="mailto:clinic.hikaku.review@gmail.com">clinic.hikaku.review@gmail.com</a></td>
+                    </tr>
+                    <tr>
+                        <th>お申込み方法</th>
+                        <td>各販売サイトに記載の方法に準ずる</td>
+                    </tr>
+                    <tr>
+                        <th>商品引渡し方法</th>
+                        <td>各販売サイトに記載の方法に準ずる</td>
+                    </tr>
+                    <tr>
+                        <th>お支払い方法</th>
+                        <td>各販売サイトに記載の方法に準ずる</td>
+                    </tr>
+                    <tr>
+                        <th>クッキー情報</th>
+                        <td>
+                            当サイトでは、クッキーおよびIPアドレス情報については、それら単独では特定の個人を識別することができないため、個人情報とは考えておりません。<br><br>
+                            ただし、これらの情報と個人情報が一体となって使用される場合には、これらの情報も個人情報とみなします。当サイトでは、当サイトに訪問した方のクッキー情報を取得し、ブラウザの識別やセッション管理、行動ターゲティング広告を提供し、それ以外の目的ではクッキー情報を利用しません。また、クッキー情報については、ブラウザの設定で拒否することが可能です。
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>免責事項</th>
+                        <td>
+                            当サイトはアフィリエイトプログラムにより商品をご紹介致しております。当サイトは、当サイトに掲載された情報の内容が、第三者の権利を侵害していないこと、必ず正確な情報であることを保証いたしません。また、当サイトは、当サイトの利用にあたり発生した如何なる不利益について一切の責任を負いません。
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <ul class="footer-links">
+                    <li><a href="/common_page/privacy/">プライバシーポリシー</a></li>
+                    <li><a href="/common_page/disclaimer/">免責事項</a></li>
+                </ul>
+                <p class="copyright">&copy; 2025 矯正歯科おすすめ比較.com All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

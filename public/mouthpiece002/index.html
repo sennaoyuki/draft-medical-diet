@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <!-- 重要なリソースのpreload -->
-    <link rel="preload" as="image" href="./images/OMT_MV.webp" fetchpriority="high" type="image/webp">
+    <link rel="preload" as="image" href="../common_data/images/OMT_MV.webp" fetchpriority="high" type="image/webp">
     <link rel="preload" as="style" href="styles.css?v=2025080101">
     <link rel="preload" as="script" href="app.js?v=2025081417">
     <!-- Google Fontsはプリロードせず、通常のロードのみにする -->
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="styles.css?v=2025081417" media="all">
     <link rel="stylesheet" href="comparison-table-fix.css?v=1" media="all">
     <link rel="stylesheet" href="responsive-fix-480-768.css?v=2025080104" media="all">
-    <link rel="icon" type="image/png" href="../images/favicon.png" id="favicon">
+    <link rel="icon" type="image/png" href="../common_data/images/favicon.png" id="favicon">
     <!-- Critical CSS -->
     <!-- Font loading detection -->
     <script>'fonts' in document&&document.fonts.ready.then(function(){document.documentElement.classList.add('fonts-loaded')})</script>
@@ -48,8 +48,8 @@
                 <div class="logo-section">
                     <a href="/" class="logo-link">
                         <div class="logo-main">
-                            <span class="logo-icon"><img src="/images/favicon.png" alt="矯正歯科おすすめ比較.com" id="header-logo-icon"></span>
-                            <h1 class="site-logo">矯正歯科おすすめ比較.com</h1>
+                            <span class="logo-icon"><img src="../common_data/images/favicon.png" alt="矯正歯科おすすめ比較.com" id="header-logo-icon"></span>
+                            <h1 class="site-logo" id="site-logo">おすすめ比較.com</h1>
                         </div>
                     </a>
                 </div>
@@ -67,8 +67,8 @@
         <section class="hero-section">
             <div class="hero-image-wrapper">
                 <picture>
-                    <source srcset="./images/OMT_MV.webp" type="image/webp">
-                    <img src="./images/injection-MV.jpg" alt="クールスカルプティングランキング - コスパ×通いやすさで選ぶ" class="hero-image" loading="eager" fetchpriority="high" decoding="async" width="1500" height="928">
+                    <source srcset="../common_data/images/OMT_MV.webp" type="image/webp">
+                    <img src="../common_data/images/injection-MV.jpg" alt="クールスカルプティングランキング - コスパ×通いやすさで選ぶ" class="hero-image" loading="eager" fetchpriority="high" decoding="async" width="1500" height="928">
                 </picture>
                 <div id="mv-region-name" style="position:absolute;top: 8%;left: 1%;width: clamp(60px, 15vw, 115px);text-align: center;color: #808080;font-size: clamp(14px, 3.5vw, 27px);font-weight: 600;z-index:10;pointer-events:none;padding: clamp(4px, 1vw, 8px);border-radius: 8px;">東京</div>
                 <div id="mv-left-appeal-text" style="position:absolute;top: 26%;left: 12%;;text-align: center;color: #808080;font-size: clamp(14px, 3.2vw, 25px);font-weight: 700;z-index:10;pointer-events:none;padding: clamp(6px, 1.5vw, 12px);">コスパ</div>
@@ -91,7 +91,7 @@
             <!-- ランキング表示セクション -->
             <section class="clinic-rankings">
                 <div class="ranking-header-banner">
-                    <img src="/images/ranking_header_banner.webp" alt="" class="ranking-banner-image">                    
+                    <img src="../common_data/images/ranking_header_banner.webp" alt="" class="ranking-banner-image">                    
                 </div>
                 <div id="rank-region-name" style="position:absolute;top: 6%;left: 52%;white-space: nowrap;transform: translateX(-50%);text-align: center;color: rgb(255, 255, 255);font-size: clamp(14px, 4.8vw, 33px);font-weight: 600;z-index:10;pointer-events:none;">東京</div>
                 <div id="ranking-list" class="ranking-container">
@@ -140,7 +140,7 @@
                             <!-- タブ1: 医療痩身の効果 -->
                             <div class="tab-content active" data-tab="0" style="display: block;">
                                 <div style="width: 100%; margin-bottom: 15px;">
-                                    <img src="./images/Tips1.webp" alt="脂肪冷却の効果" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy">
+                                    <img src="../common_data/images/Tips1.webp" alt="脂肪冷却の効果" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy">
                                 </div>
                                 <p style="font-size: 14px; line-height: 1.8; color: #4C4C4C; margin-bottom: 15px;">
                                     本気で痩せたいなら医療痩身が最短！科学的根拠に基づき、脂肪細胞そのものを破壊・減少させるので痩せる仕組みで、リバウンドしにくい！と今人気急上昇中のダイエット法！
@@ -150,7 +150,7 @@
                             <!-- タブ2: クリニック選び -->
                             <div class="tab-content" data-tab="1" style="display: none;">
                                 <div style="width: 100%; margin-bottom: 15px;">
-                                    <img src="./images/Tips2.webp" alt="脂肪冷却のリスクと副作用" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy">
+                                    <img src="../common_data/images/Tips2.webp" alt="脂肪冷却のリスクと副作用" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy">
                                 </div>
                                 <p style="font-size: 14px; line-height: 1.8; color: #4C4C4C; margin-bottom: 15px;">
                                     クリニック選びの失敗が理想の体型実現の失敗につながります。<br>
@@ -164,7 +164,7 @@
                             <!-- タブ3: 今がおすすめ -->
                             <div class="tab-content" data-tab="2" style="display: none;">
                                 <div style="width: 100%; margin-bottom: 15px;">
-                                    <img src="./images/Tips3.webp" alt="今がおすすめの理由" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy">
+                                    <img src="../common_data/images/Tips3.webp" alt="今がおすすめの理由" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy">
                                 </div>
                                 <p style="font-size: 14px; line-height: 1.8; color: #4C4C4C; margin-bottom: 15px;">
                                     夏本番になると予約が取りにくくなり、料金も高くなりがち。今なら夏直前キャンペーンでお得に始められて、予約もスムーズ！理想の体型で夏を迎えるなら今がラストチャンスです。
@@ -303,7 +303,7 @@
             <!-- 案件詳細セクション -->
             <section class="clinic-details-section">
                 <div class="details-header-banner">
-                    <img src="./images/details_header_bannar3.webp" alt="コスパ×効果×通いやすさで選ぶ医療痩身クリニックBEST3" class="details-banner-image">
+                    <img src="../common_data/images/details_header_bannar3.webp" alt="コスパ×効果×通いやすさで選ぶ医療痩身クリニックBEST3" class="details-banner-image">
                     <div id="detail-region-name">東京で人気のクリニック</div>
                     <div id="detail-rank-best">3<span style="font-size: 0.6em;"> 選！</span></div>
                 </div>
@@ -323,7 +323,7 @@
                                 マウスピース矯正を始める前に知っておくべきこと
                             </div>
                             <div class="header-image">
-                                <img src="./images/column.webp" alt="マウスピース矯正の基礎知識" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="../common_data/images/column.webp" alt="マウスピース矯正の基礎知識" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
                         </div>
 
@@ -507,7 +507,7 @@
                         <div class="content-section" id="risks">
                             <div class="section-title">マウスピース矯正のリスクや副作用</div>
                             <div class="header-image" style="margin: 16px 0;">
-                                <img src="/images/column2.webp" alt="マウスピース矯正の副作用について" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                                <img src="../common_data/images/column2.webp" alt="マウスピース矯正の副作用について" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                             </div>
                             <div class="section-content">
                                 マウスピース矯正は高い効果が期待できる一方で、治療過程での違和感や痛み、歯肉の炎症、アライナーの破損などの副作用が生じることがあります。
@@ -606,7 +606,7 @@
                         <div class="content-section" id="contract">
                             <div class="section-title">契約時の確認ポイント</div>
                             <div class="header-image" style="margin: 16px 0;">
-                                <img src="/images/column3.webp" alt="矯正契約の注意点" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+                                <img src="../common_data/images/column3.webp" alt="矯正契約の注意点" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -700,7 +700,7 @@
    <!-- 迷ったら1位クリニックセクション -->
             <div id="first-choice-recommendation-section">
                 <div style="position: relative; display: inline-block; width: 100%;">
-                    <img src="/images/ranking_header_banner.webp" alt="" class="ranking-banner-image">
+                    <img src="../common_data/images/ranking_header_banner.webp" alt="" class="ranking-banner-image">
                     <div id="first-choice-region-text" style="position: absolute;bottom: 44%;left: 6%;text-align: center;color: rgb(255, 255, 255);font-size: clamp(16px, 5vw, 38px);font-weight: 600;z-index: 10;pointer-events: none;">迷ったら<span id="first-choice-clinic-name"></span>がおすすめ</div>
                 </div><section class="first-choice-recommendation-section" style="border: 5px solid rgb(253 208 124);border-radius: -5px;padding: 5px 5px 10px 5px;margin: 0px 20px;background-color: #fffef8;">
                                 
@@ -817,9 +817,9 @@ text-align: center;
                                 
                 <ul>
                     <h5>運営</h5>
-                    <li><a href="/company/" class="footer-page-link">運営者情報</a></li>
-                    <li><a href="/privacy/" class="footer-page-link">プライバシーポリシー</a></li>
-                    <li><a href="/disclaimer/" class="footer-page-link">免責事項</a></li>
+                    <li><a href="/common_page/company/" class="footer-page-link">運営者情報</a></li>
+                    <li><a href="/common_page/privacy/" class="footer-page-link">プライバシーポリシー</a></li>
+                    <li><a href="/common_page/disclaimer/" class="footer-page-link">免責事項</a></li>
                     <li><a href="mailto:clinic.hikaku.review@gmail.com">お問い合わせ</a></li>
                 </ul>
                 
@@ -1040,7 +1040,7 @@ text-align: center;
             const clinicIdToSlugMap = {
                 '1': 'omt',  // Oh my teeth
                 '2': 'zenyum',  // ゼニュム
-                '3': 'kireil',  // キレイライン矯正
+                '3': 'kireiline',  // キレイライン矯正
                 '4': 'ws',  // ウィスマイル 
                 '5': 'inv'  // インビザライン
             };
@@ -1050,7 +1050,7 @@ text-align: center;
                 'Ohmyteeth': 'omt',
                 'ゼニュム': 'zenyum',
                 'Zenyum': 'zenyum',
-                'キレイライン矯正': 'kireil',
+                'キレイライン矯正': 'kireiline',
                 'ウィスマイル': 'ws',
                 'WE Smile': 'ws',
                 'インビザライン': 'inv',
@@ -1074,11 +1074,13 @@ text-align: center;
             if (clinicNameSpan) clinicNameSpan.textContent = clinicName;
             if (titleClinicName) titleClinicName.textContent = clinicName;
             if (bannerImage) {
-                bannerImage.src = `/images/clinics/${clinicSlug}/${clinicSlug}_detail_bnr.webp`;
+                const bannerFolder = clinicSlug === 'kireil' ? 'kireiline' : clinicSlug;
+                bannerImage.src = `../common_data/images/clinics/${bannerFolder}/${bannerFolder}_detail_bnr.webp`;
                 bannerImage.alt = clinicName;
             }
             if (infoLogo) {
-                infoLogo.src = `/images/clinics/${clinicSlug}/${clinicSlug}-logo.webp`;
+                const logoFolder = clinicSlug === 'kireil' ? 'kireiline' : clinicSlug;
+                infoLogo.src = `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`;
                 infoLogo.alt = clinicName;
             }
             if (ctaText) ctaText.textContent = `${clinicName}の公式サイト`;
@@ -1238,7 +1240,7 @@ text-align: center;
             const slugToNameMap = {
                 'omt': 'Oh my teeth',
                 'zenyum': 'ゼニュム',
-                'kireil': 'キレイライン矯正',
+                'kireiline': 'キレイライン矯正',
                 'ws': 'ウィスマイル',
                 'inv': 'インビザライン'
             };
@@ -1310,71 +1312,71 @@ text-align: center;
             const caseImagesMap = {
                 'dio': [
                     {
-                        src: '../images/case01.jpg',
+                        src: '../common_data/images/case01.jpg',
                         alt: 'CASE 01 - ボディメイクコース（脂肪冷却＋EMS等）68.4kg → 54.3kg'
                     },
                     {
-                        src: '../images/case02.jpg',
+                        src: '../common_data/images/case02.jpg',
                         alt: 'CASE 02 - ボディメイクコース（脂肪冷却＋ハイフ等）97.3kg → 65.8kg'
                     },
                     {
-                        src: '../images/case03.jpg',
+                        src: '../common_data/images/case03.jpg',
                         alt: 'CASE 03 - ボディメイクコース（内服薬＋EMS等）118.4kg → 81.6kg'
                     }
                 ],
                 'lieto': [
                     {
-                        src: '../images/case-lieto01.jpg',
+                        src: '../common_data/images/case-lieto01.jpg',
                         alt: 'CASE 01 - リエートクリニックの症例'
                     },
                     {
-                        src: '../images/case-lieto02.jpg',
+                        src: '../common_data/images/case-lieto02.jpg',
                         alt: 'CASE 02 - リエートクリニックの症例'
                     },
                     {
-                        src: '../images/case-lieto03.jpg',
+                        src: '../common_data/images/case-lieto03.jpg',
                         alt: 'CASE 03 - リエートクリニックの症例'
                     }
                 ],
                 'sbc': [
                     {
-                        src: '../images/case-sbc01.jpg',
+                        src: '../common_data/images/case-sbc01.jpg',
                         alt: 'CASE 01 - 湘南美容クリニックの症例'
                     },
                     {
-                        src: '../images/case-sbc02.jpg',
+                        src: '../common_data/images/case-sbc02.jpg',
                         alt: 'CASE 02 - 湘南美容クリニックの症例'
                     },
                     {
-                        src: '../images/case-sbc03.jpg',
+                        src: '../common_data/images/case-sbc03.jpg',
                         alt: 'CASE 03 - 湘南美容クリニックの症例'
                     }
                 ],
                 'eminal': [
                     {
-                        src: '../images/case-eminal01.jpg',
+                        src: '../common_data/images/case-eminal01.jpg',
                         alt: 'CASE 01 - エミナルクリニックの症例'
                     },
                     {
-                        src: '../images/case-eminal02.jpg',
+                        src: '../common_data/images/case-eminal02.jpg',
                         alt: 'CASE 02 - エミナルクリニックの症例'
                     },
                     {
-                        src: '../images/case-eminal03.jpg',
+                        src: '../common_data/images/case-eminal03.jpg',
                         alt: 'CASE 03 - エミナルクリニックの症例'
                     }
                 ],
                 'urara': [
                     {
-                        src: '../images/case-urara01.jpg',
+                        src: '../common_data/images/case-urara01.jpg',
                         alt: 'CASE 01 - ウララクリニックの症例'
                     },
                     {
-                        src: '../images/case-urara02.jpg',
+                        src: '../common_data/images/case-urara02.jpg',
                         alt: 'CASE 02 - ウララクリニックの症例'
                     },
                     {
-                        src: '../images/case-urara03.jpg',
+                        src: '../common_data/images/case-urara03.jpg',
                         alt: 'CASE 03 - ウララクリニックの症例'
                     }
                 ]
@@ -2026,10 +2028,34 @@ text-align: center;
         }
     </script>
     
-    <!-- POINTタイトルを動的に更新 -->
+    <!-- Load common site data -->
     <script>
-        // このスクリプトは不要になったため、setThreeReasons関数内で処理
-        // JSONデータの読み込みはsetThreeReasons関数内で実行される
+        // Load common site data
+        fetch('../../../common_data/data/site-common-texts.json')
+            .then(response => response.json())
+            .then(data => {
+                // Update site logo
+                const siteLogo = document.getElementById('site-logo');
+                if (siteLogo && data.サイト名) {
+                    siteLogo.textContent = data.サイト名;
+                }
+                
+                // Update favicon
+                const favicon = document.getElementById('header-logo-icon');
+                if (favicon && data.ファビコン画像パス) {
+                    favicon.src = data.ファビコン画像パス;
+                }
+                
+                // Update footer site name (copyright text contains both site name and copyright)
+                const footerSiteName = document.querySelector('.copyright');
+                if (footerSiteName && data.サイト名) {
+                    footerSiteName.textContent = '© 2025 ' + data.サイト名;
+                }
+                
+            })
+            .catch(error => {
+                console.error('Error loading common site data:', error);
+            });
     </script>
     <script src="/tracking-params.js"></script>
 </body>

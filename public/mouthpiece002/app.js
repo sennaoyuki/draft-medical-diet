@@ -317,13 +317,15 @@ class DisplayManager {
                     clinicLogoPath = logoPathFromJson;
                 } else {
                     // フォールバック：コードベースのパス
-                    clinicLogoPath = `/images/clinics/${clinicCode}/${clinicCode}-logo.webp`;
+                    // キレイラインの特別処理
+                    const logoFolder = clinicCode === 'kireil' ? 'kireiline' : clinicCode;
+                    clinicLogoPath = `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`;
                 }
             }
 
             rankingItem.innerHTML = `
                 <div class="rank-medal ${medalClass}">
-                    <img src="/images/badges/rank-${rankNum}.svg" alt="${medalText}" class="medal-image">
+                    <img src="../common_data/images/badges/rank-${rankNum}.svg" alt="${medalText}" class="medal-image">
                 </div>
                 <div class="clinic-card">
                     <div class="satisfaction-badge">
@@ -545,12 +547,34 @@ class DataManager {
             this.campaigns = data.campaigns;
             
             // 共通テキストデータの読み込み
+            this.commonTexts = {};
+            
+            // まずローカルのsite-common-texts.jsonを読み込み
             try {
-                const commonTextResponse = await fetch(this.dataPath + 'site-common-texts.json');
+                const localTextResponse = await fetch(this.dataPath + 'site-common-texts.json');
+                if (localTextResponse.ok) {
+                    const localJsonText = await localTextResponse.text();
+                    try {
+                        this.commonTexts = JSON.parse(localJsonText);
+                        console.log('✅ ローカルsite-common-texts.jsonを読み込みました');
+                    } catch (parseError) {
+                        console.warn('⚠️ ローカルsite-common-texts.jsonのパースエラー:', parseError);
+                    }
+                }
+            } catch (error) {
+                console.warn('⚠️ ローカルsite-common-texts.jsonの読み込みエラー:', error);
+            }
+            
+            // 次にcommon_dataから共通項目を読み込み、上書き
+            try {
+                const commonTextResponse = await fetch('../../../common_data/data/site-common-texts.json');
                 if (commonTextResponse.ok) {
                     const jsonText = await commonTextResponse.text();
                     try {
-                        this.commonTexts = JSON.parse(jsonText);
+                        const commonData = JSON.parse(jsonText);
+                        // common_dataの値で上書き
+                        this.commonTexts = { ...this.commonTexts, ...commonData };
+                        console.log('✅ common_dataのsite-common-texts.jsonで上書きしました');
                         
                         // ファビコンとヘッダーロゴアイコンを動的に設定
                         if (this.commonTexts['ファビコン画像パス']) {
@@ -571,7 +595,7 @@ class DataManager {
                         this.commonTexts = {};
                     }
                 } else {
-                    console.warn('⚠️ site-common-texts.json が見つかりません。デフォルトテキストを使用します。Status:', commonTextResponse.status);
+                    console.warn('⚠️ common_dataのsite-common-texts.json が見つかりません。ローカルのみ使用します。Status:', commonTextResponse.status);
                     this.commonTexts = {};
                 }
             } catch (error) {
@@ -1202,7 +1226,9 @@ class DataManager {
 
     // クリニックロゴパスを取得
     getClinicLogoPath(clinicCode) {
-        return this.getClinicText(clinicCode, 'クリニックロゴ画像パス', `/images/clinics/${clinicCode}/${clinicCode}-logo.webp`);
+        // キレイラインの特別処理
+        const logoFolder = clinicCode === 'kireil' ? 'kireiline' : clinicCode;
+        return this.getClinicText(clinicCode, 'クリニックロゴ画像パス', `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`);
     }
 
     // クリニック詳細データを動的に取得
@@ -1251,7 +1277,10 @@ class DataManager {
             title: this.getClinicText(clinicCode, '詳細タイトル', '医療痩せプログラム'),
             subtitle: this.getClinicText(clinicCode, '詳細サブタイトル', '効果的な痩身治療'),
             link: `${clinicName} ＞`,
-            banner: this.getClinicText(clinicCode, '詳細バナー画像パス', `/images/clinics/${clinicCode}/${clinicCode}_detail_bnr.webp`),
+            banner: this.getClinicText(clinicCode, '詳細バナー画像パス', (() => {
+                const bannerFolder = clinicCode === 'kireil' ? 'kireiline' : clinicCode;
+                return `../common_data/images/clinics/${bannerFolder}/${bannerFolder}_detail_bnr.webp`;
+            })()),
             features: (() => {
                 const tagsText = this.getClinicText(clinicCode, '詳細_特徴タグ', '# 医療ダイエット<br># 医療痩身<br># リバウンド防止');
                 // <br>で分割し、#と空白を削除
@@ -2113,7 +2142,7 @@ class RankingApp {
             // サイトロゴの更新（共通テキスト）
             const siteLogo = document.querySelector('.site-logo');
             if (siteLogo) {
-                const logoText = this.dataManager.getCommonText('サイトロゴ', '医療ダイエット比較.com');
+                const logoText = this.dataManager.getCommonText('サイト名', '矯正歯科おすすめ比較.com');
                 siteLogo.textContent = logoText;
             } else {
                 console.warn('⚠️ サイトロゴ要素が見つかりません');
@@ -2207,14 +2236,15 @@ class RankingApp {
             // フッターサイト名の更新（共通テキスト）
             const footerSiteName = document.querySelector('.footer_contents h4 a');
             if (footerSiteName) {
-                const footerText = this.dataManager.getCommonText('フッターサイト名', '医療ダイエット比較.com');
+                const footerText = this.dataManager.getCommonText('サイト名', '矯正歯科おすすめ比較.com');
                 footerSiteName.textContent = footerText;
             }
             
             // フッターコピーライトの更新（共通テキスト）
             const footerCopyright = document.querySelector('.copyright');
             if (footerCopyright) {
-                const copyrightText = this.dataManager.getCommonText('フッターコピーライト', '© 2025 医療ダイエット比較.com');
+                const siteName = this.dataManager.getCommonText('サイト名', '矯正歯科おすすめ比較.com');
+                const copyrightText = '© 2025 ' + siteName;
                 footerCopyright.textContent = copyrightText;
             }
             
@@ -2487,7 +2517,8 @@ class RankingApp {
                     let logoPath = this.dataManager.getClinicText(clinicCode, 'クリニックロゴ画像パス', '');
                     
                     if (!logoPath) {
-                        logoPath = `${imagesPath}/clinics/${clinicCode}/${clinicCode}-logo.webp`;
+                        const logoFolder = clinicCode === 'kireil' ? 'kireiline' : clinicCode;
+                        logoPath = `${imagesPath}/clinics/${logoFolder}/${logoFolder}-logo.webp`;
                     }
                     
                     const redirectUrl = `./redirect.html#clinic_id=${clinicId}&rank=${rankNum}&region_id=${regionId}`;
@@ -2707,7 +2738,8 @@ class RankingApp {
             
             if (!logoPath) {
                 // フォールバック：コードベースのパス
-                logoPath = `${imagesPath}/clinics/${clinicCode}/${clinicCode}-logo.webp`;
+                const logoFolder = clinicCode === 'kireil' ? 'kireiline' : clinicCode;
+                logoPath = `${imagesPath}/clinics/${logoFolder}/${logoFolder}-logo.webp`;
             }
             
             // リダイレクトURL（ハッシュフラグメント使用）
@@ -2832,8 +2864,9 @@ class RankingApp {
         // ロゴ画像を更新
         const infoLogo = document.getElementById('first-choice-info-logo');
         if (infoLogo) {
+            const logoFolder = clinicCode === 'kireil' ? 'kireiline' : clinicCode;
             const logoPath = window.dataManager.getClinicText(clinicCode, 'クリニックロゴ画像パス', '') || 
-                            `${imagesPath}/clinics/${clinicCode}/${clinicCode}-logo.webp`;
+                            `${imagesPath}/clinics/${logoFolder}/${logoFolder}-logo.webp`;
             infoLogo.src = logoPath;
             infoLogo.alt = topClinic.name;
         }
@@ -3233,7 +3266,8 @@ class RankingApp {
             // バナーがない場合はデフォルトパスを設定
             if (!data.banner) {
                 const clinicCode = this.dataManager.getClinicCodeById(clinicId);
-                data.banner = `/images/clinics/${clinicCode}/${clinicCode}_detail_bnr.webp`;
+                const bannerFolder = clinicCode === 'kireil' ? 'kireiline' : clinicCode;
+                data.banner = `../common_data/images/clinics/${bannerFolder}/${bannerFolder}_detail_bnr.webp`;
             }
             
             // 店舗データを動的に取得（store_view.csvに基づいてフィルタリング）
@@ -3264,7 +3298,8 @@ class RankingApp {
                 ${(() => {
                     // DataManagerからバナーパスを動的に取得
                     const clinicCode = this.dataManager.getClinicCodeById(clinicId);
-                    const correctBanner = data.banner || `/images/clinics/${clinicCode}/${clinicCode}_detail_bnr.webp`;
+                    const bannerFolder = clinicCode === 'kireil' ? 'kireiline' : clinicCode;
+                    const correctBanner = data.banner || `../common_data/images/clinics/${bannerFolder}/${bannerFolder}_detail_bnr.webp`;
                     return correctBanner ? `
                     <div class="detail-banner">
                         <img src="${correctBanner}" alt="${clinic.name}キャンペーン">
@@ -3339,15 +3374,15 @@ class RankingApp {
                             const clinicCode = this.dataManager.getClinicCodeById(clinicId);
                             const reviews = this.dataManager.getClinicReviews(clinicCode);
                             const reviewIcons = [
-                                '/images/review_icon/review_icon1.webp',
-                                '/images/review_icon/review_icon2.webp',
-                                '/images/review_icon/review_icon3.webp',
-                                '/images/review_icon/review_icon4.webp',
-                                '/images/review_icon/review_icon5.webp',
-                                '/images/review_icon/review_icon6.webp',
-                                '/images/review_icon/review_icon7.webp',
-                                '/images/review_icon/review_icon8.webp',
-                                '/images/review_icon/review_icon9.webp'
+                                '../common_data/images/review_icon/review_icon1.webp',
+                                '../common_data/images/review_icon/review_icon2.webp',
+                                '../common_data/images/review_icon/review_icon3.webp',
+                                '../common_data/images/review_icon/review_icon4.webp',
+                                '../common_data/images/review_icon/review_icon5.webp',
+                                '../common_data/images/review_icon/review_icon6.webp',
+                                '../common_data/images/review_icon/review_icon7.webp',
+                                '../common_data/images/review_icon/review_icon8.webp',
+                                '../common_data/images/review_icon/review_icon9.webp'
                             ];
                             
                             let html = '';
@@ -3443,7 +3478,8 @@ class RankingApp {
                             const campaignMicrocopy = this.dataManager.getClinicText(clinicCode, 'INFORMATIONサブテキスト', '＼月額・総額がリーズナブルなクリニック／');
                             const ctaText = this.dataManager.getClinicText(clinicCode, 'CTAボタンテキスト', `${clinic.name}の公式サイト`);
                             
-                            const logoSrc = `/images/clinics/${clinicCode}/${clinicCode}-logo.webp`;
+                            const logoFolder = clinicCode === 'kireil' ? 'kireiline' : clinicCode;
+                            const logoSrc = `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`;
                             const logoAlt = clinic.name;
                             
                             return `
@@ -3451,7 +3487,7 @@ class RankingApp {
                             <div class="campaign-content">
                                 <div class="camp_header3">
                                     <div class="info_logo">
-                                        <img src="${logoSrc}" alt="${logoAlt}" onerror="this.onerror=null; this.src='/images/clinics/${clinicCode}/${clinicCode}-logo.jpg';">
+                                        <img src="${logoSrc}" alt="${logoAlt}" onerror="this.onerror=null; this.src='../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.jpg';">
                                     </div>
                                     <div class="camp_txt">
                                         ${campaignDescription}

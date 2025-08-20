@@ -1,6 +1,6 @@
-clinic_id,clinic_name,code,ranking,brand_logo_url,brand_description
-1,Oh my teeth,omt,1,,
-2,インビザライン,inv,2,,
-3,キレイライン矯正,kireil,3,,
-4,ウィスマイル,ws,4,,
-5,ゼニュム,zenyum,5,,
+clinic_id,clinic_name,code
+1,Oh my teeth,omt
+2,インビザライン,inv
+3,キレイライン矯正,kireil
+4,ウィスマイル,ws
+5,ゼニュム,zenyum
