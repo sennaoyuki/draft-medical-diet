@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <linearGradient id="bronze" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#CD7F32;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#E5A572;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B87333;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <!-- Medal background -->
+  <circle cx="40" cy="40" r="35" fill="url(#bronze)" fill-opacity="0.9" stroke="#CD7F32" stroke-width="3" filter="url(#shadow)"/>
+  <!-- Inner circle -->
+  <circle cx="40" cy="40" r="28" fill="none" stroke="#FFF" stroke-width="1" opacity="0.5"/>
+  <!-- Star -->
+  <path d="M40,15 L45,25 L56,27 L48,35 L50,46 L40,40 L30,46 L32,35 L24,27 L35,25 Z" fill="#FFF" opacity="0.9"/>
+  <!-- Text -->
+  <text x="40" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFF">3rd</text>
+</svg>

@@ -1,0 +1,123 @@
+/* CASE画像の中太配置を確実に修正 */
+
+/* Slickスライダーの基本設定 */
+.case-slider .slick-list {
+    overflow: hidden !important;
+}
+
+.case-slider .slick-track {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* スライドを100%幅に - インラインスタイルを上書き */
+.case-slider .slick-slide,
+.case-slider .slick-slide[style] {
+    width: 100% !important;
+    min-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 200px !important;
+}
+
+.case-slider .slick-slide > div {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* スライドの位置調整 */
+.case-slider.slick-initialized .slick-slide {
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+/* 画像の基本スタイル - 特異性を高める */
+body .case-slider .slick-slide img {
+    width: auto !important;
+    height: auto !important;
+    max-width: 90% !important;
+    max-height: 400px !important;
+    margin: 0 auto !important;
+    display: block !important;
+    object-fit: contain !important;
+    padding: 0 !important;
+    box-sizing: content-box !important;
+}
+
+/* モバイルサイズ対応 (768px以下) */
+@media (max-width: 768px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: 85% !important;
+        max-height: 250px !important;
+        padding: 0 !important;
+    }
+}
+
+/* 小さい画面 (414px以下) */
+@media (max-width: 414px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: 80% !important;
+        max-height: 200px !important;
+        padding: 0 !important;
+    }
+}
+
+/* 非常に小さい画面 (375px以下) */
+@media (max-width: 375px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: 75% !important;
+        max-height: 180px !important;
+        padding: 0 !important;
+    }
+    
+    /* スライドの幅を上書き */
+    body .case-slider .slick-slide,
+    body .case-slider .slick-slide[style] {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+}
+
+/* デスクトップ (769px以上) */
+@media (min-width: 769px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: 600px !important;
+        max-height: 400px !important;
+        padding: 0 !important;
+    }
+}
+
+/* Slick矢印の位置調整 */
+.case-slider .slick-prev {
+    left: 10px !important;
+    z-index: 10;
+}
+
+.case-slider .slick-next {
+    right: 10px !important;
+    z-index: 10;
+}
+
+/* 前のslickのcenterModeスタイルを無効化 */
+.case-slider.slick-initialized .slick-slide {
+    opacity: 1 !important;
+}
+
+/* 特定のビューポートでの修正 (376-768px) */
+@media (min-width: 376px) and (max-width: 768px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: min(85%, 350px) !important;
+        max-height: 250px !important;
+        padding: 0 !important;
+    }
+}

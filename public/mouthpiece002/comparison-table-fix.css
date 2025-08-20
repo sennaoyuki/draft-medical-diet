@@ -1,0 +1,128 @@
+/* Comparison Table Tab Layout Fix */
+
+/* Ensure table uses full width and proper layout */
+#comparison-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+/* Fix for tab1 (総合) - 5 columns: 17% + 21.67% + 21.67% + 21.66% + 18% = 100% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:not([style*="display: none"]) {
+    width: 21.67%; /* Default width for middle columns */
+}
+
+/* First column (クリニック) - 17% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:first-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:first-child:not([style*="display: none"]) {
+    width: 17%;
+}
+
+/* Second column (総合評価) - 21.67% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:nth-child(2):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:nth-child(2):not([style*="display: none"]) {
+    width: 21.67%;
+}
+
+/* Third column (費用) - 21.67% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:nth-child(3):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:nth-child(3):not([style*="display: none"]) {
+    width: 21.67%;
+}
+
+/* Fourth column (特徴) - 21.66% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:nth-child(4):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:nth-child(4):not([style*="display: none"]) {
+    width: 21.66%;
+}
+
+/* Last column (公式サイト) - 18% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:last-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:last-child:not([style*="display: none"]) {
+    width: 18%;
+}
+
+/* Fix for tab2 (施術内容) - 5 columns: 17% + 21.67% + 21.67% + 21.66% + 18% = 100% */
+.comparison-table[data-active-tab="tab2"] #comparison-table th:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:not([style*="display: none"]) {
+    width: 21.67%; /* Default for middle columns */
+}
+
+/* First column (クリニック) - 17% */
+.comparison-table[data-active-tab="tab2"] #comparison-table th:first-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:first-child:not([style*="display: none"]) {
+    width: 17%;
+}
+
+/* Middle columns (矯正範囲, 目安期間, 通院頻度) - 21.67%, 21.67%, 21.66% */
+.comparison-table[data-active-tab="tab2"] #comparison-table th:nth-child(5):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:nth-child(5):not([style*="display: none"]) {
+    width: 21.67%;
+}
+.comparison-table[data-active-tab="tab2"] #comparison-table th:nth-child(6):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:nth-child(6):not([style*="display: none"]) {
+    width: 21.67%;
+}
+.comparison-table[data-active-tab="tab2"] #comparison-table th:nth-child(7):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:nth-child(7):not([style*="display: none"]) {
+    width: 21.66%;
+}
+
+/* Last column (公式サイト) - 18% */
+.comparison-table[data-active-tab="tab2"] #comparison-table th:last-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:last-child:not([style*="display: none"]) {
+    width: 18%;
+}
+
+/* Fix for tab3 (サービス) - 5 columns: 17% + 21.67% + 21.67% + 21.66% + 18% = 100% */
+.comparison-table[data-active-tab="tab3"] #comparison-table th:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:not([style*="display: none"]) {
+    width: 21.67%; /* Default for middle columns */
+}
+
+/* First column (クリニック) - 17% */
+.comparison-table[data-active-tab="tab3"] #comparison-table th:first-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:first-child:not([style*="display: none"]) {
+    width: 17%;
+}
+
+/* Middle columns (実績/症例数, ワイヤー矯正の紹介, サポート) - 21.67%, 21.67%, 21.66% */
+.comparison-table[data-active-tab="tab3"] #comparison-table th:nth-child(8):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:nth-child(8):not([style*="display: none"]) {
+    width: 21.67%;
+}
+.comparison-table[data-active-tab="tab3"] #comparison-table th:nth-child(9):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:nth-child(9):not([style*="display: none"]) {
+    width: 21.67%;
+}
+.comparison-table[data-active-tab="tab3"] #comparison-table th:nth-child(10):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:nth-child(10):not([style*="display: none"]) {
+    width: 21.66%;
+}
+
+/* Last column (公式サイト) - 18% */
+.comparison-table[data-active-tab="tab3"] #comparison-table th:last-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:last-child:not([style*="display: none"]) {
+    width: 18%;
+}
+
+/* Prevent text overflow and ensure proper wrapping */
+#comparison-table th,
+#comparison-table td {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+/* Ensure hidden columns don't take any space */
+#comparison-table .th-none,
+#comparison-table .td-none,
+#comparison-table th[style*="display: none"],
+#comparison-table td[style*="display: none"] {
+    width: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    margin: 0 !important;
+}

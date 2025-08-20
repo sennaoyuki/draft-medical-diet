@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>検索結果 | 医療ダイエット比較.com</title>
+    <meta name="description" content="医療ダイエットクリニックの検索結果。対応部位、地域、店舗数から絞り込み検索ができます。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css?v=2025072401">
+    <link rel="stylesheet" href="../search-results.css?v=2025072401">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <!-- Analytics -->
+    <script src="/analytics.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="site-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <a href="../" class="logo-link" id="header-logo-link">
+                        <div class="logo-main">
+                            <span class="logo-icon"><img src="../images/favicon.png" alt="医療ダイエット比較.com" style="width: 20px; height: 20px; vertical-align: middle;"></span>
+                            <h1 class="site-logo">医療ダイエット比較.com</h1>
+                        </div>
+                    </a>
+                </div>
+                <nav class="header-nav">
+                    <div id="hamburger-menu" class="hamburger-menu" style="position: relative;">
+                        <span style="background-color: #333;"></span>
+                        <span style="background-color: #333;"></span>
+                        <span style="background-color: #333;"></span>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- 検索結果ヘッダー -->
+        <section class="search-results-header">
+            <div class="breadcrumb">
+                <a href="/">ホーム</a> <i class="fas fa-chevron-right"></i> 検索結果
+            </div>
+            <h2 class="search-results-title">クリニック検索結果</h2>
+            <div class="search-summary" id="search-summary" style="display: none;">
+                <!-- 検索条件のサマリーが表示される -->
+            </div>
+        </section>
+
+
+        <!-- 検索結果一覧 -->
+        <section class="search-results-content">
+            <div class="results-count" id="results-count">
+                <!-- 検索結果件数が表示される -->
+            </div>
+            
+            <div class="results-grid" id="results-grid">
+                <!-- 検索結果が動的に挿入される -->
+            </div>
+
+            <div class="no-results" id="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <p>該当するクリニックが見つかりませんでした。</p>
+                <p>検索条件を変更してお試しください。</p>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="privacy.html" class="footer-link">プライバシーポリシー</a>
+                    <a href="disclaimer.html" class="footer-link">免責事項</a>
+                    <a href="contact.html" class="footer-link">お問い合わせ</a>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 医療ダイエット比較.com All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- サイドバーメニュー -->
+    <div id="sidebar-menu" class="sidebar-menu">
+        <div class="sidebar-header">
+            <h3 class="sidebar-title">絞り込み検索</h3>
+            <button id="close-sidebar" class="close-sidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-filter-group">
+                <label for="sidebar-region-select" class="sidebar-filter-label">地域を選択</label>
+                <select id="sidebar-region-select" class="sidebar-select">
+                    <option value="all">全地域</option>
+                    <option value="hokkaido">北海道</option>
+                    <option value="miyagi">宮城</option>
+                    <option value="tokyo">東京</option>
+                    <option value="saitama">埼玉</option>
+                    <option value="kanagawa">神奈川</option>
+                    <option value="chiba">千葉</option>
+                    <option value="aichi">愛知</option>
+                    <option value="kyoto">京都</option>
+                    <option value="osaka">大阪</option>
+                    <option value="hyogo">兵庫</option>
+                    <option value="hiroshima">広島</option>
+                    <option value="fukuoka">福岡</option>
+                </select>
+            </div>
+            <div class="sidebar-filter-group">
+                <label for="sidebar-clinic-search" class="sidebar-filter-label">クリニック名検索</label>
+                <input type="text" id="sidebar-clinic-search" class="sidebar-search-input" placeholder="クリニック名を入力">
+            </div>
+            <div class="sidebar-filter-group">
+                <label for="sidebar-specialty-filter" class="sidebar-filter-label">対応部位</label>
+                <select id="sidebar-specialty-filter" class="sidebar-select">
+                    <option value="">すべての部位</option>
+                    <option value="face">顔</option>
+                    <option value="upperarm">二の腕</option>
+                    <option value="stomach">お腹</option>
+                    <option value="buttocks">お尻</option>
+                    <option value="thigh">太もも</option>
+                    <option value="other">その他</option>
+                </select>
+            </div>
+            <div class="sidebar-filter-group">
+                <label for="sidebar-hours-filter" class="sidebar-filter-label">店舗数</label>
+                <select id="sidebar-hours-filter" class="sidebar-select">
+                    <option value="">店舗数指定なし</option>
+                    <option value="small">0〜5店舗</option>
+                    <option value="medium">6〜10店舗</option>
+                    <option value="large">10〜20店舗</option>
+                    <option value="xlarge">それ以上</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <script src="../search-results.js?v=2025072401"></script>
+    <script src="/tracking-params.js"></script>
+</body>
+</html>
