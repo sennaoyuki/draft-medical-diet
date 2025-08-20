@@ -603,6 +603,61 @@ class DataManager {
                 this.commonTexts = {};
             }
             
+            // 画像パスを動的に設定（DOMの構築を待つ）
+            setTimeout(() => {
+                // MV画像
+                if (this.commonTexts['MV画像パス']) {
+                    const heroImage = document.querySelector('.hero-image');
+                    const heroSource = document.querySelector('.hero-image-wrapper source');
+                    if (heroImage) {
+                        heroImage.src = this.commonTexts['MV画像パス'];
+                    }
+                    if (heroSource) {
+                        heroSource.srcset = this.commonTexts['MV画像パス'];
+                    }
+                }
+                
+                // ランキングバナー画像
+                if (this.commonTexts['ランキングバナー画像パス']) {
+                    const rankingBanners = document.querySelectorAll('.ranking-banner-image');
+                    rankingBanners.forEach(img => {
+                        img.src = this.commonTexts['ランキングバナー画像パス'];
+                    });
+                }
+                
+                // Tips1画像
+                if (this.commonTexts['Tips1画像パス']) {
+                    const tips1Img = document.querySelector('.tab-content[data-tab="0"] img');
+                    if (tips1Img) {
+                        tips1Img.src = this.commonTexts['Tips1画像パス'];
+                    }
+                }
+                
+                // Tips2画像
+                if (this.commonTexts['Tips2画像パス']) {
+                    const tips2Img = document.querySelector('.tab-content[data-tab="1"] img');
+                    if (tips2Img) {
+                        tips2Img.src = this.commonTexts['Tips2画像パス'];
+                    }
+                }
+                
+                // Tips3画像
+                if (this.commonTexts['Tips3画像パス']) {
+                    const tips3Img = document.querySelector('.tab-content[data-tab="2"] img');
+                    if (tips3Img) {
+                        tips3Img.src = this.commonTexts['Tips3画像パス'];
+                    }
+                }
+                
+                // 詳細バナー画像
+                if (this.commonTexts['詳細バナー画像パス']) {
+                    const detailsBanner = document.querySelector('.details-banner-image');
+                    if (detailsBanner) {
+                        detailsBanner.src = this.commonTexts['詳細バナー画像パス'];
+                    }
+                }
+            }, 100);
+            
             // クリニック別テキストデータの読み込み
             try {
                 const clinicTextResponse = await fetch(this.dataPath + 'clinic-texts.json');
