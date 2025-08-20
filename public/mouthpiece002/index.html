@@ -1039,10 +1039,10 @@ text-align: center;
             // クリニックIDまたは名前からslugを特定
             const clinicIdToSlugMap = {
                 '1': 'omt',  // Oh my teeth
-                '2': 'zenyum',  // ゼニュム
-                '3': 'kireiline',  // キレイライン矯正
-                '4': 'ws',  // ウィスマイル 
-                '5': 'inv'  // インビザライン
+                '2': 'invsalign',  // インビザライン
+                '3': 'ws',  // ウィスマイル
+                '4': 'kireiline',  // キレイライン矯正
+                '5': 'zenyum'  // ゼニュム
             };
             
             const clinicNameToSlugMap = {
@@ -1053,8 +1053,8 @@ text-align: center;
                 'キレイライン矯正': 'kireiline',
                 'ウィスマイル': 'ws',
                 'WE Smile': 'ws',
-                'インビザライン': 'inv',
-                'Invisalign': 'inv'
+                'インビザライン': 'invsalign',
+                'Invisalign': 'invsalign'
             };
             
             const clinicSlug = clinicData.code || clinicIdToSlugMap[clinicData.id] || clinicNameToSlugMap[clinicName] || clinicNameToSlugMap[clinicData.name] || 'omt';
@@ -1073,16 +1073,7 @@ text-align: center;
             
             if (clinicNameSpan) clinicNameSpan.textContent = clinicName;
             if (titleClinicName) titleClinicName.textContent = clinicName;
-            if (bannerImage) {
-                const bannerFolder = clinicSlug === 'kireil' ? 'kireiline' : clinicSlug;
-                bannerImage.src = `../common_data/images/clinics/${bannerFolder}/${bannerFolder}_detail_bnr.webp`;
-                bannerImage.alt = clinicName;
-            }
-            if (infoLogo) {
-                const logoFolder = clinicSlug === 'kireil' ? 'kireiline' : clinicSlug;
-                infoLogo.src = `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`;
-                infoLogo.alt = clinicName;
-            }
+    
             if (ctaText) ctaText.textContent = `${clinicName}の公式サイト`;
             
             // クリニック別の内容設定（DataManagerから動的に取得）
@@ -1242,7 +1233,7 @@ text-align: center;
                 'zenyum': 'ゼニュム',
                 'kireiline': 'キレイライン矯正',
                 'ws': 'ウィスマイル',
-                'inv': 'インビザライン'
+                'invsalign': 'インビザライン'
             };
             const clinicKeyForTexts = slugToNameMap[clinicSlug] || clinicSlug;
             
@@ -1437,10 +1428,10 @@ text-align: center;
             
             retryCount++;
             if (retryCount < maxRetries) {
-                console.log(`App not ready yet, retry ${retryCount}/${maxRetries}`);
+                // console.log(`App not ready yet, retry ${retryCount}/${maxRetries}`);
                 setTimeout(tryUpdateFirstChoice, 500);
             } else {
-                console.log('Max retries reached, app may not be loaded');
+                // console.log('Max retries reached, app may not be loaded');
             }
         }
         

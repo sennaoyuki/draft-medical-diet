@@ -7,7 +7,7 @@ meta5,遷移先URL（3位）,3位表示時の遷移先URL,https://www.oh-my-teet
 meta6,遷移先URL（4位）,4位表示時の遷移先URL,https://www.oh-my-teeth.com/,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
 meta7,遷移先URL（5位）,5位表示時の遷移先URL,https://www.oh-my-teeth.com/,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
 comparison1,総合評価,比較表の総合評価スコア,4.9,4.5,4.3,3.8,4.1
-meta8,クリニックロゴ画像パス,各クリニックのロゴ画像パス,/images/clinics/omt/omt-logo.webp,/images/clinics/inv/inv-logo.webp,/images/clinics/kireiline/kireiline-logo.webp,/images/clinics/zenyum/zenyum-logo.webp,/images/clinics/ws/ws-logo.webp
+meta8,クリニックロゴ画像パス,各クリニックのロゴ画像パス,../common_data/images/clinics/omt/omt-logo.webp,../common_data/images/clinics/invisalign/invisalign-logo.webp,../common_data/images/clinics/kireiline/kireiline-logo.webp,../common_data/images/clinics/zenyum/zenyum-logo.webp,../common_data/images/clinics/ws/ws-logo.webp
 ranking1,ランキングプッシュメッセージ,ランキングカード内の短い訴求文,2025年のイチ押し！<br>通院不要！最短2ヶ月<br>国内製造数No.1,世界1500万人が<br>グローバルスタンダード矯正システム,12万人が選んだ！<br>満足度90%,シンガポール発<br>50万人が利用！,AWARD受賞10回<br>複数プランあり
 comparison2,費用,比較表の金額欄,"<deco>33万円プラン</deco><br>(月額3,500円~)<br>※追加費用なし",80万円～120万円<br>（症例により異なる）,46.2万円<br>(15回プラン)<br>通院毎に再診療あり,32.45万円<br>治療計画費:<br>＋2.2~3.3万円,51.7万円<br>(18回プラン)<br>提携院から別プランの案内あり
 comparison3,特徴,比較表の特徴欄,コスパ抜群！<br>日本ブランド<br>国内製造数No.1,世界1500万人の実績<br>グローバルスタンダード<br>高精度な治療計画,日本全国の提携院を紹介,シンガポールの<br>ブランド<br>世界9カ国展開,提携院を紹介してくれるサービス
@@ -24,7 +24,7 @@ zenyum,比較表の注意事項,ゼニュムの注意事項,"「料金につい�
 wesmile,比較表の注意事項,ウィ・スマイル矯正の注意事項,"「料金について」治療費月額1,925円（税込）〜の分割可。平均治療期間3ヶ月〜11ヶ月※個人差あり<br>「各種料金について」初診料0円（一部医院は有料）。調整料0円（※1）。保定料0円（※1）。（※1：治療費に含まれる）<br>「初回検診について」※初回検診料はクリニックによって異なります。※予約状況によってご案内が終了している場合もございます<br>「実績について」満足度98％※1。治療開始50,000名以上※2。加盟100医院以上※3。※1 2024年5月時点、一部提携医院にて。※2 2025年4月時点。※3 2025年5月時点",,,,,
 header1,詳細タイトル,案件詳細セクションのh3タイトル,平均3ヶ月!コスパ抜群の自宅矯正,世界基準の高精度矯正治療,満足度90%を誇る実績！,シンガポール発の革新的矯正！,全国125の提携医院を紹介可能！
 header2,詳細サブタイトル,案件詳細セクションのpタグ,国内ブランド製造数No.1 安心の一律料金,1500万人が選んだ信頼の治療,手軽に始められる部分矯正,一律料金で安心の矯正治療,AWARD受賞歴10回の実績あり！
-header3,詳細バナー画像パス,各クリニックの詳細バナー画像,/images/clinics/omt/omt_detail_bnr.webp,/images/clinics/inv/inv_detail_bnr.webp,/images/clinics/kireiline/kireiline_detail_bnr.webp,/images/clinics/zenyum/zenyum_detail_bnr.webp,/images/clinics/ws/ws_detail_bnr.webp
+header3,詳細バナー画像パス,各クリニックの詳細バナー画像,../common_data/images/clinics/omt/omt_detail_bnr.webp,../common_data/images/clinics/invisalign/invisalign_detail_bnr.webp,../common_data/images/clinics/kireiline/kireiline_detail_bnr.webp,../common_data/images/clinics/zenyum/zenyum_detail_bnr.webp,../common_data/images/clinics/ws/ws_detail_bnr.webp
 tags1,特徴タグ,案件詳細セクションの特徴タグ,# リーズナブル<br># 一律料金<br># 通院不要<br># 24時間サポート<br># 日本ブランド<br># 国内製造<br># 部分矯正<br># 全体矯正<br># ホワイトニングあり,# マウスピース矯正<br># クリニック紹介型<br># 高精度治療<br># 認定医<br># 全症例対応<br># 透明矯正<br># 取り外し可能<br># グローバル実績<br># 包括的治療,# マウスピース矯正<br># クリニック紹介型<br># 短期間<br># 前歯矯正<br># 提携医院<br># リーズナブル<br># 満足度90%,# マウスピース矯正<br># シンガポール発<br># 一律料金<br># オンライン診療<br># 50万人実績<br># 追加費用なし<br># アジア圏実績<br># 革新的技術<br># 透明矯正,# マウスピース矯正<br># クリニック紹介型<br># 初診料無料<br># 提携医院<br># 分割払い<br># 部分矯正<br># 丁寧サポート
 detail1,費用,案件詳細セクションの費用,Basicプラン33万円<br>Proプラン66万円,80万円～120万円<br>（症例により異なる）,初回2.2万円～<br>総額23.1万円～46.2万円,32.45万円<br>治療計画費：2.2〜3.3万円,"1回お試しコース: 1,650円<br>8回コース: 23.1万円<br>12回コース: 35.2万円<br>18回コース: 51.7万円<br>24回コース: 66万円<br>30回コース: 88万円"
 detail2,目安期間,案件詳細セクションの目安期間,Basic：平均3ヶ月<br>Pro：平均6ヶ月,1年～3年<br>（症例により異なる）,2.5ヶ月～1年<br>（平均6ヶ月）,部分矯正：6ヶ月<br>全体矯正：10ヶ月,2ヶ月～10ヶ月以上<br>（プランにより異なる）

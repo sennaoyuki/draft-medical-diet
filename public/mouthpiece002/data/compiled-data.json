@@ -115,7 +115,7 @@
     },
     {
       "id": "2",
-      "code": "inv",
+      "code": "invsalign",
       "name": "インビザライン",
       "regions": [
         "013",
@@ -345,7 +345,7 @@
         "3",
         "4"
       ],
-      "inv_stores": [
+      "invsalign_stores": [
         "9"
       ],
       "ws_stores": [
@@ -362,7 +362,7 @@
       ]
     },
     "014": {
-      "inv_stores": [
+      "invsalign_stores": [
         "10"
       ],
       "kireiline_stores": [
@@ -374,7 +374,7 @@
         "5",
         "6"
       ],
-      "inv_stores": [
+      "invsalign_stores": [
         "11"
       ],
       "ws_stores": [
@@ -391,7 +391,7 @@
       "omt_stores": [
         "7"
       ],
-      "inv_stores": [
+      "invsalign_stores": [
         "12"
       ],
       "kireiline_stores": [
