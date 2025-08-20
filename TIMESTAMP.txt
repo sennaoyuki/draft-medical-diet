@@ -1,1 +1,2 @@
 Repository restructured: 2025-08-20 11:38:52 JST
+Added disclaimer directory: 2025-08-20 11:49:01 JST
