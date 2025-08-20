@@ -556,7 +556,6 @@ class DataManager {
                     const localJsonText = await localTextResponse.text();
                     try {
                         this.commonTexts = JSON.parse(localJsonText);
-                        console.log('✅ ローカルsite-common-texts.jsonを読み込みました');
                     } catch (parseError) {
                         console.warn('⚠️ ローカルsite-common-texts.jsonのパースエラー:', parseError);
                     }
@@ -3372,7 +3371,7 @@ class RankingApp {
                             </div>
                         </div>
                         <div class="ranking__name">
-                            <a href="${this.urlHandler.getClinicUrlWithRegionId(clinic.id, clinic.rank)}" target="_blank" rel="noopener nofollow">${clinic.name} ＞</a>
+                            <a href="${this.urlHandler.getClinicUrlWithRegionId(clinic.id, clinic.rank)}" target="_blank" rel="noopener nofollow">${clinic.name === 'Oh my teeth' ? 'Oh my teeth（オーマイティース）' : clinic.name} ＞</a>
                         </div>
                     </div>
                 ${(() => {
