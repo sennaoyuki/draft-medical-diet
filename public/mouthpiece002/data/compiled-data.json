@@ -115,7 +115,7 @@
     },
     {
       "id": "2",
-      "code": "invsalign",
+      "code": "invisalign",
       "name": "インビザライン",
       "regions": [
         "013",
@@ -345,7 +345,7 @@
         "3",
         "4"
       ],
-      "invsalign_stores": [
+      "invisalign_stores": [
         "9"
       ],
       "ws_stores": [
@@ -362,7 +362,7 @@
       ]
     },
     "014": {
-      "invsalign_stores": [
+      "invisalign_stores": [
         "10"
       ],
       "kireiline_stores": [
@@ -374,7 +374,7 @@
         "5",
         "6"
       ],
-      "invsalign_stores": [
+      "invisalign_stores": [
         "11"
       ],
       "ws_stores": [
@@ -391,7 +391,7 @@
       "omt_stores": [
         "7"
       ],
-      "invsalign_stores": [
+      "invisalign_stores": [
         "12"
       ],
       "kireiline_stores": [

@@ -90,20 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     clickSection = 'comparison';
                 }
                 
-                // クリニック名を取得
-                const href = link.getAttribute('href');
-                if (href.includes('/dio/')) {
-                    clickClinic = 'ディオクリニック';
-                } else if (href.includes('/eminal/')) {
-                    clickClinic = 'エミナルクリニック';
-                } else if (href.includes('/urara/')) {
-                    clickClinic = 'ウララクリニック';
-                } else if (href.includes('/lieto/')) {
-                    clickClinic = 'リエートクリニック';
-                } else if (href.includes('/sbc/')) {
-                    clickClinic = '湘南美容クリニック';
-                }
-                
                 // 相対パスに変換（現在のディレクトリ内のgo/に変更）
                 let relativePath = href;
                 

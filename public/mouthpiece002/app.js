@@ -968,11 +968,11 @@ class DataManager {
             'Oh my teeth': 'Oh my teeth',  // 直接名前が来た場合もサポート
             'zenyum': 'ゼニュム',
             'ゼニュム': 'ゼニュム',
-            'kireilineine': 'キレイライン矯正',  // 正しいコードに修正
+            'kireiline': 'キレイライン矯正',  // 正しいコードに修正
             'キレイライン矯正': 'キレイライン矯正',
             'ws': 'ウィスマイル',
             'ウィスマイル': 'ウィスマイル',
-            'invsalign': 'インビザライン',  // 正しいコードに修正
+            'invisalign': 'インビザライン',  // 正しいコードに修正
             'インビザライン': 'インビザライン'
         };
         
@@ -1281,7 +1281,7 @@ class DataManager {
     // クリニックロゴパスを取得
     getClinicLogoPath(clinicCode) {
         // キレイラインの特別処理
-        const logoFolder = clinicCode === 'kireiline' ? 'kireilineine' : clinicCode;
+        const logoFolder = clinicCode === 'kireiline' ? 'kireiline' : clinicCode;
         return this.getClinicText(clinicCode, 'クリニックロゴ画像パス', `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`);
     }
 
@@ -1332,7 +1332,7 @@ class DataManager {
             subtitle: this.getClinicText(clinicCode, '詳細サブタイトル', '効果的な痩身治療'),
             link: `${clinicName} ＞`,
             banner: this.getClinicText(clinicCode, '詳細バナー画像パス', (() => {
-                const bannerFolder = clinicCode === 'kireiline' ? 'kireilineine' : clinicCode;
+                const bannerFolder = clinicCode === 'kireiline' ? 'kireiline' : clinicCode;
                 return `../common_data/images/clinics/${bannerFolder}/${bannerFolder}_detail_bnr.webp`;
             })()),
             features: (() => {
@@ -2571,7 +2571,7 @@ class RankingApp {
                     let logoPath = this.dataManager.getClinicText(clinicCode, 'クリニックロゴ画像パス', '');
                     
                     if (!logoPath) {
-                        const logoFolder = clinicCode === 'invsalign' ? 'invisalign' : clinicCode;
+                        const logoFolder = clinicCode === 'invisalign' ? 'invisalign' : clinicCode;
                         logoPath = `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`;
                     }
                     
@@ -2684,7 +2684,7 @@ class RankingApp {
         console.warn('フォールバックデータが使用されています。実際のランキングデータが取得できませんでした。');
         return [
             { id: '1', name: 'Oh my teeth', code: 'omt', rank: 1 },
-            { id: '2', name: 'インビザライン', code: 'invsalign', rank: 2 },
+            { id: '2', name: 'インビザライン', code: 'invisalign', rank: 2 },
             { id: '4', name: 'キレイライン矯正', code: 'kireiline', rank: 3 },
             { id: '3', name: 'ウィスマイル', code: 'ws', rank: 4 },
             { id: '5', name: 'ゼニュム', code: 'zenyum', rank: 5 }
@@ -2817,7 +2817,7 @@ class RankingApp {
             
             if (!logoPath) {
                 // フォールバック：コードベースのパス
-                const logoFolder = clinicCode === 'invsalign' ? 'invisalign' : clinicCode;
+                const logoFolder = clinicCode === 'invisalign' ? 'invisalign' : clinicCode;
                 logoPath = `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`;
             }
             
@@ -2918,7 +2918,7 @@ class RankingApp {
         const bannerImage = document.getElementById('first-choice-banner-image');
         if (bannerImage) {
             const bannerPath = window.dataManager.getClinicText(clinicCode, 'クリニック詳細バナー画像パス', '') || 
-                             `${imagesPath}/clinics/${clinicCode}/${clinicCode}_detail_bnr.webp`;
+                             `../common_data/images//clinics/${clinicCode}/${clinicCode}_detail_bnr.webp`;
             bannerImage.src = bannerPath;
             bannerImage.alt = topClinic.name;
         }
@@ -2943,7 +2943,7 @@ class RankingApp {
         // ロゴ画像を更新
         const infoLogo = document.getElementById('first-choice-info-logo');
         if (infoLogo) {
-            const logoFolder = clinicCode === 'invsalign' ? 'invisalign' : clinicCode;
+            const logoFolder = clinicCode === 'invisalign' ? 'invisalign' : clinicCode;
             const logoPath = window.dataManager.getClinicText(clinicCode, 'クリニックロゴ画像パス', '') || 
                             `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`;
             infoLogo.src = logoPath;
@@ -3345,7 +3345,7 @@ class RankingApp {
             // バナーがない場合はデフォルトパスを設定
             if (!data.banner) {
                 const clinicCode = this.dataManager.getClinicCodeById(clinicId);
-                const bannerFolder = clinicCode === 'kireiline' ? 'kireilineine' : clinicCode;
+                const bannerFolder = clinicCode === 'kireiline' ? 'kireiline' : clinicCode;
                 data.banner = `../common_data/images/clinics/${bannerFolder}/${bannerFolder}_detail_bnr.webp`;
             }
             
@@ -3377,7 +3377,7 @@ class RankingApp {
                 ${(() => {
                     // DataManagerからバナーパスを動的に取得
                     const clinicCode = this.dataManager.getClinicCodeById(clinicId);
-                    const bannerFolder = clinicCode === 'kireiline' ? 'kireilineine' : clinicCode;
+                    const bannerFolder = clinicCode === 'kireiline' ? 'kireiline' : clinicCode;
                     const correctBanner = data.banner || `../common_data/images/clinics/${bannerFolder}/${bannerFolder}_detail_bnr.webp`;
                     return correctBanner ? `
                     <div class="detail-banner">
@@ -3557,7 +3557,7 @@ class RankingApp {
                             const campaignMicrocopy = this.dataManager.getClinicText(clinicCode, 'INFORMATIONサブテキスト', '＼月額・総額がリーズナブルなクリニック／');
                             const ctaText = this.dataManager.getClinicText(clinicCode, 'CTAボタンテキスト', `${clinic.name}の公式サイト`);
                             
-                            const logoFolder = clinicCode === 'kireiline' ? 'kireilineine' : clinicCode;
+                            const logoFolder = clinicCode === 'kireiline' ? 'kireiline' : clinicCode;
                             const logoSrc = `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`;
                             const logoAlt = clinic.name;
                             
