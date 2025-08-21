@@ -972,6 +972,7 @@ class DataManager {
             'キレイライン矯正': 'キレイライン矯正',
             'ws': 'ウィスマイル',
             'ウィスマイル': 'ウィスマイル',
+            'wesmile': 'ウィスマイル',  // 追加：別のコード形式
             'invisalign': 'インビザライン',  // 正しいコードに修正
             'インビザライン': 'インビザライン'
         };
@@ -985,6 +986,17 @@ class DataManager {
             clinicName = clinic ? clinic.name : null;
         }
         
+        // デバッグ：比較表の注意事項の場合のみログ
+        if (actualItemKey === '比較表の注意事項') {
+            console.log(`DEBUG getClinicText: code=${clinicCode}, mapped name=${clinicName}, key=${actualItemKey}`);
+            console.log(`DEBUG clinicTexts keys:`, this.clinicTexts ? Object.keys(this.clinicTexts) : 'clinicTexts is null');
+            if (clinicName && this.clinicTexts && this.clinicTexts[clinicName]) {
+                console.log(`DEBUG Found clinic data for ${clinicName}, has key? ${!!this.clinicTexts[clinicName][actualItemKey]}`);
+                if (this.clinicTexts[clinicName][actualItemKey]) {
+                    console.log(`DEBUG Text length: ${this.clinicTexts[clinicName][actualItemKey].length}`);
+                }
+            }
+        }
         
         if (clinicName && this.clinicTexts && this.clinicTexts[clinicName] && this.clinicTexts[clinicName][actualItemKey]) {
             const value = this.clinicTexts[clinicName][actualItemKey];
@@ -4106,15 +4118,23 @@ document.addEventListener('DOMContentLoaded', () => {
 // アプリケーションの初期化
 // 比較表の注釈を動的に生成する関数
 function initializeDisclaimers() {
+    console.log('DEBUG: initializeDisclaimers called');
+    
     // 両方の場所に注意事項を表示
     const mainContent = document.getElementById('main-content');
     const rankingDisclaimers = document.getElementById('ranking-disclaimers-content');
     
+    console.log('DEBUG: mainContent found:', !!mainContent);
+    console.log('DEBUG: rankingDisclaimers found:', !!rankingDisclaimers);
+    console.log('DEBUG: dataManager available:', !!window.dataManager);
+    
     if (!window.dataManager) {
+        console.warn('DEBUG: dataManager not available');
         return;
     }
     
     if (!mainContent && !rankingDisclaimers) {
+        console.warn('DEBUG: Neither disclaimer container found');
         return;
     }
 
@@ -4145,83 +4165,139 @@ function initializeDisclaimers() {
     }
     
 
-    // 1位~5位のクリニックを取得
-    const topClinics = [];
-    for (let i = 1; i <= 5; i++) {
-        const clinicId = ranking.ranks[`no${i}`];
-        
-        // '-' や無効なIDをスキップ
-        if (clinicId && clinicId !== '-' && clinicId !== '') {
-            const clinic = window.dataManager.getClinicById(clinicId);
-            if (clinic) {
-                const clinicCode = window.dataManager.getClinicCodeById(clinicId);
-                if (clinicCode) {
-                    topClinics.push({
-                        rank: i,
-                        id: clinicId,
-                        code: clinicCode,
-                        name: clinic.name
-                    });
-                } else {
+    // 比較表で実際に表示されているクリニックのみを取得
+    const displayedClinics = [];
+    const comparisonTbody = document.getElementById('comparison-tbody');
+
+    if (comparisonTbody && comparisonTbody.children.length > 0) {
+        // 比較表の行からクリニック情報を取得
+        Array.from(comparisonTbody.children).forEach((row, index) => {
+            const cells = row.querySelectorAll('td');
+            if (cells.length > 0) {
+                // クリニック名セルを取得（通常は最初のtd）
+                const clinicNameCell = cells[0];
+                if (clinicNameCell) {
+                    const clinicName = clinicNameCell.textContent.trim();
+                    const clinicLink = clinicNameCell.querySelector('a');
+
+                    if (clinicName && clinicName !== '') {
+                        // クリニックコードを特定（リンクのonclick属性からclinic_idを取得）
+                        let clinicId = null;
+                        if (clinicLink) {
+                            const onclickMatch = clinicLink.getAttribute('onclick')?.match(/clinic_id:\s*'([^']+)'/);
+                            if (onclickMatch) {
+                                clinicId = onclickMatch[1];
+                            }
+                        }
+
+                        if (clinicId) {
+                            const clinicCode = window.dataManager.getClinicCodeById(clinicId);
+                            if (clinicCode) {
+                                displayedClinics.push({
+                                    rank: index + 1,
+                                    id: clinicId,
+                                    code: clinicCode,
+                                    name: clinicName
+                                });
+                                console.log(`DEBUG: Added displayed clinic ${clinicName} (ID: ${clinicId}, Code: ${clinicCode})`);
+                            }
+                        }
+                    }
                 }
-            } else {
             }
-        } else {
+        });
+    }
+
+    // フォールバック：比較表が生成されていない場合はランキングから取得
+    const topClinics = displayedClinics.length > 0 ? displayedClinics : [];
+
+    if (topClinics.length === 0 && ranking && ranking.ranks) {
+        // フォールバック：1位~5位のクリニックを取得
+        for (let i = 1; i <= 5; i++) {
+            const clinicId = ranking.ranks[`no${i}`];
+
+            if (clinicId && clinicId !== '-' && clinicId !== '') {
+                const clinic = window.dataManager.getClinicById(clinicId);
+                if (clinic) {
+                    const clinicCode = window.dataManager.getClinicCodeById(clinicId);
+                    if (clinicCode) {
+                        topClinics.push({
+                            rank: i,
+                            id: clinicId,
+                            code: clinicCode,
+                            name: clinic.name
+                        });
+                        console.log(`DEBUG: Added fallback clinic ${clinic.name} (ID: ${clinicId}, Code: ${clinicCode})`);
+                    }
+                }
+            }
         }
     }
+    
+    // クリニック名でアルファベット順にソート
+    topClinics.sort((a, b) => a.name.localeCompare(b.name));
+
+    console.log(`DEBUG: Total clinics found: ${topClinics.length}`);
+    topClinics.forEach((clinic, index) => {
+        console.log(`DEBUG: Clinic ${index + 1}: ${clinic.name} (${clinic.code})`);
+    });
 
     // 有効なクリニックがない場合
     if (topClinics.length === 0) {
-        mainContent.innerHTML = '';
+        if (mainContent) mainContent.innerHTML = '';
+        if (rankingDisclaimers) rankingDisclaimers.innerHTML = '';
         return;
     }
 
 
-    // HTMLを生成 - cryolipolysisと同じスタイルで階層的なアコーディオン
-    let disclaimerHTML = '';
-    let disclaimerCount = 0;
-    
-    topClinics.forEach(clinic => {
-        // 比較表の注意事項を取得
-        const disclaimerText = window.dataManager.getClinicText(clinic.code, '比較表の注意事項', '');
+    // 共通のHTML生成関数
+    const generateDisclaimerHtmlForSection = (clinics, prefix) => {
+        let disclaimerHTML = '';
+        let disclaimerCount = 0;
         
-        
-        // 注意事項がある場合のみ表示
-        if (disclaimerText && disclaimerText.trim() !== '') {
-            disclaimerCount++;
-            const clinicSlug = clinic.code.toLowerCase().replace(/\s+/g, '');
-            
-            disclaimerHTML += `
-                <div class="disclaimer-item">
-                    <button class="disclaimer-header" onclick="toggleDisclaimer('${clinicSlug}')" style="width: 100%; text-align: left; padding: 6px 10px; background-color: #f8f8f8; border: 1px solid #eeeeee; border-radius: 2px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-                        <span style="font-size: 9px; font-weight: 400; color: #777;">${clinic.name}</span>
-                        <span id="${clinicSlug}-arrow" style="font-size: 7px; color: #aaa; transition: transform 0.2s;">▼</span>
-                    </button>
-                    <div id="${clinicSlug}-content" class="disclaimer-content" style="display: none; padding: 6px 10px; background-color: #fefefe; border: 1px solid #eeeeee; border-top: none; border-radius: 0 0 2px 2px; margin-top: -2px;">
-                        <div style="font-size: 9px; color: #777; line-height: 1.4;">
-                            ${disclaimerText.split('\n').map(line => line.trim()).filter(line => line).map(line => `<p>${line}</p>`).join('\n                            ')}
+        clinics.forEach(clinic => {
+            const disclaimerText = window.dataManager.getClinicText(clinic.code, '比較表の注意事項', '');
+            if (disclaimerText && disclaimerText.trim() !== '') {
+                disclaimerCount++;
+                const clinicSlug = clinic.code.toLowerCase().replace(/\s+/g, '');
+                const uniqueSlug = `${prefix}-${clinicSlug}`;
+                
+                disclaimerHTML += `
+                    <div class="disclaimer-item">
+                        <button class="disclaimer-header" onclick="return toggleClinicDisclaimer('${uniqueSlug}', event)" style="width: 100%; text-align: left; padding: 6px 10px; background-color: #f8f8f8; border: 1px solid #eeeeee; border-radius: 2px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+                            <span style="font-size: 9px; font-weight: 400; color: #777;">${clinic.name}</span>
+                            <span id="${uniqueSlug}-arrow" style="font-size: 7px; color: #aaa; transition: transform 0.2s;">▼</span>
+                        </button>
+                        <div id="${uniqueSlug}-content" class="disclaimer-content" style="display: none; padding: 6px 10px; background-color: #fefefe; border: 1px solid #eeeeee; border-top: none; border-radius: 0 0 2px 2px; margin-top: -2px;">
+                            <div style="font-size: 9px; color: #777; line-height: 1.4;">
+                                ${disclaimerText.split('\n').map(line => line.trim()).filter(line => line).map(line => `<p>${line}</p>`).join('\n                            ')}
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
-        }
-    });
+                `;
+            }
+        });
+        
+        return { html: disclaimerHTML, count: disclaimerCount };
+    };
 
-    // 生成したHTMLを両方の場所に挿入
-    if (disclaimerCount > 0) {
-        if (mainContent) {
-            mainContent.innerHTML = disclaimerHTML;
+    // ランキングセクション用のHTMLを生成して挿入
+    const rankingResult = generateDisclaimerHtmlForSection(topClinics, 'rank');
+    if (rankingDisclaimers) {
+        if (rankingResult.count > 0) {
+            rankingDisclaimers.innerHTML = rankingResult.html;
+        } else {
+            rankingDisclaimers.innerHTML = '<p style="font-size: 11px; color: #666; padding: 10px;">注意事項はありません。</p>';
         }
-        if (rankingDisclaimers) {
-            rankingDisclaimers.innerHTML = disclaimerHTML;
-        }
-    } else {
-        const noDisclaimerMessage = '<p style="font-size: 11px; color: #666; padding: 10px;">注意事項はありません。</p>';
-        if (mainContent) {
-            mainContent.innerHTML = noDisclaimerMessage;
-        }
-        if (rankingDisclaimers) {
-            rankingDisclaimers.innerHTML = noDisclaimerMessage;
+    }
+
+    // 比較表セクション用のHTMLを生成して挿入
+    const comparisonResult = generateDisclaimerHtmlForSection(topClinics, 'comp');
+    if (mainContent) {
+        if (comparisonResult.count > 0) {
+            mainContent.innerHTML = comparisonResult.html;
+        } else {
+            mainContent.innerHTML = '<p style="font-size: 11px; color: #666; padding: 10px;">注意事項はありません。</p>';
         }
     }
 }
@@ -4237,6 +4313,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         initializeDisclaimers();
     }, 100);
+    
+    // デバッグ用：グローバル関数として公開
+    window.testInitializeDisclaimers = initializeDisclaimers;
     
     // 初期化後にも一度詳細リンクをチェック
     setTimeout(() => {

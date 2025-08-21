@@ -156,12 +156,31 @@ function convertClinicTextsToJson() {
                 }
             }
         } else {
-            // その他の項目（デフォルト処理）
-            for (let j = 0; j < clinicNames.length; j++) {
-                const clinicName = clinicNames[j];
-                if (clinicName && clinicName.trim() && clinicsData[clinicName]) {
-                    const value = row[j + 3] || ''; // j+3に修正（list_name、項目名、目的・注意事項をスキップ）
-                    clinicsData[clinicName][fieldName] = value;
+            // クリニックコードがlistNameとして使われている場合の処理
+            const clinicCodeToName = {
+                'ohmyteeth': 'Oh my teeth',
+                'invisalign': 'インビザライン',
+                'kireilign': 'キレイライン矯正',
+                'zenyum': 'ゼニュム',
+                'wesmile': 'ウィスマイル'
+            };
+            
+            if (clinicCodeToName[listName]) {
+                // 特定のクリニックに対する項目
+                const targetClinicName = clinicCodeToName[listName];
+                if (clinicsData[targetClinicName]) {
+                    // 3列目（目的・注意事項）の次の列（4列目）からデータを取得
+                    const value = row[3] || '';
+                    clinicsData[targetClinicName][fieldName] = value;
+                }
+            } else {
+                // その他の項目（デフォルト処理）
+                for (let j = 0; j < clinicNames.length; j++) {
+                    const clinicName = clinicNames[j];
+                    if (clinicName && clinicName.trim() && clinicsData[clinicName]) {
+                        const value = row[j + 3] || ''; // j+3に修正（list_name、項目名、目的・注意事項をスキップ）
+                        clinicsData[clinicName][fieldName] = value;
+                    }
                 }
             }
         }

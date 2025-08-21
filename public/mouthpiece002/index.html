@@ -106,7 +106,7 @@
                     <div class="disclaimer-accordion" style="margin-top: 15px;">
                         <!-- 第1段階: 各クリニックの注意事項 -->
                         <div class="main-disclaimer">
-                            <button class="main-disclaimer-header" onclick="toggleMainDisclaimer('ranking')" style="width: 100%; text-align: left; padding: 8px 12px; background-color: #ffffff; border: 1px solid #f0f0f0; border-radius: 3px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                            <button id="ranking-disclaimer-button" class="main-disclaimer-header ranking-disclaimer-header" style="width: 100%; text-align: left; padding: 8px 12px; background-color: #ffffff; border: 1px solid #f0f0f0; border-radius: 3px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                                 <span style="font-size: 10px; font-weight: 500; color: #666;">各クリニックの注意事項</span>
                                 <span id="ranking-main-arrow" style="font-size: 8px; color: rgb(153, 153, 153); transition: transform 0.2s; transform: rotate(0deg);">▼</span>
                             </button>
@@ -288,7 +288,7 @@
                     <div class="disclaimer-accordion" style="margin-top: 15px;">
                         <!-- 第1段階: 各クリニックの注意事項 -->
                         <div class="main-disclaimer">
-                            <button class="main-disclaimer-header" onclick="toggleMainDisclaimer()" style="width: 100%; text-align: left; padding: 8px 12px; background-color: #fafafa; border: 1px solid #f0f0f0; border-radius: 3px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                            <button id="comparison-disclaimer-button" class="main-disclaimer-header comparison-disclaimer-header" style="width: 100%; text-align: left; padding: 8px 12px; background-color: #fafafa; border: 1px solid #f0f0f0; border-radius: 3px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
                                 <span style="font-size: 10px; font-weight: 500; color: #666;">各クリニックの注意事項</span>
                                 <span id="main-arrow" style="font-size: 8px; color: rgb(153, 153, 153); transition: transform 0.2s; transform: rotate(0deg);">▼</span>
                             </button>
@@ -953,46 +953,110 @@ text-align: center;
             }
         });
         
-        // 注意事項アコーディオンのトグル関数
-        function toggleMainDisclaimer(section = '') {
-            console.log('>>> toggleMainDisclaimer called with section:', section);
-            
-            let contentId = 'main-content';
-            let arrowId = 'main-arrow';
-            
-            // ランキングセクション用のIDを使用
-            if (section === 'ranking') {
-                contentId = 'ranking-disclaimers-content';
-                arrowId = 'ranking-main-arrow';
+                // ランキングセクション用のアコーディオン関数
+        function toggleRankingDisclaimer(event) {
+            console.log('>>> toggleRankingDisclaimer called');
+
+            // イベント伝播を防ぐ
+            if (event) {
+                event.stopPropagation();
+                event.preventDefault();
+                event.stopImmediatePropagation();
             }
-            
-            console.log('>>> Looking for contentId:', contentId);
-            console.log('>>> Looking for arrowId:', arrowId);
-            
-            const content = document.getElementById(contentId);
-            const arrow = document.getElementById(arrowId);
-            
-            console.log('>>> Found content:', !!content);
-            console.log('>>> Found arrow:', !!arrow);
-            
+
+            // イベントターゲットがランキングセクション内かどうかをチェック
+            if (event && event.target) {
+                const isRankingSection = event.target.closest('.ranking-disclaimer-header') ||
+                                        event.target.closest('#ranking-disclaimers-content') ||
+                                        event.target.id === 'ranking-main-arrow';
+                if (!isRankingSection) {
+                    console.log('>>> Event target is not in ranking section, ignoring');
+                    return false;
+                }
+            }
+
+            const content = document.getElementById('ranking-disclaimers-content');
+            const arrow = document.getElementById('ranking-main-arrow');
+
             if (content) {
                 const currentDisplay = window.getComputedStyle(content).display;
-                console.log('>>> Current display:', currentDisplay);
-                
+                console.log('>>> Ranking current display:', currentDisplay);
+
                 if (content.style.display === 'none' || currentDisplay === 'none') {
                     content.style.display = 'block';
                     if (arrow) arrow.style.transform = 'rotate(180deg)';
-                    console.log('>>> Opened main disclaimer');
+                    console.log('>>> Opened ranking disclaimer');
                 } else {
                     content.style.display = 'none';
                     if (arrow) arrow.style.transform = 'rotate(0deg)';
-                    console.log('>>> Closed main disclaimer');
+                    console.log('>>> Closed ranking disclaimer');
                 }
             } else {
-                console.error('>>> Main content not found!');
+                console.error('>>> Ranking disclaimer content not found!');
+            }
+
+            return false;
+        }
+
+                // 比較表セクション用のアコーディオン関数（第一段階）
+        function toggleComparisonDisclaimer(eventOrSlug) {
+            console.log('>>> toggleComparisonDisclaimer called with:', eventOrSlug);
+
+            // 引数がイベントオブジェクトの場合（第一段階）
+            if (eventOrSlug && typeof eventOrSlug === 'object' && eventOrSlug.target) {
+                const event = eventOrSlug;
+                // イベント伝播を防ぐ
+                if (event) {
+                    event.stopPropagation();
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                }
+
+                const content = document.getElementById('main-content');
+                const arrow = document.getElementById('main-arrow');
+
+                if (content) {
+                    const currentDisplay = window.getComputedStyle(content).display;
+                    if (content.style.display === 'none' || currentDisplay === 'none') {
+                        content.style.display = 'block';
+                        if (arrow) arrow.style.transform = 'rotate(180deg)';
+                    } else {
+                        content.style.display = 'none';
+                        if (arrow) arrow.style.transform = 'rotate(0deg)';
+                    }
+                }
+                return false;
             }
         }
+
+        // 各クリニック個別のアコーディオン用の汎用関数
+        function toggleClinicDisclaimer(uniqueSlug, event) {
+            console.log('>>> toggleClinicDisclaimer called for:', uniqueSlug);
+            if (event) {
+                event.stopPropagation();
+                event.preventDefault();
+                event.stopImmediatePropagation();
+            }
+
+            const content = document.getElementById(`${uniqueSlug}-content`);
+            const arrow = document.getElementById(`${uniqueSlug}-arrow`);
+
+            if (content && arrow) {
+                const currentDisplay = window.getComputedStyle(content).display;
+                if (currentDisplay === 'none' || content.style.display === 'none') {
+                    content.style.display = 'block';
+                    if (arrow) arrow.style.transform = 'rotate(180deg)';
+                } else {
+                    content.style.display = 'none';
+                    if (arrow) arrow.style.transform = 'rotate(0deg)';
+                }
+            } else {
+                console.error('>>> disclaimer content/arrow not found for:', uniqueSlug);
+            }
+            return false;
+        }
         
+        // 元のtoggleDisclaimer関数（キャンペーンセクション用）
         function toggleDisclaimer(clinicSlug) {
             console.log('>>> toggleDisclaimer called with clinicSlug:', clinicSlug);
             
@@ -1893,6 +1957,17 @@ text-align: center;
 
         // Tips Section Tab Functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners for disclaimer accordions
+            const rankingBtn = document.getElementById('ranking-disclaimer-button');
+            if (rankingBtn) {
+                rankingBtn.addEventListener('click', toggleRankingDisclaimer);
+            }
+
+            const comparisonBtn = document.getElementById('comparison-disclaimer-button');
+            if (comparisonBtn) {
+                comparisonBtn.addEventListener('click', toggleComparisonDisclaimer);
+            }
+
             const tabs = document.querySelectorAll('.tips-container .tab');
             const tabContents = document.querySelectorAll('.tips-container .tab-content');
 
