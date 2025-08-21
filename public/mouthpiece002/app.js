@@ -549,9 +549,9 @@ class DataManager {
             // 共通テキストデータの読み込み
             this.commonTexts = {};
             
-            // まずローカルのsite-common-texts.jsonを読み込み
+            // まずローカルのsite-common-texts.jsonを読み込み（appeal_textフォルダから）
             try {
-                const localTextResponse = await fetch(this.dataPath + 'site-common-texts.json');
+                const localTextResponse = await fetch(this.dataPath + 'appeal_text/site-common-texts.json');
                 if (localTextResponse.ok) {
                     const localJsonText = await localTextResponse.text();
                     try {
@@ -657,9 +657,9 @@ class DataManager {
                 }
             }, 100);
             
-            // クリニック別テキストデータの読み込み
+            // クリニック別テキストデータの読み込み（clinic_textフォルダから）
             try {
-                const clinicTextResponse = await fetch(this.dataPath + 'clinic-texts.json');
+                const clinicTextResponse = await fetch(this.dataPath + 'clinic_text/clinic-texts.json');
                 if (clinicTextResponse.ok) {
                     this.clinicTexts = await clinicTextResponse.json();
                 } else {

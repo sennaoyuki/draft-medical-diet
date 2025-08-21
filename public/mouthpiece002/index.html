@@ -1162,6 +1162,17 @@ text-align: center;
             }
         }
         
+        // クリニックコードから名前を取得するヘルパー関数
+        function getClinicNameFromCode(clinicCode) {
+            const dm = window.app?.dataManager || window.dataManager;
+            if (dm && dm.clinics) {
+                const clinic = dm.clinics.find(c => c.code === clinicCode);
+                if (clinic) return clinic.name;
+            }
+            // フォールバック：コードをそのまま返す
+            return clinicCode;
+        }
+
         // 動的にクリニック情報を取得（clinic-texts.jsonから）
         function getClinicInfo(clinicSlug) {
             // DataManagerが利用可能な場合は動的に取得

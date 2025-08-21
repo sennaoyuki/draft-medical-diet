@@ -119,11 +119,11 @@
                     
                     async loadClinicTexts() {
                         try {
-                            const response = await fetch('./data/clinic-texts.json');
+                            const response = await fetch('./data/clinic_text/clinic-texts.json');
                             if (!response.ok) {
                                 console.error('❌ clinic-texts.jsonの読み込みに失敗:', response.status);
-                                // フォールバック：data copy ディレクトリから読み込み
-                                const fallbackResponse = await fetch('./data copy/clinic-texts.json');
+                                // フォールバック：元の場所から読み込み
+                                const fallbackResponse = await fetch('./data/clinic-texts.json');
                                 this.clinicTexts = await fallbackResponse.json();
                             } else {
                                 this.clinicTexts = await response.json();
