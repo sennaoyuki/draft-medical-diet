@@ -7224,3 +7224,695 @@ img{max-width:100%;height:auto}
     font-size: 10px;
     text-decoration: none !important;
 }
+
+/* From GSA_Mouthpiece/public/mouthpiece002/case-slider-fix-v2.css */
+/* CASE画像の中太配置を確実に修正 */
+
+/* Slickスライダーの基本設定 */
+.case-slider .slick-list {
+    overflow: hidden !important;
+}
+
+.case-slider .slick-track {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* スライドを100%幅に - インラインスタイルを上書き */
+.case-slider .slick-slide,
+.case-slider .slick-slide[style] {
+    width: 100% !important;
+    min-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 200px !important;
+}
+
+.case-slider .slick-slide > div {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* スライドの位置調整 */
+.case-slider.slick-initialized .slick-slide {
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+}
+
+/* 画像の基本スタイル - 特異性を高める */
+body .case-slider .slick-slide img {
+    width: auto !important;
+    height: auto !important;
+    max-width: 90% !important;
+    max-height: 400px !important;
+    margin: 0 auto !important;
+    display: block !important;
+    object-fit: contain !important;
+    padding: 0 !important;
+    box-sizing: content-box !important;
+}
+
+/* モバイルサイズ対応 (768px以下) */
+@media (max-width: 768px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: 85% !important;
+        max-height: 250px !important;
+        padding: 0 !important;
+    }
+}
+
+/* 小さい画面 (414px以下) */
+@media (max-width: 414px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: 80% !important;
+        max-height: 200px !important;
+        padding: 0 !important;
+    }
+}
+
+/* 非常に小さい画面 (375px以下) */
+@media (max-width: 375px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: 75% !important;
+        max-height: 180px !important;
+        padding: 0 !important;
+    }
+    
+    /* スライドの幅を上書き */
+    body .case-slider .slick-slide,
+    body .case-slider .slick-slide[style] {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+}
+
+/* デスクトップ (769px以上) */
+@media (min-width: 769px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: 600px !important;
+        max-height: 400px !important;
+        padding: 0 !important;
+    }
+}
+
+/* Slick矢印の位置調整 */
+.case-slider .slick-prev {
+    left: 10px !important;
+    z-index: 10;
+}
+
+.case-slider .slick-next {
+    right: 10px !important;
+    z-index: 10;
+}
+
+/* 前のslickのcenterModeスタイルを無効化 */
+.case-slider.slick-initialized .slick-slide {
+    opacity: 1 !important;
+}
+
+/* 特定のビューポートでの修正 (376-768px) */
+@media (min-width: 376px) and (max-width: 768px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: min(85%, 350px) !important;
+        max-height: 250px !important;
+        padding: 0 !important;
+    }
+}
+
+/* From GSA_Mouthpiece/public/mouthpiece002/case-slider-fix.css */
+/* CASEスライダーの幅問題を修正 */
+
+/* SlickのcenterModeを上書きして中央配置 */
+.case-slider.slick-initialized .slick-track {
+    transform: translateX(0) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.case-slider.slick-initialized .slick-list {
+    overflow: visible !important;
+}
+
+@media (max-width: 768px) {
+    .case-slider.slick-initialized .slick-list {
+        overflow: hidden !important;
+    }
+    
+    /* 現在のスライドを中央に配置 */
+    .case-slider.slick-initialized .slick-slide.slick-current {
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+}
+
+/* Slick centerModeスタイル */
+.case-slider.slick-initialized .slick-slide {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.case-slider.slick-initialized .slick-slide.slick-center,
+.case-slider.slick-initialized .slick-slide.slick-current {
+    opacity: 1;
+}
+
+/* Slickのデフォルトwidthをオーバーライド */
+.case-slider .slick-slide[style] {
+    width: auto !important;
+    min-width: 100% !important;
+}
+
+/* 全画面サイズ共通 */
+.case-slider .slick-track {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.case-slider .slick-slide {
+    float: none !important;
+    display: flex !important;
+    height: auto !important;
+    min-height: 200px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.case-slider .slick-slide > div {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* 画像の中央配置を確実に */
+.case-slider img {
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* センターモードでの追加調整 */
+.case-slider.slick-initialized .slick-center img {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+/* モバイルサイズでの追加修正 */
+@media (max-width: 768px) {
+    .case-slider.slick-initialized .slick-slide,
+    .case-slider.slick-initialized .slick-slide[style] {
+        width: 100vw !important;
+        max-width: 100% !important;
+    }
+    
+    .case-slider .slick-list {
+        overflow: hidden !important;
+    }
+    
+    .case-slider .slick-track {
+        width: auto !important;
+    }
+    
+    /* 画像サイズの統一 - 優先度を上げる */
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: min(85%, 320px) !important;
+        height: auto !important;
+        max-height: 200px !important;
+        object-fit: contain !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+}
+
+/* 414px - 768px の範囲 */
+@media (min-width: 414px) and (max-width: 768px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: min(85%, 350px) !important;
+        height: auto !important;
+        max-height: 220px !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* 375px以下での最優先修正 */
+@media (max-width: 375px) {
+    body .case-slider .slick-slide img {
+        width: auto !important;
+        max-width: min(85%, 280px) !important;
+        height: auto !important;
+        min-height: 150px !important;
+        max-height: 180px !important;
+        object-fit: contain !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+}
+
+/* デスクトップサイズ（769px以上） */
+@media (min-width: 769px) {
+    .case-slider .slick-slide[style] {
+        width: 100% !important;
+    }
+    
+    .case-slider .slick-slide img {
+        max-width: 600px !important;
+    }
+}
+
+/* Slick矢印の位置調整 */
+.case-slider .slick-prev {
+    left: 10px !important;
+    z-index: 10;
+}
+
+.case-slider .slick-next {
+    right: 10px !important;
+    z-index: 10;
+}
+
+/* From GSA_Mouthpiece/public/mouthpiece002/comparison-table-fix.css */
+/* Comparison Table Tab Layout Fix */
+
+/* Ensure table uses full width and proper layout */
+#comparison-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+/* Fix for tab1 (総合) - 5 columns: 17% + 21.67% + 21.67% + 21.66% + 18% = 100% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:not([style*="display: none"]) {
+    width: 21.67%; /* Default width for middle columns */
+}
+
+/* First column (クリニック) - 17% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:first-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:first-child:not([style*="display: none"]) {
+    width: 17%;
+}
+
+/* Second column (総合評価) - 21.67% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:nth-child(2):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:nth-child(2):not([style*="display: none"]) {
+    width: 21.67%;
+}
+
+/* Third column (費用) - 21.67% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:nth-child(3):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:nth-child(3):not([style*="display: none"]) {
+    width: 21.67%;
+}
+
+/* Fourth column (特徴) - 21.66% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:nth-child(4):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:nth-child(4):not([style*="display: none"]) {
+    width: 21.66%;
+}
+
+/* Last column (公式サイト) - 18% */
+.comparison-table[data-active-tab="tab1"] #comparison-table th:last-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab1"] #comparison-table td:last-child:not([style*="display: none"]) {
+    width: 18%;
+}
+
+/* Fix for tab2 (施術内容) - 5 columns: 17% + 21.67% + 21.67% + 21.66% + 18% = 100% */
+.comparison-table[data-active-tab="tab2"] #comparison-table th:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:not([style*="display: none"]) {
+    width: 21.67%; /* Default for middle columns */
+}
+
+/* First column (クリニック) - 17% */
+.comparison-table[data-active-tab="tab2"] #comparison-table th:first-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:first-child:not([style*="display: none"]) {
+    width: 17%;
+}
+
+/* Middle columns (矯正範囲, 目安期間, 通院頻度) - 21.67%, 21.67%, 21.66% */
+.comparison-table[data-active-tab="tab2"] #comparison-table th:nth-child(5):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:nth-child(5):not([style*="display: none"]) {
+    width: 21.67%;
+}
+.comparison-table[data-active-tab="tab2"] #comparison-table th:nth-child(6):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:nth-child(6):not([style*="display: none"]) {
+    width: 21.67%;
+}
+.comparison-table[data-active-tab="tab2"] #comparison-table th:nth-child(7):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:nth-child(7):not([style*="display: none"]) {
+    width: 21.66%;
+}
+
+/* Last column (公式サイト) - 18% */
+.comparison-table[data-active-tab="tab2"] #comparison-table th:last-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab2"] #comparison-table td:last-child:not([style*="display: none"]) {
+    width: 18%;
+}
+
+/* Fix for tab3 (サービス) - 5 columns: 17% + 21.67% + 21.67% + 21.66% + 18% = 100% */
+.comparison-table[data-active-tab="tab3"] #comparison-table th:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:not([style*="display: none"]) {
+    width: 21.67%; /* Default for middle columns */
+}
+
+/* First column (クリニック) - 17% */
+.comparison-table[data-active-tab="tab3"] #comparison-table th:first-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:first-child:not([style*="display: none"]) {
+    width: 17%;
+}
+
+/* Middle columns (実績/症例数, ワイヤー矯正の紹介, サポート) - 21.67%, 21.67%, 21.66% */
+.comparison-table[data-active-tab="tab3"] #comparison-table th:nth-child(8):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:nth-child(8):not([style*="display: none"]) {
+    width: 21.67%;
+}
+.comparison-table[data-active-tab="tab3"] #comparison-table th:nth-child(9):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:nth-child(9):not([style*="display: none"]) {
+    width: 21.67%;
+}
+.comparison-table[data-active-tab="tab3"] #comparison-table th:nth-child(10):not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:nth-child(10):not([style*="display: none"]) {
+    width: 21.66%;
+}
+
+/* Last column (公式サイト) - 18% */
+.comparison-table[data-active-tab="tab3"] #comparison-table th:last-child:not([style*="display: none"]),
+.comparison-table[data-active-tab="tab3"] #comparison-table td:last-child:not([style*="display: none"]) {
+    width: 18%;
+}
+
+/* Prevent text overflow and ensure proper wrapping */
+#comparison-table th,
+#comparison-table td {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    min-width: 0;
+}
+
+/* Ensure hidden columns don't take any space */
+#comparison-table .th-none,
+#comparison-table .td-none,
+#comparison-table th[style*="display: none"],
+#comparison-table td[style*="display: none"] {
+    width: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    margin: 0 !important;
+}
+
+/* From GSA_Mouthpiece/public/mouthpiece002/responsive-fix-480-768.css */
+/* ===== 480-768px レスポンシブ修正 ===== */
+/* 問題: comparison-section, details-section, tips-sectionの異常な幅 */
+
+/* 480〜768pxの範囲で適用される修正 */
+@media (min-width: 481px) and (max-width: 768px) {
+      
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* 2. メインコンテナの幅制限 */
+    main,
+    .container {
+        width: 100% !important;
+        max-width: 768px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* body直下の要素から特定の要素を除外 */
+    body > *:not(.sidebar-menu):not(.sidebar-overlay):not(.map-modal):not(.disclaimer-modal) {
+        width: 100% !important;
+        max-width: 768px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* 3. 比較セクションの修正 - padding込みでも親要素を超えないように */
+    .comparison-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 30px 0 !important; /* 左右のpaddingを削除 */
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+    
+    /* 比較セクション内のコンテンツにpaddingを追加 */
+    .comparison-section > * {
+        padding: 0 15px !important;
+    }
+    
+    .comparison-table {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    .comparison-table table {
+        width: 100% !important;
+        table-layout: fixed !important;
+    }
+    
+    .table-wrapper {
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    /* 4. 詳細セクションの修正 - padding込みでも親要素を超えないように */
+    .clinic-details-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 40px 0 !important; /* 左右のpaddingを削除 */
+        margin: 40px 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* 詳細セクション内のコンテンツにpaddingを追加 */
+    .clinic-details-section > * {
+        padding: 0 15px !important;
+    }
+    
+    .detail-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0.3% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .detail-info-table {
+        width: 100% !important;
+        overflow-x: auto !important;
+    }
+    
+    /* 5. Tipsセクションの修正 - padding込みでも親要素を超えないように */
+    .tips-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important; /* 左右のpaddingを削除 */
+        margin: 30px 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Tipsセクション内のコンテンツにpaddingを追加 */
+    .tips-container > * {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .tips-container .tabs {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        justify-content: center !important;
+    }
+    
+    .tips-container .tab {
+        flex: 0 1 auto !important;
+        padding: 10px 15px !important;
+        white-space: nowrap !important;
+    }
+    
+    .tips-container .slider-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .tips-container .slide {
+        width: 100% !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* 6. ランキングセクションの修正 - padding込みでも親要素を超えないように */
+    .clinic-rankings {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px 15px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .ranking-container {
+        width: 100% !important; /* 幅を100%に設定 */
+        max-width: 100% !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 12px !important;
+        padding: 15px 0 !important;
+        margin: 0 !important; /* マージンを削除 */
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* ランキングコンテナのスクロール領域を確保 */
+    .clinic-rankings .ranking-container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 15px 0 !important;
+    }
+    
+    .ranking-item {
+        flex: 0 0 auto !important;
+        width: 180px !important;
+        min-width: 180px !important;
+        max-width: 200px !important;
+    }
+    
+    /* 7. 要素の重なり防止 */
+    section {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 40px !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* 8. フォントサイズの調整 */
+    h1 { font-size: 24px !important; }
+    h2 { font-size: 20px !important; }
+    h3 { font-size: 18px !important; }
+    h4 { font-size: 16px !important; }
+    p, li { font-size: 14px !important; }
+    
+    /* 9. ボタンとリンクの調整 */
+    .cta-button,
+    .view-details,
+    .official-link {
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 10px auto !important;
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+    }
+    
+    /* 10. 画像の調整 */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .clinic-logo {
+        max-width: 150px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* 11. グリッドレイアウトの調整 */
+    .grid-container,
+    [class*="grid"] {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
+    
+    /* 12. フレックスボックスの調整 */
+    .flex-container,
+    [class*="flex"] {
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+    
+    /* 13. パディングとマージンの統一 */
+    .section-padding {
+        padding: 30px 15px !important;
+    }
+    
+    /* 14. スクロールバーを隠す */
+    .ranking-container::-webkit-scrollbar,
+    .comparison-table::-webkit-scrollbar,
+    .table-wrapper::-webkit-scrollbar {
+        height: 6px !important;
+    }
+    
+    .ranking-container::-webkit-scrollbar-thumb,
+    .comparison-table::-webkit-scrollbar-thumb,
+    .table-wrapper::-webkit-scrollbar-thumb {
+        background-color: #ddd !important;
+        border-radius: 3px !important;
+    }
+    
+    /* 15. z-indexの調整 */
+    .sidebar-menu { z-index: 1100 !important; }
+    .modal { z-index: 1200 !important; }
+    .hamburger-menu { z-index: 1050 !important; }
+    
+    /* 16. サイドバーメニューの幅を固定 */
+    .sidebar-menu {
+        width: 300px !important; /* 元の幅を維持 */
+        max-width: 300px !important;
+        right: -300px !important; /* 初期状態は画面外 */
+    }
+    
+    .sidebar-menu.active {
+        right: 0 !important; /* アクティブ時は表示 */
+    }
+    
+    /* サイドバーオーバーレイも除外 */
+    .sidebar-overlay {
+        width: 100vw !important;
+        max-width: 100vw !important;
+    }
+}
+
+/* 特定の幅での微調整 */
+@media (min-width: 481px) and (max-width: 600px) {
+    .ranking-item {
+        width: 160px !important;
+        min-width: 160px !important;
+    }
+    
+    .tips-container .tab {
+        font-size: 13px !important;
+        padding: 8px 12px !important;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .ranking-item {
+        width: 190px !important;
+        min-width: 190px !important;
+    }
+    
+}
