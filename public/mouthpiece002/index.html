@@ -1029,17 +1029,16 @@ text-align: center;
             // クリニック名を動的に取得
             const clinicCode = clinicData.code 
                 || window.app?.dataManager?.getClinicCodeById?.(clinicData.id)
-                || window.dataManager?.getClinicCodeById?.(clinicData.id)
-                || 'dio';
+                || window.dataManager?.getClinicCodeById?.(clinicData.id);
             const dmForText = window.app?.dataManager || window.dataManager;
             const clinicName = (dmForText && typeof dmForText.getClinicText === 'function' 
                 ? dmForText.getClinicText(clinicCode, 'ブランド名', clinicData.name)
-                : null) || clinicData.name || 'ディオクリニック';
+                : null) || clinicData.name || 'Oh my teeth';
             
             // クリニックIDまたは名前からslugを特定
             const clinicIdToSlugMap = {
                 '1': 'omt',  // Oh my teeth
-                '2': 'invsalign',  // インビザライン
+                '2': 'invisalign',  // インビザライン
                 '3': 'ws',  // ウィスマイル
                 '4': 'kireiline',  // キレイライン矯正
                 '5': 'zenyum'  // ゼニュム
@@ -1053,8 +1052,8 @@ text-align: center;
                 'キレイライン矯正': 'kireiline',
                 'ウィスマイル': 'ws',
                 'WE Smile': 'ws',
-                'インビザライン': 'invsalign',
-                'Invisalign': 'invsalign'
+                'インビザライン': 'invisalign',
+                'Invisalign': 'invisalign'
             };
             
             const clinicSlug = clinicData.code || clinicIdToSlugMap[clinicData.id] || clinicNameToSlugMap[clinicName] || clinicNameToSlugMap[clinicData.name] || 'omt';
@@ -1200,20 +1199,6 @@ text-align: center;
             return 'https://sss.ac01.l-ad.net/cl/p1a64143O61e70f7/?bid=a6640dkh37648h88&param2=[ADID_PLACEHOLDER]&param3=[GCLID_PLACEHOLDER]';
         }
 
-        // クリニックコードから日本語クリニック名へのマッピング
-        function getClinicNameFromCode(clinicCode) {
-            const codeToNameMap = {
-                'dio': 'ディオクリニック',
-                'eminal': 'エミナルクリニック',
-                'urara': 'ウララクリニック', 
-                'lieto': 'リエートクリニック',
-                'sbc': '湘南美容クリニック',
-                'dsc': 'DSクリニック'
-            };
-            const dm5 = window.app?.dataManager || window.dataManager;
-            return codeToNameMap[clinicCode] || (dm5 && typeof dm5.getClinicText === 'function' ? dm5.getClinicText(clinicCode, 'ブランド名', 'ディオクリニック') : null) || 'ディオクリニック';
-        }
-
         // 3つの理由を設定
         function setThreeReasons(clinicSlug) {
             const pointsContainer = document.getElementById('first-choice-points');
@@ -1233,7 +1218,7 @@ text-align: center;
                 'zenyum': 'ゼニュム',
                 'kireiline': 'キレイライン矯正',
                 'ws': 'ウィスマイル',
-                'invsalign': 'インビザライン'
+                'invisalign': 'インビザライン'
             };
             const clinicKeyForTexts = slugToNameMap[clinicSlug] || clinicSlug;
             
@@ -1296,84 +1281,6 @@ text-align: center;
                 existingCase.remove();
             }
             return;
-        }
-        
-        // クリニックごとの症例画像を管理
-        function getCaseImages(clinicSlug) {
-            const caseImagesMap = {
-                'dio': [
-                    {
-                        src: '../common_data/images/case01.jpg',
-                        alt: 'CASE 01 - ボディメイクコース（脂肪冷却＋EMS等）68.4kg → 54.3kg'
-                    },
-                    {
-                        src: '../common_data/images/case02.jpg',
-                        alt: 'CASE 02 - ボディメイクコース（脂肪冷却＋ハイフ等）97.3kg → 65.8kg'
-                    },
-                    {
-                        src: '../common_data/images/case03.jpg',
-                        alt: 'CASE 03 - ボディメイクコース（内服薬＋EMS等）118.4kg → 81.6kg'
-                    }
-                ],
-                'lieto': [
-                    {
-                        src: '../common_data/images/case-lieto01.jpg',
-                        alt: 'CASE 01 - リエートクリニックの症例'
-                    },
-                    {
-                        src: '../common_data/images/case-lieto02.jpg',
-                        alt: 'CASE 02 - リエートクリニックの症例'
-                    },
-                    {
-                        src: '../common_data/images/case-lieto03.jpg',
-                        alt: 'CASE 03 - リエートクリニックの症例'
-                    }
-                ],
-                'sbc': [
-                    {
-                        src: '../common_data/images/case-sbc01.jpg',
-                        alt: 'CASE 01 - 湘南美容クリニックの症例'
-                    },
-                    {
-                        src: '../common_data/images/case-sbc02.jpg',
-                        alt: 'CASE 02 - 湘南美容クリニックの症例'
-                    },
-                    {
-                        src: '../common_data/images/case-sbc03.jpg',
-                        alt: 'CASE 03 - 湘南美容クリニックの症例'
-                    }
-                ],
-                'eminal': [
-                    {
-                        src: '../common_data/images/case-eminal01.jpg',
-                        alt: 'CASE 01 - エミナルクリニックの症例'
-                    },
-                    {
-                        src: '../common_data/images/case-eminal02.jpg',
-                        alt: 'CASE 02 - エミナルクリニックの症例'
-                    },
-                    {
-                        src: '../common_data/images/case-eminal03.jpg',
-                        alt: 'CASE 03 - エミナルクリニックの症例'
-                    }
-                ],
-                'urara': [
-                    {
-                        src: '../common_data/images/case-urara01.jpg',
-                        alt: 'CASE 01 - ウララクリニックの症例'
-                    },
-                    {
-                        src: '../common_data/images/case-urara02.jpg',
-                        alt: 'CASE 02 - ウララクリニックの症例'
-                    },
-                    {
-                        src: '../common_data/images/case-urara03.jpg',
-                        alt: 'CASE 03 - ウララクリニックの症例'
-                    }
-                ]
-            };
-            
-            return caseImagesMap[clinicSlug] || [];
         }
 
 

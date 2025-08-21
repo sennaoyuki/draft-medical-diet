@@ -514,13 +514,13 @@ class DataManager {
         } else {
             this.dataPath = './data/';
         }
-        // 地域データ用のパス（data copyを使用）
-        this.regionDataPath = './data copy/';
+        // 地域データ用のパス（data/rankingを使用）
+        this.regionDataPath = './data/ranking/';
     }
 
     async init() {
         try {
-            // JSONファイルの読み込み（地域データはdata copyから）
+            // JSONファイルの読み込み（地域データはdata/rankingから）
             const response = await fetch(this.regionDataPath + 'compiled-data.json');
             if (!response.ok) {
                 throw new Error('Failed to load compiled-data.json');
@@ -706,7 +706,7 @@ class DataManager {
     // CSVファイルを読み込む汎用関数（エラーハンドリング付き）
     async loadCsvFile(filename) {
         try {
-            // 地域関連のCSVファイルはdata copyから、それ以外はdataから読み込む
+            // 地域関連のCSVファイルはdata/rankingから、それ以外はdataから読み込む
             const path = (filename.includes('stores.csv') || filename.includes('ranking.csv') || filename.includes('store_view.csv')) 
                 ? this.regionDataPath + filename 
                 : this.dataPath + filename;
@@ -879,7 +879,7 @@ class DataManager {
 
     // 地域IDで地域を取得
     getRegionById(regionId) {
-        // region_id=000の場合は「全国」を返す（data copyには存在する）
+        // region_id=000の場合は「全国」を返す（data/rankingには存在する）
         if (regionId === '000' || regionId === '0') {
             // まずregions配列から探す
             const zenkoku = this.regions.find(r => r.id === '0' || r.id === '000');
@@ -892,7 +892,7 @@ class DataManager {
         const paddedId = String(regionId).padStart(3, '0');
         const unpaddedId = String(parseInt(regionId, 10));
         
-        // data copyには非パディング形式で保存されている可能性が高い
+        // data/rankingには非パディング形式で保存されている可能性が高い
         return this.regions.find(r => 
             r.id === unpaddedId || 
             r.id === paddedId || 

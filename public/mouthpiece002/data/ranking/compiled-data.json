@@ -1384,11 +1384,6 @@
         "87"
       ],
       "storeCount": 8,
-      "bodyParts": [
-        "stomach",
-        "thigh"
-      ],
-      "features": "医療ダイエット専門クリニック",
       "stores": [
         {
           "id": "omt_001",
@@ -1643,11 +1638,6 @@
         "93"
       ],
       "storeCount": 29,
-      "bodyParts": [
-        "stomach",
-        "thigh"
-      ],
-      "features": "医療ダイエット専門クリニック",
       "stores": [
         {
           "id": "invisalign_001",
@@ -2077,11 +2067,6 @@
         "97"
       ],
       "storeCount": 107,
-      "bodyParts": [
-        "stomach",
-        "thigh"
-      ],
-      "features": "医療ダイエット専門クリニック",
       "stores": [
         {
           "id": "kireiline_001",
@@ -3055,11 +3040,6 @@
         "94"
       ],
       "storeCount": 123,
-      "bodyParts": [
-        "stomach",
-        "thigh"
-      ],
-      "features": "医療ダイエット専門クリニック",
       "stores": [
         {
           "id": "ws_001",
@@ -4111,11 +4091,6 @@
         "90"
       ],
       "storeCount": 14,
-      "bodyParts": [
-        "stomach",
-        "thigh"
-      ],
-      "features": "医療ダイエット専門クリニック",
       "stores": [
         {
           "id": "zenyum_001",
@@ -9487,9 +9462,8 @@
       "zenyum_stores": []
     }
   },
-  "campaigns": [],
   "metadata": {
-    "lastUpdated": "2025-08-21T05:24:08.167Z",
+    "lastUpdated": "2025-08-21T06:25:37.474Z",
     "totalClinics": 5,
     "totalStores": 281,
     "totalRegions": 301

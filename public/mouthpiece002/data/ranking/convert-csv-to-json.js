@@ -21,32 +21,20 @@ function parseCSV(csvText) {
     return data;
 }
 
-// 対応部位の文字列をパーツ配列に変換する関数
-function parseBodyParts(bodyPartsText) {
-    if (!bodyPartsText) return ['stomach', 'thigh']; // デフォルト
-    
-    const parts = [];
-    if (bodyPartsText.includes('顔') || bodyPartsText.includes('face')) parts.push('face');
-    if (bodyPartsText.includes('二の腕') || bodyPartsText.includes('upperarm')) parts.push('upperarm');
-    if (bodyPartsText.includes('お腹') || bodyPartsText.includes('腹') || bodyPartsText.includes('stomach')) parts.push('stomach');
-    if (bodyPartsText.includes('お尻') || bodyPartsText.includes('buttocks')) parts.push('buttocks');
-    if (bodyPartsText.includes('太もも') || bodyPartsText.includes('thigh')) parts.push('thigh');
-    if (bodyPartsText.includes('その他') || bodyPartsText.includes('全身') || bodyPartsText.includes('other')) parts.push('other');
-    
-    return parts.length > 0 ? parts : ['stomach', 'thigh'];
-}
 
 // メイン処理
 async function convertCSVtoJSON() {
     console.log('📍 CSV → JSON変換開始...\n');
     console.log('🔄 v3.0 - 完全動的対応版: CSVデータから全て自動取得、ハードコード撤廃');
 
-    // 現在のディレクトリ（dataディレクトリ）を使用
-    const dataDir = __dirname;
+    // CSVファイルはcommon_data/dataから読み込み
+    const csvDataDir = path.join(__dirname, '../../../common_data/data');
+    // 出力先は現在のディレクトリ（data/ranking）
+    const outputDir = __dirname;
     
     // 1. 地域データ
     console.log('1️⃣ 地域データを読み込み中...');
-    const regionCSV = fs.readFileSync(path.join(dataDir, '出しわけSS - region.csv'), 'utf8');
+    const regionCSV = fs.readFileSync(path.join(csvDataDir, '出しわけSS - region.csv'), 'utf8');
     const regions = parseCSV(regionCSV).map(row => ({
         id: row.parameter_no,
         name: row.region
@@ -55,49 +43,27 @@ async function convertCSVtoJSON() {
 
     // 2. クリニックデータ
     console.log('\n2️⃣ クリニックデータを読み込み中...');
-    const clinicCSV = fs.readFileSync(path.join(dataDir, '出しわけSS - items.csv'), 'utf8');
+    const clinicCSV = fs.readFileSync(path.join(csvDataDir, '出しわけSS - items.csv'), 'utf8');
     const clinics = parseCSV(clinicCSV);
     console.log(`   ✅ ${clinics.length}件のクリニックデータ`);
 
     // 3. 店舗データ
     console.log('\n3️⃣ 店舗データを読み込み中...');
-    const storeCSV = fs.readFileSync(path.join(dataDir, '出しわけSS - stores.csv'), 'utf8');
+    const storeCSV = fs.readFileSync(path.join(csvDataDir, '出しわけSS - stores.csv'), 'utf8');
     const stores = parseCSV(storeCSV);
     console.log(`   ✅ ${stores.length}件の店舗データ`);
 
     // 4. ランキングデータ
     console.log('\n4️⃣ ランキングデータを読み込み中...');
-    const rankingCSV = fs.readFileSync(path.join(dataDir, '出しわけSS - ranking.csv'), 'utf8');
+    const rankingCSV = fs.readFileSync(path.join(outputDir, '出しわけSS - ranking.csv'), 'utf8');
     const rankings = parseCSV(rankingCSV);
     console.log(`   ✅ ${rankings.length}件のランキングデータ`);
 
     // 5. 店舗ビューデータ
     console.log('\n5️⃣ 店舗ビューデータを読み込み中...');
-    const storeViewCSV = fs.readFileSync(path.join(dataDir, '出しわけSS - store_view.csv'), 'utf8');
+    const storeViewCSV = fs.readFileSync(path.join(csvDataDir, '出しわけSS - store_view.csv'), 'utf8');
     const storeViews = parseCSV(storeViewCSV);
     console.log(`   ✅ ${storeViews.length}件の店舗ビューデータ`);
-
-    // 6. キャンペーンデータ
-    console.log('\n6️⃣ キャンペーンデータを読み込み中...');
-    const campaignCSV = fs.readFileSync(path.join(dataDir, '出しわけSS - campaigns.csv'), 'utf8');
-    const campaigns = parseCSV(campaignCSV);
-    console.log(`   ✅ ${campaigns.length}件のキャンペーンデータ`);
-
-    // 7. クリニック詳細情報（injection-lipolysis001から）
-    console.log('\n7️⃣ クリニック詳細情報を読み込み中...');
-    let clinicTexts = {};
-    try {
-        const clinicTextsPath = path.join(__dirname, '../injection-lipolysis001/data/clinic-texts.json');
-        if (fs.existsSync(clinicTextsPath)) {
-            const clinicTextsJSON = fs.readFileSync(clinicTextsPath, 'utf8');
-            clinicTexts = JSON.parse(clinicTextsJSON);
-            console.log(`   ✅ ${Object.keys(clinicTexts).length}件のクリニック詳細情報`);
-        } else {
-            console.log('   ⚠️  クリニック詳細情報が見つかりません、基本情報のみ使用');
-        }
-    } catch (error) {
-        console.log('   ⚠️  クリニック詳細情報の読み込みに失敗、基本情報のみ使用');
-    }
 
     // データを統合して構造化
     console.log('\n📊 データを統合中...');
@@ -118,9 +84,7 @@ async function convertCSVtoJSON() {
         // 該当クリニックの全店舗を取得（複数パターンで検索）
         const clinicStores = stores.filter(store => {
             return store.clinic_name === clinicName || 
-                   store.clinic_name === clinicCode.toUpperCase() || 
-                   store.clinic_name === 'DIO' && clinicCode === 'dio' ||
-                   store.clinic_name === 'DSクリニック' && clinicCode === 'dsc';
+                   store.clinic_name === clinicCode.toUpperCase() ;
         });
         
         // 店舗が存在する地域IDを取得
@@ -134,33 +98,13 @@ async function convertCSVtoJSON() {
             });
         });
         
-        // クリニック詳細情報から対応部位と特徴を取得
-        const clinicDetail = clinicTexts[clinicCode];
-        let bodyParts = ['stomach', 'thigh']; // デフォルト
-        let features = '医療ダイエット専門クリニック'; // デフォルト
-        
-        if (clinicDetail) {
-            // 対応部位を解析
-            bodyParts = parseBodyParts(clinicDetail['対応部位']);
-            
-            // 特徴を取得（複数の候補から）
-            features = clinicDetail['特徴タグ'] || 
-                      clinicDetail['ランキングプッシュメッセージ'] || 
-                      clinicDetail['詳細タイトル'] || 
-                      features;
-            
-            // HTMLタグを削除
-            features = features.replace(/<[^>]*>/g, '').replace(/# /g, '').split('<br>')[0];
-        }
         
         return {
             id: clinic.clinic_id,
             code: clinicCode,
             name: clinicName,
             regions: Array.from(clinicRegions).sort(),
-            storeCount: clinicStores.length,
-            bodyParts: bodyParts,
-            features: features,
+            storeCount: clinicStores.length,            
             stores: clinicStores.map(store => ({
                 id: store.store_id,
                 name: store.store_name,
@@ -207,19 +151,6 @@ async function convertCSVtoJSON() {
         clinics: compiledClinics,
         rankings: rankingsByRegion,
         storeViews: storeViewsByRegion,
-        campaigns: campaigns.map(campaign => ({
-            id: campaign.campaign_id,
-            regionId: campaign.region_id,
-            clinicId: campaign.clinic_id,
-            title: campaign.title,
-            headerText: campaign.header_text,
-            logoSrc: campaign.logo_src,
-            logoAlt: campaign.logo_alt,
-            description: campaign.description,
-            ctaText: campaign.cta_text,
-            ctaUrl: campaign.cta_url,
-            footerText: campaign.footer_text
-        })),
         metadata: {
             lastUpdated: new Date().toISOString(),
             totalClinics: clinics.length,
@@ -229,7 +160,7 @@ async function convertCSVtoJSON() {
     };
 
     // JSONファイルとして保存
-    const outputPath = path.join(dataDir, 'compiled-data.json');
+    const outputPath = path.join(outputDir, 'compiled-data.json');
     fs.writeFileSync(outputPath, JSON.stringify(compiledData, null, 2), 'utf8');
     
     console.log('\n✅ 変換完了！');
@@ -241,12 +172,7 @@ async function convertCSVtoJSON() {
     compiledClinics.forEach(clinic => {
         console.log(`   ${clinic.name}: ${clinic.storeCount}店舗, ${clinic.regions.length}地域`);
     });
-    
-    console.log('\n💡 ヒント: 他の環境にも反映する場合は以下のコマンドを実行してください:');
-    console.log('   cp compiled-data.json ../draft/data/');
-    console.log('   cp compiled-data.json ../medical-diet001/data/');
-    console.log('   cp compiled-data.json ../medical-diet002/data/');
-}
+    }
 
 // 実行
 convertCSVtoJSON().catch(console.error);
