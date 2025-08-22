@@ -477,15 +477,13 @@
                 console.log('⚠️ utm_creativeが空のためparam2は設定されません');
             }
             
-            // param3とgclidパラメータを設定（統合取得関数使用）
+            // gclidパラメータを設定（統合取得関数使用、param3は削除）
             const gclid = getOriginalParam('gclid');
             if (gclid) {
-                url.searchParams.set('param3', gclid);
                 url.searchParams.set('gclid', gclid);
-                console.log('✅ param3設定:', gclid);
                 console.log('✅ gclid設定:', gclid);
             } else {
-                console.log('⚠️ gclidが空のためparam3とgclidは設定されません');
+                console.log('⚠️ gclidが空のため設定されません');
             }
             
             // param4として追跡データをエンコード
