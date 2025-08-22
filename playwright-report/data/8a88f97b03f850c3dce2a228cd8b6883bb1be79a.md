@@ -1,0 +1,1562 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "矯正歯科おすすめ比較.com 矯正歯科おすすめ比較.com" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e7] [cursor=pointer]:
+            - img "矯正歯科おすすめ比較.com" [ref=e9] [cursor=pointer]
+            - heading "矯正歯科おすすめ比較.com" [level=1] [ref=e10] [cursor=pointer]
+        - navigation:
+          - button "メニュー" [ref=e11] [cursor=pointer]
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - img "マウスピース矯正ランキング - 2025年最新版" [ref=e18]
+        - generic: 東京
+        - generic: 【コスパ】×【続けやすさ】で選ぶ
+        - img:
+          - generic: マウスピース矯正
+        - img:
+          - generic: ランキングTOP4
+      - generic [ref=e19]: PR
+    - main [ref=e20]:
+      - generic [ref=e21]:
+        - img "で人気の脂肪溶解注射はここ！" [ref=e23]
+        - generic: 東京で人気のマウスピース矯正はココ！
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - img "No.1" [ref=e27]
+            - generic [ref=e28]:
+              - generic [ref=e30]: 満足度
+              - generic [ref=e31]:
+                - generic [ref=e32]:
+                  - generic [ref=e33]: 
+                  - generic [ref=e34]: 
+                  - generic [ref=e35]: 
+                  - generic [ref=e36]: 
+                  - generic [ref=e37]: 
+                - generic [ref=e38]:
+                  - text: "4.9"
+                  - generic [ref=e39]: /5.0
+              - heading "Oh my teeth" [level=3] [ref=e41]
+              - img "Oh my teethバナー" [ref=e43]
+              - generic [ref=e44]:
+                - text: 2025年のイチ押し！
+                - text: 通院不要！最短2ヶ月
+                - text: 国内製造数No.1
+              - paragraph [ref=e45]:
+                - link "公式サイト ▶" [ref=e46] [cursor=pointer]:
+                  - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=1&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%221%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                  - generic [ref=e47] [cursor=pointer]: 公式サイト
+                  - generic [ref=e48] [cursor=pointer]: ▶
+          - generic [ref=e49]:
+            - img "No.2" [ref=e51]
+            - generic [ref=e52]:
+              - generic [ref=e54]: 満足度
+              - generic [ref=e55]:
+                - generic [ref=e56]:
+                  - generic [ref=e57]: 
+                  - generic [ref=e58]: 
+                  - generic [ref=e59]: 
+                  - generic [ref=e60]: 
+                  - generic [ref=e61]: 
+                - generic [ref=e62]:
+                  - text: "4.3"
+                  - generic [ref=e63]: /5.0
+              - heading "キレイライン矯正" [level=3] [ref=e65]
+              - img "キレイライン矯正バナー" [ref=e67]
+              - generic [ref=e68]:
+                - text: 12万人が選んだ！
+                - text: 満足度90%
+              - paragraph [ref=e69]:
+                - link "公式サイト ▶" [ref=e70] [cursor=pointer]:
+                  - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=3&rank=2&region_id=013#params=%7B%22clinic_id%22%3A%223%22%2C%22rank%22%3A2%2C%22region_id%22%3A%22013%22%7D
+                  - generic [ref=e71] [cursor=pointer]: 公式サイト
+                  - generic [ref=e72] [cursor=pointer]: ▶
+          - generic [ref=e73]:
+            - img "No.3" [ref=e75]
+            - generic [ref=e76]:
+              - generic [ref=e78]: 満足度
+              - generic [ref=e79]:
+                - generic [ref=e80]:
+                  - generic [ref=e81]: 
+                  - generic [ref=e82]: 
+                  - generic [ref=e83]: 
+                  - generic [ref=e84]: 
+                  - generic [ref=e85]: 
+                - generic [ref=e86]:
+                  - text: "4.1"
+                  - generic [ref=e87]: /5.0
+              - heading "ウィスマイル" [level=3] [ref=e89]
+              - img "ウィスマイルバナー" [ref=e91]
+              - generic [ref=e92]:
+                - text: AWARD受賞10回
+                - text: 複数プランあり
+              - paragraph [ref=e93]:
+                - link "公式サイト ▶" [ref=e94] [cursor=pointer]:
+                  - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=4&rank=3&region_id=013#params=%7B%22clinic_id%22%3A%224%22%2C%22rank%22%3A3%2C%22region_id%22%3A%22013%22%7D
+                  - generic [ref=e95] [cursor=pointer]: 公式サイト
+                  - generic [ref=e96] [cursor=pointer]: ▶
+          - generic [ref=e97]:
+            - img "No.4" [ref=e99]
+            - generic [ref=e100]:
+              - generic [ref=e102]: 満足度
+              - generic [ref=e103]:
+                - generic [ref=e104]:
+                  - generic [ref=e105]: 
+                  - generic [ref=e106]: 
+                  - generic [ref=e107]: 
+                  - generic [ref=e108]: 
+                  - generic [ref=e109]: 
+                - generic [ref=e110]:
+                  - text: "3.8"
+                  - generic [ref=e111]: /5.0
+              - heading "ゼニュム" [level=3] [ref=e113]
+              - img "ゼニュムバナー" [ref=e115]
+              - generic [ref=e116]:
+                - text: シンガポール発
+                - text: 50万人が利用！
+              - paragraph [ref=e117]:
+                - link "公式サイト ▶" [ref=e118] [cursor=pointer]:
+                  - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=5&rank=4&region_id=013#params=%7B%22clinic_id%22%3A%225%22%2C%22rank%22%3A4%2C%22region_id%22%3A%22013%22%7D
+                  - generic [ref=e119] [cursor=pointer]: 公式サイト
+                  - generic [ref=e120] [cursor=pointer]: ▶
+      - button "各クリニックの注意事項 ▼" [ref=e125] [cursor=pointer]:
+        - generic [ref=e126] [cursor=pointer]: 各クリニックの注意事項
+        - generic [ref=e127] [cursor=pointer]: ▼
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic [ref=e133] [cursor=pointer]: 期間と効果
+          - generic [ref=e135] [cursor=pointer]: 向き・不向き
+          - generic [ref=e137] [cursor=pointer]: 選び方
+        - generic [ref=e139]:
+          - img "マウスピース矯正の効果" [ref=e141]
+          - paragraph [ref=e142]:
+            - text: マウスピース矯正で
+            - generic [ref=e143]: 目立たず理想の歯並びへ！
+            - text: 日常で目立ちにくく、食事や歯磨きも
+            - generic [ref=e144]: これまで通り
+            - text: 。軽度〜中等度のズレなら
+            - generic [ref=e145]: 最短2ヶ月（平均9ヶ月）
+            - text: で段階的に整い、ワイヤー矯正と遜色ない効果が期待できます。装着初期に違和感が出る場合もありますが、多くは数日で慣れます。取り外し式で衛生的、
+            - generic [ref=e146]: 痛み・負担が少ない
+            - text: のも大きな魅力です。
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - heading "東京で人気のマウスピース矯正" [level=2] [ref=e149]:
+            - generic [ref=e150]: 東京
+            - text: で人気のマウスピース矯正
+          - heading "クリニックを徹底比較" [level=3] [ref=e151]:
+            - text: クリニックを
+            - generic [ref=e152]: 徹底比較
+        - generic [ref=e153]:
+          - generic [ref=e154]:
+            - generic [ref=e155] [cursor=pointer]: 総合
+            - generic [ref=e156] [cursor=pointer]: 治療詳細
+            - generic [ref=e157] [cursor=pointer]: 実績/サポート
+          - table [ref=e158]:
+            - rowgroup [ref=e159]:
+              - row "クリニック 総合評価 費用 特徴 公式サイト" [ref=e160]:
+                - cell "クリニック" [ref=e161]
+                - cell "総合評価" [ref=e162]
+                - cell "費用" [ref=e163]
+                - cell "特徴" [ref=e164]
+                - cell "公式サイト" [ref=e165]
+            - rowgroup [ref=e166]:
+              - row "Oh my teeth Oh my teeth 4.9 ★★★★★ ★★★★★ 33万円プラン (月額3,500円~) ※追加費用なし コスパ抜群！ 日本ブランド 国内製造数No.1 公式サイト > 詳細をみる" [ref=e167]:
+                - cell "Oh my teeth Oh my teeth" [ref=e168]:
+                  - img "Oh my teeth" [ref=e169]
+                  - link "Oh my teeth" [ref=e170] [cursor=pointer]:
+                    - /url: "#"
+                - cell "4.9 ★★★★★ ★★★★★" [ref=e171]:
+                  - generic [ref=e172]: "4.9"
+                  - generic [ref=e173]: ★★★★★ ★★★★★
+                - cell "33万円プラン (月額3,500円~) ※追加費用なし" [ref=e174]:
+                  - generic [ref=e175]: 33万円プラン
+                  - text: (月額3,500円~)
+                  - text: ※追加費用なし
+                - cell "コスパ抜群！ 日本ブランド 国内製造数No.1" [ref=e176]:
+                  - text: コスパ抜群！
+                  - text: 日本ブランド
+                  - text: 国内製造数No.1
+                - cell "公式サイト > 詳細をみる" [ref=e177]:
+                  - link "公式サイト >" [ref=e178] [cursor=pointer]:
+                    - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=1&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%221%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                  - link "詳細をみる" [ref=e179] [cursor=pointer]:
+                    - /url: "#clinic1"
+              - row "キレイライン矯正 キレイライン矯正 4.3 ★★★★★ ★★★★★ 46.2万円 (15回プラン) 通院毎に再診料あり 日本全国の提携院を紹介 公式サイト > 詳細をみる" [ref=e180]:
+                - cell "キレイライン矯正 キレイライン矯正" [ref=e181]:
+                  - img "キレイライン矯正" [ref=e182]
+                  - link "キレイライン矯正" [ref=e183] [cursor=pointer]:
+                    - /url: "#"
+                - cell "4.3 ★★★★★ ★★★★★" [ref=e184]:
+                  - generic [ref=e185]: "4.3"
+                  - generic [ref=e186]: ★★★★★ ★★★★★
+                - cell "46.2万円 (15回プラン) 通院毎に再診料あり" [ref=e187]:
+                  - text: 46.2万円
+                  - text: (15回プラン)
+                  - text: 通院毎に再診料あり
+                - cell "日本全国の提携院を紹介" [ref=e188]
+                - cell "公式サイト > 詳細をみる" [ref=e189]:
+                  - link "公式サイト >" [ref=e190] [cursor=pointer]:
+                    - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=3&rank=2&region_id=013#params=%7B%22clinic_id%22%3A%223%22%2C%22rank%22%3A2%2C%22region_id%22%3A%22013%22%7D
+                  - link "詳細をみる" [ref=e191] [cursor=pointer]:
+                    - /url: "#clinic2"
+              - row "ウィスマイル ウィスマイル 4.1 ★★★★★ ★★★★★ 51.7万円 (18回プラン) 提携院から別プランの案内あり 提携院を紹介してくれるサービス 公式サイト > 詳細をみる" [ref=e192]:
+                - cell "ウィスマイル ウィスマイル" [ref=e193]:
+                  - img "ウィスマイル" [ref=e194]
+                  - link "ウィスマイル" [ref=e195] [cursor=pointer]:
+                    - /url: "#"
+                - cell "4.1 ★★★★★ ★★★★★" [ref=e196]:
+                  - generic [ref=e197]: "4.1"
+                  - generic [ref=e198]: ★★★★★ ★★★★★
+                - cell "51.7万円 (18回プラン) 提携院から別プランの案内あり" [ref=e199]:
+                  - text: 51.7万円
+                  - text: (18回プラン)
+                  - text: 提携院から別プランの案内あり
+                - cell "提携院を紹介してくれるサービス" [ref=e200]
+                - cell "公式サイト > 詳細をみる" [ref=e201]:
+                  - link "公式サイト >" [ref=e202] [cursor=pointer]:
+                    - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=4&rank=3&region_id=013#params=%7B%22clinic_id%22%3A%224%22%2C%22rank%22%3A3%2C%22region_id%22%3A%22013%22%7D
+                  - link "詳細をみる" [ref=e203] [cursor=pointer]:
+                    - /url: "#clinic3"
+              - row "ゼニュム ゼニュム 3.8 ★★★★★ ★★★★★ 55万円 (30枚プラン) シンガポールの ブランド 世界9カ国展開 公式サイト > 詳細をみる" [ref=e204]:
+                - cell "ゼニュム ゼニュム" [ref=e205]:
+                  - img "ゼニュム" [ref=e206]
+                  - link "ゼニュム" [ref=e207] [cursor=pointer]:
+                    - /url: "#"
+                - cell "3.8 ★★★★★ ★★★★★" [ref=e208]:
+                  - generic [ref=e209]: "3.8"
+                  - generic [ref=e210]: ★★★★★ ★★★★★
+                - cell "55万円 (30枚プラン)" [ref=e211]:
+                  - text: 55万円
+                  - text: (30枚プラン)
+                - cell "シンガポールの ブランド 世界9カ国展開" [ref=e212]:
+                  - text: シンガポールの
+                  - text: ブランド
+                  - text: 世界9カ国展開
+                - cell "公式サイト > 詳細をみる" [ref=e213]:
+                  - link "公式サイト >" [ref=e214] [cursor=pointer]:
+                    - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=5&rank=4&region_id=013#params=%7B%22clinic_id%22%3A%225%22%2C%22rank%22%3A4%2C%22region_id%22%3A%22013%22%7D
+                  - link "詳細をみる" [ref=e215] [cursor=pointer]:
+                    - /url: "#clinic4"
+          - button "各クリニックの注意事項 ▼" [ref=e218] [cursor=pointer]:
+            - generic [ref=e219] [cursor=pointer]: 各クリニックの注意事項
+            - generic [ref=e220] [cursor=pointer]: ▼
+      - generic [ref=e221]:
+        - generic [ref=e222]:
+          - img "コスパ×効果×通いやすさで選ぶ脂肪冷却BEST3" [ref=e223]
+          - generic: 東京で人気のクリニック
+          - generic:
+            - text: "4"
+            - generic: 選！
+        - generic [ref=e224]:
+          - generic [ref=e226]:
+            - generic [ref=e227]:
+              - generic [ref=e228]:
+                - generic [ref=e229]: "1"
+                - generic [ref=e230]:
+                  - heading "平均3ヶ月!コスパ抜群の自宅矯正" [level=3] [ref=e231]
+                  - paragraph [ref=e232]: 国内ブランド製造数No.1 安心の一律料金
+              - link "Oh my teeth（オーマイティース） ＞" [ref=e234] [cursor=pointer]:
+                - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=1&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%221%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+            - img "Oh my teethキャンペーン" [ref=e236]
+            - generic [ref=e237]:
+              - generic [ref=e238]: "# リーズナブル"
+              - generic [ref=e239]: "# 一律料金"
+              - generic [ref=e240]: "# 通院不要"
+              - generic [ref=e241]: "# 24時間サポート"
+              - generic [ref=e242]: "# 日本ブランド"
+              - generic [ref=e243]: "# 国内製造"
+              - generic [ref=e244]: "# 部分矯正"
+              - generic [ref=e245]: "# 全体矯正"
+              - generic [ref=e246]: "# ホワイトニングあり"
+            - table [ref=e247]:
+              - rowgroup [ref=e248]:
+                - row "費用 Basicプラン33万円 Proプラン66万円" [ref=e249]:
+                  - cell "費用" [ref=e250]
+                  - cell "Basicプラン33万円 Proプラン66万円" [ref=e251]:
+                    - text: Basicプラン33万円
+                    - text: Proプラン66万円
+                - row "目安期間 Basic：平均3ヶ月 Pro：平均6ヶ月" [ref=e252]:
+                  - cell "目安期間" [ref=e253]
+                  - cell "Basic：平均3ヶ月 Pro：平均6ヶ月" [ref=e254]:
+                    - text: Basic：平均3ヶ月
+                    - text: Pro：平均6ヶ月
+                - row "矯正範囲 軽度〜中等度 ※全体矯正のプランも案内可" [ref=e255]:
+                  - cell "矯正範囲" [ref=e256]
+                  - cell "軽度〜中等度 ※全体矯正のプランも案内可" [ref=e257]:
+                    - text: 軽度〜中等度
+                    - text: ※全体矯正のプランも案内可
+                - row "営業時間 平日11:00～21:00 土日祝10:00～19:00 年末年始休診" [ref=e258]:
+                  - cell "営業時間" [ref=e259]
+                  - cell "平日11:00～21:00 土日祝10:00～19:00 年末年始休診" [ref=e260]:
+                    - text: 平日11:00～21:00
+                    - text: 土日祝10:00～19:00
+                    - text: 年末年始休診
+                - row "店舗 新宿／池袋／表参道／有楽町／心斎橋／梅田／名古屋／博多" [ref=e261]:
+                  - cell "店舗" [ref=e262]
+                  - cell "新宿／池袋／表参道／有楽町／心斎橋／梅田／名古屋／博多" [ref=e263]
+                - row "公式サイト https://www.oh-my-teeth.com/" [ref=e264]:
+                  - cell "公式サイト" [ref=e265]
+                  - cell "https://www.oh-my-teeth.com/" [ref=e266]
+            - paragraph [ref=e268]:
+              - link "無料カウンセリングはコチラ ▶" [ref=e269] [cursor=pointer]:
+                - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=1&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%221%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                - generic [ref=e270] [cursor=pointer]: 無料カウンセリングはコチラ
+                - generic [ref=e271] [cursor=pointer]: ▶
+            - generic [ref=e272]:
+              - heading "POINT" [level=4] [ref=e273]
+              - generic [ref=e274]:
+                - generic [ref=e275]:
+                  - generic [ref=e276]: 
+                  - strong [ref=e277]: 通院不要のオンライン矯正システム
+                - paragraph [ref=e279]: Oh my teethの最大の特徴は、矯正開始後の定期的な通院が原則不要という革新的なシステムです。初回の3D歯型スキャン後は、自宅にマウスピース矯正キットが届き、24時間LINEサポートで専属医療チームに相談できます。
+                - generic [ref=e280]:
+                  - generic [ref=e281]: 
+                  - strong [ref=e282]: リーズナブルで分かりやすい料金
+                - paragraph [ref=e284]: Oh my teethは不透明な追加費用のない分かりやすい料金プランです。診察料や処置料などもすべてプラン内に含まれてるので安心できます。初回診断・カウンセリングも完全無料で受けることができます。
+                - generic [ref=e285]:
+                  - generic [ref=e286]: 
+                  - strong [ref=e287]: 累計5万人の体験実績と安心保証
+                - paragraph [ref=e289]: Oh my teethは累計5万人が歯型スキャンを体験している豊富な実績があります。国内ブランド製造数No.1の実績により、安心して治療を受けられます。
+                - generic [ref=e290]:
+                  - text: 【公式】
+                  - link "https://www.oh-my-teeth.com/" [ref=e291] [cursor=pointer]:
+                    - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=1&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%221%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                    - strong [ref=e292] [cursor=pointer]: https://www.oh-my-teeth.com/
+            - generic [ref=e293]:
+              - heading "REVIEW" [level=4] [ref=e294]
+              - generic [ref=e295]:
+                - navigation [ref=e296]:
+                  - list [ref=e297]:
+                    - listitem [ref=e298] [cursor=pointer]:
+                      - generic [ref=e299] [cursor=pointer]: 
+                      - text: コスパ
+                    - listitem [ref=e300] [cursor=pointer]:
+                      - generic [ref=e301] [cursor=pointer]: 
+                      - text: スタッフ
+                    - listitem [ref=e302] [cursor=pointer]:
+                      - generic [ref=e303] [cursor=pointer]: 
+                      - text: サービス
+                - generic [ref=e304]:
+                  - generic [ref=e305]:
+                    - generic [ref=e306]:
+                      - img "レビューアイコン" [ref=e307]
+                      - generic [ref=e308]: ★★★★★
+                    - generic [ref=e309]:
+                      - strong [ref=e311]: 表参道の美しい立地で3D体験！
+                      - generic [ref=e312]: LINEで簡単に予約ができ、表参道の美しい場所で無料で歯のスキャンをしてもらいました！とてもスムーズで、待ち時間も長くなく、スキャンも簡単で実際に3Dで見ることができました！表参道という立地も素敵で、美容意識の高い女性にぴったりです。
+                  - generic [ref=e313]:
+                    - generic [ref=e314]:
+                      - img "レビューアイコン" [ref=e315]
+                      - generic [ref=e316]: ★★★★★
+                    - generic [ref=e317]:
+                      - strong [ref=e319]: 理想の歯並びが3Dで見える感動！
+                      - generic [ref=e320]: 歯の治療を受けて、ここで再度スキャンを受けました（前回は新宿でした）。スタッフの温かいホスピタリティは相変わらず素晴らしかったです。矯正シミュレーションを見た後、将来の歯並びにワクワクしました。未来の美しい自分を想像できて感動しました。
+                  - generic [ref=e321]:
+                    - generic [ref=e322]:
+                      - img "レビューアイコン" [ref=e323]
+                      - generic [ref=e324]: ★★★★★
+                    - generic [ref=e325]:
+                      - strong [ref=e327]: 質問で不安が安心に変わった！
+                      - generic [ref=e328]: 自分の歯の形を3Dで見るのは楽しかったです。自分の目でしっかりと見ることで、矯正治療の目標について考える機会を得ました。スタッフの方もとても丁寧でした。質問にも一つ一つ答えてくださり、不安が安心に変わりました。心の変化が人生を変える第一歩でした。
+                  - paragraph [ref=e329]:
+                    - text: ※効果には個人差があります
+                    - text: ※個人の感想です
+            - generic [ref=e330]:
+              - heading "Oh my teethの【東京】の店舗" [level=4] [ref=e331]
+              - generic [ref=e332]:
+                - generic [ref=e333]:
+                  - img "東京表参道矯正歯科" [ref=e335]
+                  - generic [ref=e336]:
+                    - link "東京表参道矯正歯科" [ref=e338] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e339]: 東京都港区北青山3-15-5 ポルトフィーノ1F
+                  - link " 地図" [ref=e340] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e341] [cursor=pointer]: 
+                    - text: 地図
+                - generic [ref=e342]:
+                  - img "東京銀座有楽町矯正歯科" [ref=e344]
+                  - generic [ref=e345]:
+                    - link "東京銀座有楽町矯正歯科" [ref=e347] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e348]: 東京都千代田区有楽町2-10-1 東京交通会館2F
+                  - link " 地図" [ref=e349] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e350] [cursor=pointer]: 
+                    - text: 地図
+                - generic [ref=e351]:
+                  - img "東京池袋矯正歯科" [ref=e353]
+                  - generic [ref=e354]:
+                    - link "東京池袋矯正歯科" [ref=e356] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e357]: 東京都豊島区西池袋1-1-30 東武ホープセンター北地区B1F
+                  - link " 地図" [ref=e358] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e359] [cursor=pointer]: 
+                    - text: 地図
+                - text: 
+                - button "他1件のクリニックを見る ▼" [ref=e360] [cursor=pointer]:
+                  - generic [ref=e361] [cursor=pointer]: 他1件のクリニックを見る
+                  - text: ▼
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - generic [ref=e364]: INFORMATION!
+                - generic [ref=e365]:
+                  - generic [ref=e366]:
+                    - img "Oh my teeth" [ref=e368]
+                    - generic [ref=e369]:
+                      - text: ホワイトニング14回分無料
+                      - text: 24時間LINEサポート対応
+                  - generic [ref=e370]:
+                    - text: ＼無料で歯型スキャン可能です／
+                    - paragraph [ref=e371]:
+                      - link "Oh my teethの公式サイト ▶" [ref=e372] [cursor=pointer]:
+                        - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=1&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%221%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                        - generic [ref=e373] [cursor=pointer]: Oh my teethの公式サイト
+                        - generic [ref=e374] [cursor=pointer]: ▶
+              - button "Oh my teethの確認事項 ▼" [ref=e376] [cursor=pointer]:
+                - generic [ref=e377] [cursor=pointer]: Oh my teethの確認事項
+                - generic [ref=e378] [cursor=pointer]: ▼
+          - generic [ref=e380]:
+            - generic [ref=e381]:
+              - generic [ref=e382]:
+                - generic [ref=e383]: "2"
+                - generic [ref=e384]:
+                  - heading "満足度90%を誇る実績！" [level=3] [ref=e385]
+                  - paragraph [ref=e386]: 手軽に始められる部分矯正
+              - link "キレイライン矯正 ＞" [ref=e388] [cursor=pointer]:
+                - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=3&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%223%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+            - img "キレイライン矯正キャンペーン" [ref=e390]
+            - generic [ref=e391]:
+              - generic [ref=e392]: "# マウスピース矯正"
+              - generic [ref=e393]: "# クリニック紹介型"
+              - generic [ref=e394]: "# 短期間"
+              - generic [ref=e395]: "# 前歯矯正"
+              - generic [ref=e396]: "# 提携医院"
+              - generic [ref=e397]: "# リーズナブル"
+              - generic [ref=e398]: "# 満足度90%"
+            - table [ref=e399]:
+              - rowgroup [ref=e400]:
+                - row "費用 5回プラン：19.8万円 10回プラン：33万円 15回プラン：46.2万円 追加1回：+4.4万円" [ref=e401]:
+                  - cell "費用" [ref=e402]
+                  - cell "5回プラン：19.8万円 10回プラン：33万円 15回プラン：46.2万円 追加1回：+4.4万円" [ref=e403]:
+                    - text: 5回プラン：19.8万円
+                    - text: 10回プラン：33万円
+                    - text: 15回プラン：46.2万円
+                    - text: 追加1回：+4.4万円
+                - row "目安期間 2.5ヶ月～1年 （平均6ヶ月）" [ref=e404]:
+                  - cell "目安期間" [ref=e405]
+                  - cell "2.5ヶ月～1年 （平均6ヶ月）" [ref=e406]:
+                    - text: 2.5ヶ月～1年
+                    - text: （平均6ヶ月）
+                - row "矯正範囲 軽度～中等度 前歯部中心" [ref=e407]:
+                  - cell "矯正範囲" [ref=e408]
+                  - cell "軽度～中等度 前歯部中心" [ref=e409]:
+                    - text: 軽度～中等度
+                    - text: 前歯部中心
+                - row "営業時間 提携医院により異なる 平日10:00～20:00 土日祝対応院あり" [ref=e410]:
+                  - cell "営業時間" [ref=e411]
+                  - cell "提携医院により異なる 平日10:00～20:00 土日祝対応院あり" [ref=e412]:
+                    - text: 提携医院により異なる
+                    - text: 平日10:00～20:00
+                    - text: 土日祝対応院あり
+                - row "店舗 全国125提携クリニック 主要都市を中心に展開 2024年時点での展開数" [ref=e413]:
+                  - cell "店舗" [ref=e414]
+                  - cell "全国125提携クリニック 主要都市を中心に展開 2024年時点での展開数" [ref=e415]:
+                    - text: 全国125提携クリニック
+                    - text: 主要都市を中心に展開
+                    - text: 2024年時点での展開数
+                - row "公式サイト https://kireilign.com/" [ref=e416]:
+                  - cell "公式サイト" [ref=e417]
+                  - cell "https://kireilign.com/" [ref=e418]
+            - paragraph [ref=e420]:
+              - link "無料カウンセリングはコチラ ▶" [ref=e421] [cursor=pointer]:
+                - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=3&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%223%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                - generic [ref=e422] [cursor=pointer]: 無料カウンセリングはコチラ
+                - generic [ref=e423] [cursor=pointer]: ▶
+            - generic [ref=e424]:
+              - heading "POINT" [level=4] [ref=e425]
+              - generic [ref=e426]:
+                - generic [ref=e427]:
+                  - generic [ref=e428]: 
+                  - strong [ref=e429]: 提携医院ネットワークを活用した矯正サービス
+                - paragraph [ref=e431]: キレイライン矯正は全国の提携医院ネットワークを活用した矯正サービスです。デジタル技術を用いて治療計画を立案し、主に前歯部を中心とした矯正を行います。都度払いシステムを採用しています。
+                - generic [ref=e432]:
+                  - generic [ref=e433]: 
+                  - strong [ref=e434]: デジタル技術による効率的な治療
+                - paragraph [ref=e436]: キレイライン矯正では、デジタル技術を用いて歯の健康に支障がない範囲で最大の移動量となるよう治療計画を立てています。最短2.5ヶ月という短期間での治療完了も可能です。
+                - generic [ref=e437]:
+                  - generic [ref=e438]: 
+                  - strong [ref=e439]: 満足度90%の高い実績
+                - paragraph [ref=e441]: キレイライン矯正は豊富な利用実績と満足度90%という高い評価を誇ります。実際に短期間で効果を実感できた症例も多数報告されています。
+                - generic [ref=e442]:
+                  - text: 【公式】
+                  - link "https://kireilign.com/" [ref=e443] [cursor=pointer]:
+                    - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=3&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%223%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                    - strong [ref=e444] [cursor=pointer]: https://kireilign.com/
+            - generic [ref=e445]:
+              - heading "REVIEW" [level=4] [ref=e446]
+              - generic [ref=e447]:
+                - navigation [ref=e448]:
+                  - list [ref=e449]:
+                    - listitem [ref=e450] [cursor=pointer]:
+                      - generic [ref=e451] [cursor=pointer]: 
+                      - text: コスパ
+                    - listitem [ref=e452] [cursor=pointer]:
+                      - generic [ref=e453] [cursor=pointer]: 
+                      - text: スタッフ
+                    - listitem [ref=e454] [cursor=pointer]:
+                      - generic [ref=e455] [cursor=pointer]: 
+                      - text: サービス
+                - generic [ref=e456]:
+                  - generic [ref=e457]:
+                    - generic [ref=e458]:
+                      - img "レビューアイコン" [ref=e459]
+                      - generic [ref=e460]: ★★★★★
+                    - generic [ref=e461]:
+                      - strong [ref=e463]: お試しで始められてでリスク軽減！
+                      - generic [ref=e464]: お試し2.2万円という手軽さで矯正を始められました。効果を実感してから続けるか決められるので、リスクが少なくて安心です。
+                  - generic [ref=e465]:
+                    - generic [ref=e466]:
+                      - img "レビューアイコン" [ref=e467]
+                      - generic [ref=e468]: ★★★★★
+                    - generic [ref=e469]:
+                      - strong [ref=e471]: 学生も安心の都度払いシステム！
+                      - generic [ref=e472]: 一括で大きな金額を払う必要がなく、都度払いで自分のペースで治療を進められます。経済的な負担が少なく、学生の私でも続けられています。
+                  - generic [ref=e473]:
+                    - generic [ref=e474]:
+                      - img "レビューアイコン" [ref=e475]
+                      - generic [ref=e476]: ★★★★★
+                    - generic [ref=e477]:
+                      - strong [ref=e479]: コスパ良かった！
+                      - generic [ref=e480]: 他院では50万円以上と言われていたので、コスパは最高です。
+                  - paragraph [ref=e481]:
+                    - text: ※効果には個人差があります
+                    - text: ※個人の感想です
+            - generic [ref=e482]:
+              - heading "キレイライン矯正の【東京】の店舗" [level=4] [ref=e483]
+              - generic [ref=e484]:
+                - generic [ref=e485]:
+                  - img "アルディバラン渋谷デンタルクリニック" [ref=e487]
+                  - generic [ref=e488]:
+                    - link "アルディバラン渋谷デンタルクリニック" [ref=e490] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e491]: 東京都渋谷区渋谷3-18-8 大野ビル5F
+                  - link " 地図" [ref=e492] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e493] [cursor=pointer]: 
+                    - text: 地図
+                - generic [ref=e494]:
+                  - img "新宿駅前矯正歯科クリニック" [ref=e496]
+                  - generic [ref=e497]:
+                    - link "新宿駅前矯正歯科クリニック" [ref=e499] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e500]: 東京都新宿区新宿3-36-6 大安ビル8F
+                  - link " 地図" [ref=e501] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e502] [cursor=pointer]: 
+                    - text: 地図
+                - generic [ref=e503]:
+                  - img "池袋DDデンタルクリニック" [ref=e505]
+                  - generic [ref=e506]:
+                    - link "池袋DDデンタルクリニック" [ref=e508] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e509]: 東京都豊島区南池袋1-21-5 第7野萩ビル3F
+                  - link " 地図" [ref=e510] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e511] [cursor=pointer]: 
+                    - text: 地図
+                - text:                   
+                - button "他19件のクリニックを見る ▼" [ref=e512] [cursor=pointer]:
+                  - generic [ref=e513] [cursor=pointer]: 他19件のクリニックを見る
+                  - text: ▼
+            - generic [ref=e514]:
+              - generic [ref=e515]:
+                - generic [ref=e516]: INFORMATION!
+                - generic [ref=e517]:
+                  - generic [ref=e518]:
+                    - img "キレイライン矯正" [ref=e520]
+                    - generic [ref=e521]: ホワイトニング剤を1本〜プレゼント
+                  - generic [ref=e522]:
+                    - text: ＼満足度90％！全国医院を紹介可能／
+                    - paragraph [ref=e523]:
+                      - link "キレイライン矯正の公式サイト ▶" [ref=e524] [cursor=pointer]:
+                        - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=3&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%223%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                        - generic [ref=e525] [cursor=pointer]: キレイライン矯正の公式サイト
+                        - generic [ref=e526] [cursor=pointer]: ▶
+              - button "キレイライン矯正の確認事項 ▼" [ref=e528] [cursor=pointer]:
+                - generic [ref=e529] [cursor=pointer]: キレイライン矯正の確認事項
+                - generic [ref=e530] [cursor=pointer]: ▼
+          - generic [ref=e532]:
+            - generic [ref=e533]:
+              - generic [ref=e534]:
+                - generic [ref=e535]: "3"
+                - generic [ref=e536]:
+                  - heading "全国125の提携医院を紹介可能！" [level=3] [ref=e537]
+                  - paragraph [ref=e538]: AWARD受賞歴10回の実績あり！
+              - link "ウィスマイル ＞" [ref=e540] [cursor=pointer]:
+                - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=4&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%224%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+            - img "ウィスマイルキャンペーン" [ref=e542]
+            - generic [ref=e543]:
+              - generic [ref=e544]: "# マウスピース矯正"
+              - generic [ref=e545]: "# クリニック紹介型"
+              - generic [ref=e546]: "# 初診料無料"
+              - generic [ref=e547]: "# 提携医院"
+              - generic [ref=e548]: "# 分割払い"
+              - generic [ref=e549]: "# 部分矯正"
+              - generic [ref=e550]: "# 丁寧サポート"
+            - table [ref=e551]:
+              - rowgroup [ref=e552]:
+                - 'row "費用 1回お試しコース: 1,650円 8回コース: 23.1万円 12回コース: 35.2万円 18回コース: 51.7万円 24回コース: 66万円 30回コース: 88万円" [ref=e553]':
+                  - cell "費用" [ref=e554]
+                  - 'cell "1回お試しコース: 1,650円 8回コース: 23.1万円 12回コース: 35.2万円 18回コース: 51.7万円 24回コース: 66万円 30回コース: 88万円" [ref=e555]':
+                    - text: "1回お試しコース: 1,650円"
+                    - text: "8回コース: 23.1万円"
+                    - text: "12回コース: 35.2万円"
+                    - text: "18回コース: 51.7万円"
+                    - text: "24回コース: 66万円"
+                    - text: "30回コース: 88万円"
+                - row "目安期間 2ヶ月～10ヶ月以上 （プランにより異なる）" [ref=e556]:
+                  - cell "目安期間" [ref=e557]
+                  - cell "2ヶ月～10ヶ月以上 （プランにより異なる）" [ref=e558]:
+                    - text: 2ヶ月～10ヶ月以上
+                    - text: （プランにより異なる）
+                - row "矯正範囲 軽度～中等度 部分矯正中心" [ref=e559]:
+                  - cell "矯正範囲" [ref=e560]
+                  - cell "軽度～中等度 部分矯正中心" [ref=e561]:
+                    - text: 軽度～中等度
+                    - text: 部分矯正中心
+                - row "営業時間 平日10:00～19:00 提携医院により異なる" [ref=e562]:
+                  - cell "営業時間" [ref=e563]
+                  - cell "平日10:00～19:00 提携医院により異なる" [ref=e564]:
+                    - text: 平日10:00～19:00
+                    - text: 提携医院により異なる
+                - row "店舗 全国提携医院ネットワーク 主要都市を中心に展開 地域密着型の医院と提携" [ref=e565]:
+                  - cell "店舗" [ref=e566]
+                  - cell "全国提携医院ネットワーク 主要都市を中心に展開 地域密着型の医院と提携" [ref=e567]:
+                    - text: 全国提携医院ネットワーク
+                    - text: 主要都市を中心に展開
+                    - text: 地域密着型の医院と提携
+                - row "公式サイト https://we-smile.jp/" [ref=e568]:
+                  - cell "公式サイト" [ref=e569]
+                  - cell "https://we-smile.jp/" [ref=e570]
+            - paragraph [ref=e572]:
+              - link "無料カウンセリングはコチラ ▶" [ref=e573] [cursor=pointer]:
+                - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=4&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%224%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                - generic [ref=e574] [cursor=pointer]: 無料カウンセリングはコチラ
+                - generic [ref=e575] [cursor=pointer]: ▶
+            - generic [ref=e576]:
+              - heading "POINT" [level=4] [ref=e577]
+              - generic [ref=e578]:
+                - generic [ref=e579]:
+                  - generic [ref=e580]: 
+                  - strong [ref=e581]: AWARD受賞歴のある提携医院紹介サービス
+                - paragraph [ref=e583]: ウィスマイルはAWARD受賞歴10回を持つ提携医院紹介サービスです。全国の提携医院ネットワークを通じて、様々な治療プランを提供しています。1回から30回まで幅広いコース設定があります。
+                - generic [ref=e584]:
+                  - generic [ref=e585]: 
+                  - strong [ref=e586]: 提携医院ネットワークで安心治療
+                - paragraph [ref=e588]: ウィスマイルは全国の提携医院ネットワークにより、統一された高品質なサービスを提供しています。どこでも同じレベルの治療を受けられる安心感があります。
+                - generic [ref=e589]:
+                  - generic [ref=e590]: 
+                  - strong [ref=e591]: 柔軟な対応と永続サポート
+                - paragraph [ref=e593]: ウィスマイルは患者の事情を理解して柔軟に対応してくれる姿勢が特徴です。治療が予定通り進まない場合でも、完了まで責任を持ってサポートしてくれます。
+                - generic [ref=e594]:
+                  - text: 【公式】
+                  - link "https://we-smile.jp/" [ref=e595] [cursor=pointer]:
+                    - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=4&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%224%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                    - strong [ref=e596] [cursor=pointer]: https://we-smile.jp/
+            - generic [ref=e597]:
+              - heading "REVIEW" [level=4] [ref=e598]
+              - generic [ref=e599]:
+                - navigation [ref=e600]:
+                  - list [ref=e601]:
+                    - listitem [ref=e602] [cursor=pointer]:
+                      - generic [ref=e603] [cursor=pointer]: 
+                      - text: コスパ
+                    - listitem [ref=e604] [cursor=pointer]:
+                      - generic [ref=e605] [cursor=pointer]: 
+                      - text: スタッフ
+                    - listitem [ref=e606] [cursor=pointer]:
+                      - generic [ref=e607] [cursor=pointer]: 
+                      - text: サービス
+                - generic [ref=e608]:
+                  - generic [ref=e609]:
+                    - generic [ref=e610]:
+                      - img "レビューアイコン" [ref=e611]
+                      - generic [ref=e612]: ★★★★★
+                    - generic [ref=e613]:
+                      - strong [ref=e615]: 学生や社会人にはありがたい！
+                      - generic [ref=e616]: お小遣いの範囲で歯並びを改善できるなんて、学生や若い社会人には本当にありがたいです。
+                  - generic [ref=e617]:
+                    - generic [ref=e618]:
+                      - img "レビューアイコン" [ref=e619]
+                      - generic [ref=e620]: ★★★★★
+                    - generic [ref=e621]:
+                      - strong [ref=e623]: 自分の症状に合わせて調整できる！
+                      - generic [ref=e624]: 1回から24回まで治療回数を選べるので、自分の症状と予算に合わせて調整できます。無駄な治療をせずに済むので、コスパが良いです。
+                  - generic [ref=e625]:
+                    - generic [ref=e626]:
+                      - img "レビューアイコン" [ref=e627]
+                      - generic [ref=e628]: ★★★★★
+                    - generic [ref=e629]:
+                      - strong [ref=e631]: 初診料無料で気軽にスタート！
+                      - generic [ref=e632]: 初診料が無料なので、気軽にカウンセリングを受けられました。他院では数千円かかるところが多いので、この点は非常にありがたいです。
+                  - paragraph [ref=e633]:
+                    - text: ※効果には個人差があります
+                    - text: ※個人の感想です
+            - generic [ref=e634]:
+              - heading "ウィスマイルの【東京】の店舗" [level=4] [ref=e635]
+              - generic [ref=e636]:
+                - generic [ref=e637]:
+                  - img "A CLINIC デンタル" [ref=e639]
+                  - generic [ref=e640]:
+                    - link "A CLINIC デンタル" [ref=e642] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e643]: 東京都中央区銀座5丁目13-19デュ-プレックス銀座タワ-5/13 12階
+                  - link " 地図" [ref=e644] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e645] [cursor=pointer]: 
+                    - text: 地図
+                - generic [ref=e646]:
+                  - img "恵比寿ガーデンデンタルクリニック" [ref=e648]
+                  - generic [ref=e649]:
+                    - link "恵比寿ガーデンデンタルクリニック" [ref=e651] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e652]: 東京都渋谷区恵比寿3-9-20恵比寿ガ-デンイ-ストビル1F
+                  - link " 地図" [ref=e653] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e654] [cursor=pointer]: 
+                    - text: 地図
+                - generic [ref=e655]:
+                  - img "ルーチェマウスピース矯正歯科" [ref=e657]
+                  - generic [ref=e658]:
+                    - link "ルーチェマウスピース矯正歯科" [ref=e660] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e661]: 東京都港区南青山5丁目5番4号ル-チェ南青山 A棟B1F
+                  - link " 地図" [ref=e662] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e663] [cursor=pointer]: 
+                    - text: 地図
+                - text:                                  
+                - button "他34件のクリニックを見る ▼" [ref=e664] [cursor=pointer]:
+                  - generic [ref=e665] [cursor=pointer]: 他34件のクリニックを見る
+                  - text: ▼
+            - generic [ref=e666]:
+              - generic [ref=e667]:
+                - generic [ref=e668]: INFORMATION!
+                - generic [ref=e669]:
+                  - generic [ref=e670]:
+                    - img "ウィスマイル" [ref=e672]
+                    - generic [ref=e673]: 調整料・保定管理料が無料
+                  - generic [ref=e674]:
+                    - text: ＼全国125の提携院を紹介可能！／
+                    - paragraph [ref=e675]:
+                      - link "ウィスマイルの公式サイト ▶" [ref=e676] [cursor=pointer]:
+                        - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=4&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%224%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                        - generic [ref=e677] [cursor=pointer]: ウィスマイルの公式サイト
+                        - generic [ref=e678] [cursor=pointer]: ▶
+              - button "ウィスマイルの確認事項 ▼" [ref=e680] [cursor=pointer]:
+                - generic [ref=e681] [cursor=pointer]: ウィスマイルの確認事項
+                - generic [ref=e682] [cursor=pointer]: ▼
+          - generic [ref=e684]:
+            - generic [ref=e685]:
+              - generic [ref=e686]:
+                - generic [ref=e687]: "4"
+                - generic [ref=e688]:
+                  - heading "シンガポール発の革新的矯正！" [level=3] [ref=e689]
+                  - paragraph [ref=e690]: 一律料金で安心の矯正治療
+              - link "ゼニュム ＞" [ref=e692] [cursor=pointer]:
+                - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=5&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%225%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+            - img "ゼニュムキャンペーン" [ref=e694]
+            - generic [ref=e695]:
+              - generic [ref=e696]: "# マウスピース矯正"
+              - generic [ref=e697]: "# シンガポール発"
+              - generic [ref=e698]: "# 一律料金"
+              - generic [ref=e699]: "# オンライン診療"
+              - generic [ref=e700]: "# 50万人実績"
+              - generic [ref=e701]: "# 追加費用なし"
+              - generic [ref=e702]: "# アジア圏実績"
+              - generic [ref=e703]: "# 革新的技術"
+              - generic [ref=e704]: "# 透明矯正"
+            - table [ref=e705]:
+              - rowgroup [ref=e706]:
+                - row "費用 上下20本（20枚）：29.7万円 上下全体 （30枚）：55万円 上下全体 （45枚）：66万円" [ref=e707]:
+                  - cell "費用" [ref=e708]
+                  - cell "上下20本（20枚）：29.7万円 上下全体 （30枚）：55万円 上下全体 （45枚）：66万円" [ref=e709]:
+                    - text: 上下20本（20枚）：29.7万円
+                    - text: 上下全体 （30枚）：55万円
+                    - text: 上下全体 （45枚）：66万円
+                - row "目安期間 部分矯正：6ヶ月 全体矯正：10ヶ月" [ref=e710]:
+                  - cell "目安期間" [ref=e711]
+                  - cell "部分矯正：6ヶ月 全体矯正：10ヶ月" [ref=e712]:
+                    - text: 部分矯正：6ヶ月
+                    - text: 全体矯正：10ヶ月
+                - row "矯正範囲 上下全体 軽度～中等度" [ref=e713]:
+                  - cell "矯正範囲" [ref=e714]
+                  - cell "上下全体 軽度～中等度" [ref=e715]:
+                    - text: 上下全体
+                    - text: 軽度～中等度
+                - row "営業時間 オンライン診療24時間 提携医院は各院による 平日中心の診療" [ref=e716]:
+                  - cell "営業時間" [ref=e717]
+                  - cell "オンライン診療24時間 提携医院は各院による 平日中心の診療" [ref=e718]:
+                    - text: オンライン診療24時間
+                    - text: 提携医院は各院による
+                    - text: 平日中心の診療
+                - row "店舗 提携医院ネットワーク 主要都市を中心 オンライン診療で全国対応" [ref=e719]:
+                  - cell "店舗" [ref=e720]
+                  - cell "提携医院ネットワーク 主要都市を中心 オンライン診療で全国対応" [ref=e721]:
+                    - text: 提携医院ネットワーク
+                    - text: 主要都市を中心
+                    - text: オンライン診療で全国対応
+                - row "公式サイト https://zenyum.jp/" [ref=e722]:
+                  - cell "公式サイト" [ref=e723]
+                  - cell "https://zenyum.jp/" [ref=e724]
+            - paragraph [ref=e726]:
+              - link "無料カウンセリングはコチラ ▶" [ref=e727] [cursor=pointer]:
+                - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=5&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%225%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                - generic [ref=e728] [cursor=pointer]: 無料カウンセリングはコチラ
+                - generic [ref=e729] [cursor=pointer]: ▶
+            - generic [ref=e730]:
+              - heading "POINT" [level=4] [ref=e731]
+              - generic [ref=e732]:
+                - generic [ref=e733]:
+                  - generic [ref=e734]: 
+                  - strong [ref=e735]: シンガポール発のデジタル矯正ブランド
+                - paragraph [ref=e737]: ゼニュムはシンガポール発のデジタル矯正ブランドです。アジア圏を中心に展開しており、オンライン診療とアプリを活用した治療管理を行っています。上下全体の矯正に対応しています。
+                - generic [ref=e738]:
+                  - generic [ref=e739]: 
+                  - strong [ref=e740]: オンライン診療で通院負担軽減
+                - paragraph [ref=e742]: ゼニュムはオンライン診療を活用することで、遠方の人でも治療が受けやすいシステムを構築しています。専用アプリで治療の進捗を管理でき、24時間いつでも相談可能です。
+                - generic [ref=e743]:
+                  - generic [ref=e744]: 
+                  - strong [ref=e745]: 世界25万人の実績と信頼
+                - paragraph [ref=e747]: ゼニュムは世界中で25万人以上が利用している実績があり、アジア圏を中心に50万人が利用している信頼できるブランドです。
+                - generic [ref=e748]:
+                  - text: 【公式】
+                  - link "https://zenyum.jp/" [ref=e749] [cursor=pointer]:
+                    - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=5&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%225%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                    - strong [ref=e750] [cursor=pointer]: https://zenyum.jp/
+            - generic [ref=e751]:
+              - heading "REVIEW" [level=4] [ref=e752]
+              - generic [ref=e753]:
+                - navigation [ref=e754]:
+                  - list [ref=e755]:
+                    - listitem [ref=e756] [cursor=pointer]:
+                      - generic [ref=e757] [cursor=pointer]: 
+                      - text: コスパ
+                    - listitem [ref=e758] [cursor=pointer]:
+                      - generic [ref=e759] [cursor=pointer]: 
+                      - text: スタッフ
+                    - listitem [ref=e760] [cursor=pointer]:
+                      - generic [ref=e761] [cursor=pointer]: 
+                      - text: サービス
+                - generic [ref=e762]:
+                  - generic [ref=e763]:
+                    - generic [ref=e764]:
+                      - img "レビューアイコン" [ref=e765]
+                      - generic [ref=e766]: ★★★★★
+                    - generic [ref=e767]:
+                      - strong [ref=e769]: 追加費用がなかった！
+                      - generic [ref=e770]: 料金が一律で分かりやすく、追加費用の心配がありません。他院のように症例によって値段が変わることがないので、安心して始められました。
+                  - generic [ref=e771]:
+                    - generic [ref=e772]:
+                      - img "レビューアイコン" [ref=e773]
+                      - generic [ref=e774]: ★★★★★
+                    - generic [ref=e775]:
+                      - strong [ref=e777]: グローバル実績25万人の信頼！
+                      - generic [ref=e778]: 世界中で25万人以上が利用している実績があり、この価格でこの品質なら十分コスパが良いと思います。海外の技術を日本で受けられるのは魅力的です。
+                  - generic [ref=e779]:
+                    - generic [ref=e780]:
+                      - img "レビューアイコン" [ref=e781]
+                      - generic [ref=e782]: ★★★★★
+                    - generic [ref=e783]:
+                      - strong [ref=e785]: 一括不要で負担軽減！
+                      - generic [ref=e786]: 分割払いで月々の負担を抑えられるので、無理なく治療を続けられます。一括で大きな金額を用意する必要がないのは助かります。
+                  - paragraph [ref=e787]:
+                    - text: ※効果には個人差があります
+                    - text: ※個人の感想です
+            - generic [ref=e788]:
+              - heading "ゼニュムの【東京】の店舗" [level=4] [ref=e789]
+              - generic [ref=e790]:
+                - generic [ref=e791]:
+                  - img "赤坂さくら歯科クリニック（赤坂）" [ref=e793]
+                  - generic [ref=e794]:
+                    - link "赤坂さくら歯科クリニック（赤坂）" [ref=e796] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e797]: 東京都港区赤坂5丁目4-6 赤坂三辻ビル5F
+                  - link " 地図" [ref=e798] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e799] [cursor=pointer]: 
+                    - text: 地図
+                - generic [ref=e800]:
+                  - img "おおじま駅前歯科・大島駅前矯正歯科（大島）" [ref=e802]
+                  - generic [ref=e803]:
+                    - link "おおじま駅前歯科・大島駅前矯正歯科（大島）" [ref=e805] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e806]: 東京都江東区大島6丁目26-7 太田ビル1F
+                  - link " 地図" [ref=e807] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e808] [cursor=pointer]: 
+                    - text: 地図
+                - generic [ref=e809]:
+                  - img "サファイアデンタルクリニック（新宿）" [ref=e811]
+                  - generic [ref=e812]:
+                    - link "サファイアデンタルクリニック（新宿）" [ref=e814] [cursor=pointer]:
+                      - /url: "#"
+                    - generic [ref=e815]: 東京都新宿区新宿5-11-1 ホーメスト新宿ビル5F
+                  - link " 地図" [ref=e816] [cursor=pointer]:
+                    - /url: javascript:void(0);
+                    - generic [ref=e817] [cursor=pointer]: 
+                    - text: 地図
+                - text: 
+                - button "他1件のクリニックを見る ▼" [ref=e818] [cursor=pointer]:
+                  - generic [ref=e819] [cursor=pointer]: 他1件のクリニックを見る
+                  - text: ▼
+            - generic [ref=e820]:
+              - generic [ref=e821]:
+                - generic [ref=e822]: INFORMATION!
+                - generic [ref=e823]:
+                  - generic [ref=e824]:
+                    - img "ゼニュム" [ref=e826]
+                    - generic [ref=e827]:
+                      - text: 50万人突破記念！
+                      - text: 最大3.3万円キャッシュバック
+                  - generic [ref=e828]:
+                    - text: ＼世界9カ国に展開中ブランド／
+                    - paragraph [ref=e829]:
+                      - link "ゼニュムの公式サイト ▶" [ref=e830] [cursor=pointer]:
+                        - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=5&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%225%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                        - generic [ref=e831] [cursor=pointer]: ゼニュムの公式サイト
+                        - generic [ref=e832] [cursor=pointer]: ▶
+              - button "ゼニュムの確認事項 ▼" [ref=e834] [cursor=pointer]:
+                - generic [ref=e835] [cursor=pointer]: ゼニュムの確認事項
+                - generic [ref=e836] [cursor=pointer]: ▼
+      - generic [ref=e838]:
+        - generic [ref=e839]:
+          - generic [ref=e840]:
+            - generic [ref=e841]: マウスピース矯正を始める前に知っておくべきこと
+            - img "マウスピース矯正の基礎知識" [ref=e843]
+          - generic [ref=e844]:
+            - generic [ref=e845]: 目次
+            - list [ref=e846]:
+              - listitem [ref=e847]:
+                - link "マウスピース矯正とワイヤー矯正の違い" [ref=e848] [cursor=pointer]:
+                  - /url: "#comparison"
+                - link "仕組みの違い" [ref=e850] [cursor=pointer]:
+                  - /url: "#mechanism"
+                - link "メリット・デメリット" [ref=e852] [cursor=pointer]:
+                  - /url: "#merits"
+              - listitem [ref=e853]:
+                - link "マウスピース矯正のリスクや副作用" [ref=e854] [cursor=pointer]:
+                  - /url: "#risks"
+                - link "起こりうる副作用" [ref=e856] [cursor=pointer]:
+                  - /url: "#side-effects"
+                - link "痛みや違和感について" [ref=e858] [cursor=pointer]:
+                  - /url: "#pain"
+                - link "治療前・治療中の注意点" [ref=e860] [cursor=pointer]:
+                  - /url: "#precautions"
+              - listitem [ref=e861]:
+                - link "契約時の確認ポイント" [ref=e862] [cursor=pointer]:
+                  - /url: "#contract"
+                - link "保険適用について" [ref=e864] [cursor=pointer]:
+                  - /url: "#insurance"
+                - link "治療内容・計画を細かく確認" [ref=e866] [cursor=pointer]:
+                  - /url: "#details"
+                - link "追加費用がかからないか確認" [ref=e868] [cursor=pointer]:
+                  - /url: "#additional-fees"
+                - link "トラブル時の相談先" [ref=e870] [cursor=pointer]:
+                  - /url: "#troubles"
+        - generic [ref=e872]:
+          - generic [ref=e873]: マウスピース矯正とワイヤー矯正の違い
+          - generic [ref=e874]:
+            - text: 歯列矯正には大きく分けて「マウスピース矯正」と「ワイヤー矯正」の
+            - generic [ref=e875]: 2種類があります
+            - text: 。それぞれの仕組みやメリット・デメリットを理解し、自分に合った治療法を選びましょう。
+          - table [ref=e876]:
+            - rowgroup [ref=e877]:
+              - row "マウスピース矯正 ワイヤー矯正" [ref=e878]:
+                - cell [ref=e879]
+                - cell "マウスピース矯正" [ref=e880]
+                - cell "ワイヤー矯正" [ref=e881]
+            - rowgroup [ref=e882]:
+              - row "治療方法 アライナー（取り外し式） ブラケット＋ワイヤー（固定式）" [ref=e883]:
+                - cell "治療方法" [ref=e884]
+                - cell "アライナー（取り外し式）" [ref=e885]
+                - cell "ブラケット＋ワイヤー（固定式）" [ref=e886]
+              - row "見た目 目立ちにくい 目立ちやすい" [ref=e887]:
+                - cell "見た目" [ref=e888]
+                - cell "目立ちにくい" [ref=e889]
+                - cell "目立ちやすい" [ref=e890]
+              - row "通院頻度 1〜3ヶ月に1回 月1回程度" [ref=e891]:
+                - cell "通院頻度" [ref=e892]
+                - cell "1〜3ヶ月に1回" [ref=e893]
+                - cell "月1回程度" [ref=e894]
+              - row "治療期間(※) 最短2ヶ月〜平均9ヶ月（症例による） 1〜3年（症例による）" [ref=e895]:
+                - cell "治療期間(※)" [ref=e896]
+                - cell "最短2ヶ月〜平均9ヶ月（症例による）" [ref=e897]
+                - cell "1〜3年（症例による）" [ref=e898]
+              - row "費用相場 20万〜60万円（軽度・部分中心） 60万〜120万円（全体矯正中心）" [ref=e899]:
+                - cell "費用相場" [ref=e900]
+                - cell "20万〜60万円（軽度・部分中心）" [ref=e901]
+                - cell "60万〜120万円（全体矯正中心）" [ref=e902]
+              - row "適応 軽度〜中等度の叢生・空隙・前歯中心 重度症例／抜歯計画など幅広く対応" [ref=e903]:
+                - cell "適応" [ref=e904]
+                - cell "軽度〜中等度の叢生・空隙・前歯中心" [ref=e905]
+                - cell "重度症例／抜歯計画など幅広く対応" [ref=e906]
+          - generic [ref=e908]: （※）回数・期間は目安です。個人差や症例による違いがあります。上記は効果を保証するものではありません。
+          - generic [ref=e909]: マウスピース矯正は日常生活の制限が少なく自己管理がしやすい一方、装着時間の確保が必要です。ワイヤー矯正は適応範囲が広く、歯の大きな移動や複雑な症例にも対応できますが、見た目や清掃性の配慮が必要です。
+        - generic [ref=e911]:
+          - generic [ref=e912]: 仕組みの違い
+          - generic [ref=e913]:
+            - text: マウスピース矯正は
+            - generic [ref=e914]: 取り外し式のアライナー
+            - text: を使い、段階的に歯を動かします。ワイヤー矯正は
+            - generic [ref=e915]: 固定式のブラケットとワイヤー
+            - text: で連続的に力をかけて歯を動かします。
+          - generic [ref=e916]:
+            - text: マウスピース矯正は、1〜2週間ごとに新しいアライナーへ交換し、
+            - generic [ref=e917]: 段階的に目標位置へ移動
+            - text: させます。取り外せるため、食事や歯磨きがしやすいのが特徴です。
+          - generic [ref=e918]: 一方ワイヤー矯正は、固定式のため自己管理の負担は少ない反面、見た目や食事制限、清掃性の面で配慮が必要です。
+        - generic [ref=e920]:
+          - generic [ref=e921]: マウスピース矯正とワイヤー矯正のメリット・デメリット
+          - generic [ref=e922]: それぞれのメリット・デメリットをまとめました。自分に適した矯正方法選びの参考にしてください。
+          - table [ref=e923]:
+            - rowgroup [ref=e924]:
+              - row "マウスピース矯正 ワイヤー矯正" [ref=e925]:
+                - cell [ref=e926]
+                - cell "マウスピース矯正" [ref=e927]
+                - cell "ワイヤー矯正" [ref=e928]
+            - rowgroup [ref=e929]:
+              - row "メリット 目立ちにくく、取り外し可能 食事や歯磨きがしやすい 金属アレルギーの心配が少ない 幅広い症例に対応しやすい 歯の大きな移動や回転に強い" [ref=e930]:
+                - cell "メリット" [ref=e931]
+                - cell "目立ちにくく、取り外し可能 食事や歯磨きがしやすい 金属アレルギーの心配が少ない" [ref=e932]:
+                  - list [ref=e933]:
+                    - listitem [ref=e934]: 目立ちにくく、取り外し可能
+                    - listitem [ref=e935]: 食事や歯磨きがしやすい
+                    - listitem [ref=e936]: 金属アレルギーの心配が少ない
+                - cell "幅広い症例に対応しやすい 歯の大きな移動や回転に強い" [ref=e937]:
+                  - list [ref=e938]:
+                    - listitem [ref=e939]: 幅広い症例に対応しやすい
+                    - listitem [ref=e940]: 歯の大きな移動や回転に強い
+              - row "デメリット 装着時間の自己管理が必要（1日20〜22時間） 適応外の症例もある アライナーの紛失・破損リスク 見た目に目立つ 食事制限や清掃性の負担 口内炎や痛みが出やすい" [ref=e941]:
+                - cell "デメリット" [ref=e942]
+                - cell "装着時間の自己管理が必要（1日20〜22時間） 適応外の症例もある アライナーの紛失・破損リスク" [ref=e943]:
+                  - list [ref=e944]:
+                    - listitem [ref=e945]: 装着時間の自己管理が必要（1日20〜22時間）
+                    - listitem [ref=e946]: 適応外の症例もある
+                    - listitem [ref=e947]: アライナーの紛失・破損リスク
+                - cell "見た目に目立つ 食事制限や清掃性の負担 口内炎や痛みが出やすい" [ref=e948]:
+                  - list [ref=e949]:
+                    - listitem [ref=e950]: 見た目に目立つ
+                    - listitem [ref=e951]: 食事制限や清掃性の負担
+                    - listitem [ref=e952]: 口内炎や痛みが出やすい
+        - generic [ref=e954]:
+          - generic [ref=e955]: マウスピース矯正のリスクや副作用
+          - img "マウスピース矯正の副作用について" [ref=e957]
+          - generic [ref=e958]: マウスピース矯正は高い効果が期待できる一方で、治療過程での違和感や痛み、歯肉の炎症、アライナーの破損などの副作用が生じることがあります。
+          - generic [ref=e959]: どの矯正治療にもリスクは伴います。気になる症状があれば、必ず担当医に相談しましょう。
+        - generic [ref=e961]:
+          - generic [ref=e962]: 起こりうる副作用
+          - generic [ref=e963]: マウスピース矯正で起こりうる主な副作用は以下の通りです。
+          - generic [ref=e964]: 痛み・違和感
+          - generic [ref=e965]: 装着初期やアライナー交換直後に痛みや圧迫感、違和感が生じることがあります。通常は数日〜1週間程度で治まります。
+          - generic [ref=e966]: 歯肉の炎症・口内炎
+          - generic [ref=e967]: アライナーの縁が歯肉や粘膜に当たり、炎症や口内炎ができる場合があります。気になる場合は担当医に調整を依頼してください。
+          - generic [ref=e968]: アライナーの破損・変形
+          - generic [ref=e969]: アライナーが割れたり変形した場合は、速やかに担当医へ連絡し、再作製や調整を受けましょう。
+          - generic [ref=e970]: 歯根吸収・歯の動揺
+          - generic [ref=e971]: 稀に歯根吸収や歯の動揺が起こることがあります。定期的な診察で経過を確認しましょう。
+        - generic [ref=e973]:
+          - generic [ref=e974]: 痛みや違和感について
+          - generic [ref=e975]:
+            - text: マウスピース矯正の痛みや違和感は、
+            - generic [ref=e976]: アライナー交換直後や歯の移動量が大きい場合に生じやすく
+            - text: 、感じ方には個人差があります。
+          - generic [ref=e977]: 一般的に違和感が出やすいシーンや部位は以下の通りです。
+          - generic [ref=e978]:
+            - generic [ref=e979]: 新しいアライナーへ交換直後
+            - generic [ref=e980]: 歯の移動量が大きいケース
+            - generic [ref=e981]: アライナーの縁が当たる部位
+          - generic [ref=e982]: 痛みが強い場合や長引く場合は、担当医に相談しましょう。アライナーの調整やワックスの使用、鎮痛剤の服用などで緩和できる場合があります。
+        - generic [ref=e984]:
+          - generic [ref=e985]: 治療前・治療中の注意点
+          - generic [ref=e986]: マウスピース矯正の効果を最大限に引き出すため、以下の点に注意しましょう。
+          - generic [ref=e987]: 装着時間の厳守
+          - generic [ref=e988]: 1日20〜22時間以上の装着が必要です。装着時間が短いと計画通りに歯が動かない場合があります。
+          - generic [ref=e989]: アライナーの清掃
+          - generic [ref=e990]: アライナーは毎日清潔に保ちましょう。歯磨き後に装着し、飲食時は必ず外してください。
+          - generic [ref=e991]: 定期的な通院
+          - generic [ref=e992]: 指示された通院スケジュールを守り、経過観察や調整を受けましょう。
+          - generic [ref=e993]: 体調管理
+          - generic [ref=e994]: 体調不良時や服薬中の場合は、必ず担当医に相談してください。
+        - generic [ref=e996]:
+          - generic [ref=e997]: 契約時の確認ポイント
+          - img "矯正契約の注意点" [ref=e999]
+        - generic [ref=e1001]:
+          - generic [ref=e1002]: 保険適用について
+          - generic [ref=e1003]: 矯正治療は原則として自由診療（自費診療）となり、保険適用外の場合が多いです（先天的な疾患や顎変形症など一部例外を除く）。
+          - generic [ref=e1004]: 主な目的が審美改善であるため、自由診療に分類されるのが一般的です。詳細は各院のルールを確認してください。
+          - generic [ref=e1005]:
+            - generic [ref=e1006]: 原則自費負担
+            - text: のため、契約前に総額や追加費用を確認しましょう。
+        - generic [ref=e1008]:
+          - generic [ref=e1009]: 治療内容について細かく確認する
+          - generic [ref=e1010]: 矯正を契約する際は、治療計画・範囲・保定計画などを具体的に確認しましょう。自分の目標や希望に合っているかが重要です。
+          - generic [ref=e1011]: 例えば「前歯のみの部分矯正」と言っても、アライナー単独の計画もあれば、IPR（歯の側面を削る処置）やゴムかけ、部分ワイヤーを併用する場合もあります。
+          - generic [ref=e1012]:
+            - text: 契約後に治療内容が変更となる場合、追加料金が発生することもあるため、
+            - generic [ref=e1013]: 契約前に治療内容をしっかり確認
+            - text: しておきましょう。
+        - generic [ref=e1015]:
+          - generic [ref=e1016]: 追加費用がかからないか確認する
+          - generic [ref=e1017]: 契約時には、追加の費用についても必ず確認しましょう。提示料金とは別に、調整料・保定装置・再作製費用などが発生する場合があります。
+          - generic [ref=e1018]: 追加費用が掛かる項目の例は以下の通りです。
+          - list [ref=e1019]:
+            - listitem [ref=e1020]: 再診料・調整料
+            - listitem [ref=e1021]: 保定装置（リテーナー）代
+            - listitem [ref=e1022]: アライナー再作製費用
+            - listitem [ref=e1023]: 追加治療費
+            - listitem [ref=e1024]: 検査・レントゲン代
+          - generic [ref=e1025]: 追加費用については、契約前に必ず確認するようにしてください。
+        - generic [ref=e1027]:
+          - generic [ref=e1028]: トラブル時の相談先
+          - generic [ref=e1029]: 万が一、矯正契約についてトラブルになった場合は、以下の窓口に相談できます。
+          - list [ref=e1030]:
+            - listitem [ref=e1031]:
+              - generic [ref=e1032]: 
+              - link "医療安全支援センター（医療に関する苦情・心配事の相談）" [ref=e1033] [cursor=pointer]:
+                - /url: https://www.anzen-shien.jp/center/
+            - listitem [ref=e1034]:
+              - generic [ref=e1035]: 
+              - link "消費者ホットライン（契約内容や契約条件など、契約に関する相談）" [ref=e1036] [cursor=pointer]:
+                - /url: https://www.caa.go.jp/policies/policy/local_cooperation/local_consumer_administration/hotline/
+            - listitem [ref=e1037]:
+              - generic [ref=e1038]: 
+              - link "医療相談窓口（医療に関する広告についての相談）" [ref=e1039] [cursor=pointer]:
+                - /url: https://www.caa.go.jp/policies/policy/local_cooperation/local_consumer_administration/hotline/
+      - generic [ref=e1040]:
+        - generic [ref=e1041]:
+          - img "東京で人気の脂肪溶解注射はココ！" [ref=e1042]
+          - generic:
+            - text: 迷ったら
+            - generic: Oh my teeth
+            - text: がおすすめ
+        - generic [ref=e1043]:
+          - img "Oh my teeth" [ref=e1045]
+          - heading "Oh my teethがおすすめの3つの理由" [level=3] [ref=e1047]:
+            - generic [ref=e1048]: Oh my teeth
+            - text: がおすすめの
+            - generic [ref=e1049]: 3つの理由
+          - generic [ref=e1050]:
+            - generic [ref=e1051]:
+              - generic [ref=e1052]: 
+              - strong [ref=e1053]: 通院不要のオンライン矯正システム
+            - paragraph [ref=e1055]: Oh my teethの最大の特徴は、矯正開始後の定期的な通院が原則不要という革新的なシステムです。初回の3D歯型スキャン後は、自宅にマウスピース矯正キットが届き、24時間LINEサポートで専属医療チームに相談できます。
+            - generic [ref=e1056]:
+              - generic [ref=e1057]: 
+              - strong [ref=e1058]: リーズナブルで分かりやすい料金
+            - paragraph [ref=e1060]: Oh my teethは不透明な追加費用のない分かりやすい料金プランです。診察料や処置料などもすべてプラン内に含まれてるので安心できます。初回診断・カウンセリングも完全無料で受けることができます。
+            - generic [ref=e1061]:
+              - generic [ref=e1062]: 
+              - strong [ref=e1063]: 累計5万人の体験実績と安心保証
+            - paragraph [ref=e1065]: Oh my teethは累計5万人が歯型スキャンを体験している豊富な実績があります。国内ブランド製造数No.1の実績により、安心して治療を受けられます。
+            - generic [ref=e1066]:
+              - text: 【公式】
+              - link "https://www.oh-my-teeth.com/" [ref=e1067] [cursor=pointer]:
+                - /url: https://www.xn--ecki4eoz3204ct89aepry34c.com/go/omt/?max_scroll=100&region_id=013
+                - strong [ref=e1068] [cursor=pointer]: https://www.oh-my-teeth.com/
+          - generic [ref=e1069]:
+            - generic [ref=e1070]: INFORMATION!
+            - generic [ref=e1071]:
+              - generic [ref=e1072]:
+                - img "Oh my teeth" [ref=e1074]
+                - generic [ref=e1075]:
+                  - text: ホワイトニング14回分無料
+                  - text: 24時間LINEサポート対応
+              - generic [ref=e1076]:
+                - generic [ref=e1077]: ＼無料で歯型スキャン可能です／
+                - paragraph [ref=e1078]:
+                  - link "Oh my teethの公式サイト ▶" [ref=e1079] [cursor=pointer]:
+                    - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=1&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%221%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+                    - generic [ref=e1080] [cursor=pointer]: Oh my teethの公式サイト
+                    - generic [ref=e1081] [cursor=pointer]: ▶
+          - button "Oh my teethの確認事項 ▼" [ref=e1083] [cursor=pointer]:
+            - generic [ref=e1084] [cursor=pointer]: Oh my teethの確認事項
+            - generic [ref=e1085] [cursor=pointer]: ▼
+    - generic [ref=e1086]:
+      - generic [ref=e1087]:
+        - heading "矯正歯科おすすめ比較.com" [level=4] [ref=e1088]:
+          - link "矯正歯科おすすめ比較.com" [ref=e1089] [cursor=pointer]:
+            - /url: /
+        - list [ref=e1090]:
+          - heading "人気クリニック" [level=5] [ref=e1091]
+          - listitem [ref=e1092]:
+            - link "Oh my teeth" [ref=e1093] [cursor=pointer]:
+              - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=1&rank=1&region_id=013#params=%7B%22clinic_id%22%3A%221%22%2C%22rank%22%3A1%2C%22region_id%22%3A%22013%22%7D
+          - listitem [ref=e1094]:
+            - link "キレイライン矯正" [ref=e1095] [cursor=pointer]:
+              - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=3&rank=2&region_id=013#params=%7B%22clinic_id%22%3A%223%22%2C%22rank%22%3A2%2C%22region_id%22%3A%22013%22%7D
+          - listitem [ref=e1096]:
+            - link "ウィスマイル" [ref=e1097] [cursor=pointer]:
+              - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=4&rank=3&region_id=013#params=%7B%22clinic_id%22%3A%224%22%2C%22rank%22%3A3%2C%22region_id%22%3A%22013%22%7D
+          - listitem [ref=e1098]:
+            - link "ゼニュム" [ref=e1099] [cursor=pointer]:
+              - /url: http://localhost:8082/mouthpiece001/redirect.html?clinic_id=5&rank=4&region_id=013#params=%7B%22clinic_id%22%3A%225%22%2C%22rank%22%3A4%2C%22region_id%22%3A%22013%22%7D
+        - list [ref=e1100]:
+          - heading "運営" [level=5] [ref=e1101]
+          - listitem [ref=e1102]:
+            - link "運営者情報" [ref=e1103] [cursor=pointer]:
+              - /url: /common_page/company/
+          - listitem [ref=e1104]:
+            - link "プライバシーポリシー" [ref=e1105] [cursor=pointer]:
+              - /url: /common_page/privacy/
+          - listitem [ref=e1106]:
+            - link "免責事項" [ref=e1107] [cursor=pointer]:
+              - /url: /common_page/disclaimer/
+          - listitem [ref=e1108]:
+            - link "お問い合わせ" [ref=e1109] [cursor=pointer]:
+              - /url: mailto:clinic.hikaku.review@gmail.com
+      - paragraph [ref=e1111]: © 2025 矯正歯科おすすめ比較.com
+      - paragraph
+      - paragraph [ref=e1112]: ※本サイトの情報は参考程度に留め、必ず歯科医院にご相談ください。マウスピース矯正の効果には個人差があります。
+  - generic [ref=e1113]:
+    - generic [ref=e1114]:
+      - heading "絞り込み検索" [level=3] [ref=e1115]
+      - button "閉じる" [ref=e1116] [cursor=pointer]: ×
+    - generic [ref=e1117]:
+      - generic [ref=e1118]:
+        - generic [ref=e1119]: 地域選択
+        - combobox "地域選択" [ref=e1120]:
+          - option "全地域" [selected]
+          - option "全国"
+          - option "北海道"
+          - option "青森"
+          - option "岩手"
+          - option "宮城"
+          - option "秋田"
+          - option "山形"
+          - option "福島"
+          - option "茨城"
+          - option "栃木"
+          - option "群馬"
+          - option "埼玉"
+          - option "千葉"
+          - option "東京"
+          - option "神奈川"
+          - option "新潟"
+          - option "富山"
+          - option "石川"
+          - option "福井"
+          - option "山梨"
+          - option "長野"
+          - option "岐阜"
+          - option "静岡"
+          - option "愛知"
+          - option "三重"
+          - option "滋賀"
+          - option "京都"
+          - option "大阪"
+          - option "兵庫"
+          - option "奈良"
+          - option "和歌山"
+          - option "鳥取"
+          - option "島根"
+          - option "岡山"
+          - option "広島"
+          - option "山口"
+          - option "徳島"
+          - option "香川"
+          - option "愛媛"
+          - option "高知"
+          - option "福岡"
+          - option "佐賀"
+          - option "長崎"
+          - option "熊本"
+          - option "大分"
+          - option "宮崎"
+          - option "鹿児島"
+          - option "沖縄"
+          - option "池袋"
+          - option "上野"
+          - option "恵比寿"
+          - option "表参道"
+          - option "吉祥寺"
+          - option "銀座"
+          - option "北千住"
+          - option "五反田"
+          - option "渋谷"
+          - option "新宿"
+          - option "立川"
+          - option "八王子"
+          - option "町田"
+          - option "高田馬場"
+          - option "新橋"
+          - option "品川"
+          - option "秋葉原"
+          - option "目黒"
+          - option "原宿"
+          - option "有楽町"
+          - option "六本木"
+          - option "神田"
+          - option "国分寺"
+          - option "錦糸町"
+          - option "三鷹"
+          - option "赤羽"
+          - option "京橋"
+          - option "心斎橋"
+          - option "高槻"
+          - option "天王寺"
+          - option "難波"
+          - option "梅田"
+          - option "一宮"
+          - option "栄"
+          - option "豊田"
+          - option "豊橋"
+          - option "名古屋"
+          - option "久留米"
+          - option "天神"
+          - option "博多"
+          - option "北九州"
+          - option "旭川"
+          - option "札幌"
+          - option "室蘭"
+          - option "神戸"
+          - option "三宮"
+          - option "西宮"
+          - option "姫路"
+          - option "海老名"
+          - option "川崎"
+          - option "逗子"
+          - option "溝の口"
+          - option "武蔵小杉"
+          - option "横浜"
+          - option "藤沢"
+          - option "柏"
+          - option "船橋"
+          - option "松戸"
+          - option "浦和"
+          - option "大宮"
+          - option "川口"
+          - option "草加"
+          - option "高崎"
+          - option "河原町"
+          - option "松山"
+          - option "八戸"
+          - option "金沢"
+          - option "つくば"
+          - option "水戸"
+          - option "盛岡"
+          - option "別府"
+          - option "倉敷"
+          - option "高松"
+          - option "御殿場"
+          - option "沼津"
+          - option "浜松"
+          - option "三島"
+          - option "松江"
+          - option "宇都宮"
+          - option "米子"
+          - option "佐世保"
+          - option "松本"
+          - option "太田"
+          - option "長岡"
+          - option "郡山"
+          - option "鈴鹿"
+          - option "津市"
+          - option "四日市"
+          - option "仙台"
+          - option "延岡"
+          - option "都城"
+          - option "天童"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+          - option "-"
+      - generic [ref=e1121]:
+        - generic [ref=e1122]: クリニック名検索
+        - textbox "クリニック名検索" [ref=e1123]
+      - generic [ref=e1124]:
+        - generic [ref=e1125]: 対応部位
+        - combobox "対応部位" [ref=e1126]:
+          - option "すべての部位" [selected]
+          - option "顔"
+          - option "二の腕"
+          - option "お腹"
+          - option "お尻"
+          - option "太もも"
+          - option "その他"
+      - generic [ref=e1127]:
+        - generic [ref=e1128]: 店舗数
+        - combobox "店舗数" [ref=e1129]:
+          - option "店舗数指定なし" [selected]
+          - option "0〜5店舗"
+          - option "6〜10店舗"
+          - option "10〜20店舗"
+          - option "それ以上"
+      - link "詳細検索ページへ" [ref=e1131] [cursor=pointer]:
+        - /url: search-results/
+```

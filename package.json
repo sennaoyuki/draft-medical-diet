@@ -1,0 +1,16 @@
+{
+  "name": "gsa-mouthpiece-tests",
+  "version": "1.0.0",
+  "description": "E2E tests for mouthpiece redirect functionality",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
