@@ -932,21 +932,51 @@ text-align: center;
         // リダイレクトリンクのクリックハンドラー
         document.addEventListener('click', function(e) {
             const link = e.target.closest('a');
-            if (link && link.href && link.href.includes('/redirect.html')) {
-                // URLからパラメータを抽出
-                const url = new URL(link.href);
-                const hashParams = url.hash ? url.hash.substring(1) : '';
-                
-                if (hashParams.startsWith('params=')) {
-                    try {
-                        const paramsJson = decodeURIComponent(hashParams.substring(7));
-                        const params = JSON.parse(paramsJson);
-                        
-                        // localStorageに保存
-                        localStorage.setItem('redirectParams', JSON.stringify(params));
-                    } catch (error) {
-                        console.error('Failed to save redirect params:', error);
+            if (link && link.href) {
+                console.log('Link clicked:', link.href);
+
+                // redirect.htmlへのリンクの場合
+                if (link.href.includes('/redirect.html')) {
+                    e.preventDefault(); // デフォルトのリンク動作を阻止
+
+                    // URLからパラメータを抽出
+                    const url = new URL(link.href);
+                    const hashParams = url.hash ? url.hash.substring(1) : '';
+
+                    if (hashParams.startsWith('params=')) {
+                        try {
+                            const paramsJson = decodeURIComponent(hashParams.substring(7));
+                            const params = JSON.parse(paramsJson);
+
+                            // localStorageに保存
+                            localStorage.setItem('redirectParams', JSON.stringify(params));
+                            console.log('Saved redirect params to localStorage:', params);
+
+                            // redirect.htmlに移動
+                            window.location.href = link.href;
+                        } catch (error) {
+                            console.error('Failed to save redirect params:', error);
+                        }
+                    } else {
+                        // ハッシュパラメータがない場合はURLパラメータから取得
+                        const clinicId = url.searchParams.get('clinic_id');
+                        const rank = url.searchParams.get('rank');
+                        const regionId = url.searchParams.get('region_id');
+
+                        if (clinicId) {
+                            const params = {
+                                clinic_id: clinicId,
+                                rank: rank || '1',
+                                region_id: regionId || '013'
+                            };
+                            localStorage.setItem('redirectParams', JSON.stringify(params));
+                            console.log('Saved redirect params from URL to localStorage:', params);
+                            window.location.href = link.href;
+                        }
                     }
+                } else {
+                    // 直接URLの場合もパラメータを保存（念のため）
+                    console.log('Direct URL link clicked:', link.href);
                 }
             }
         });
