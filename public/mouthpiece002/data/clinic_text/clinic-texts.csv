@@ -1,11 +1,11 @@
 list_name,項目名,目的・注意事項,Oh my teeth,インビザライン,キレイライン矯正,ゼニュム,ウィスマイル
 meta1,クリニック名,正式名称を使用,Oh my teeth,インビザライン,キレイライン矯正,ゼニュム,ウィスマイル
 meta2,クリニックコード,英字3-5文字の略称,omt,invisalign,kireiline,zenyum,ws
-meta3,遷移先URL（1位）,1位表示時の遷移先URL,https://www.oh-my-teeth.com/,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
-meta4,遷移先URL（2位）,2位表示時の遷移先URL,https://www.oh-my-teeth.com/,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
-meta5,遷移先URL（3位）,3位表示時の遷移先URL,https://www.oh-my-teeth.com/,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
-meta6,遷移先URL（4位）,4位表示時の遷移先URL,https://www.oh-my-teeth.com/,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
-meta7,遷移先URL（5位）,5位表示時の遷移先URL,https://www.oh-my-teeth.com/,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
+meta3,遷移先URL（1位）,1位表示時の遷移先URL,https://sss.ac01.l-ad.net/cl/p1a64143O61e70f7/?bid=680eQ7ca228bdhh6,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
+meta4,遷移先URL（2位）,2位表示時の遷移先URL,https://sss.ac01.l-ad.net/cl/p1a64143O61e70f7/?bid=680eQ7ca228bdhh6,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
+meta5,遷移先URL（3位）,3位表示時の遷移先URL,https://sss.ac01.l-ad.net/cl/p1a64143O61e70f7/?bid=680eQ7ca228bdhh6,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
+meta6,遷移先URL（4位）,4位表示時の遷移先URL,https://sss.ac01.l-ad.net/cl/p1a64143O61e70f7/?bid=680eQ7ca228bdhh6,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
+meta7,遷移先URL（5位）,5位表示時の遷移先URL,https://sss.ac01.l-ad.net/cl/p1a64143O61e70f7/?bid=680eQ7ca228bdhh6,https://invisa-doctor.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
 comparison1,総合評価,比較表の総合評価スコア,4.9,4.5,4.3,3.8,4.1
 meta8,クリニックロゴ画像パス,各クリニックのロゴ画像パス,../common_data/images/clinics/omt/omt-logo.webp,../common_data/images/clinics/invisalign/invisalign-logo.webp,../common_data/images/clinics/kireiline/kireiline-logo.webp,../common_data/images/clinics/zenyum/zenyum-logo.webp,../common_data/images/clinics/ws/ws-logo.webp
 ranking1,ランキングプッシュメッセージ,ランキングカード内の短い訴求文,2025年のイチ押し！<br>通院不要！最短2ヶ月<br>国内製造数No.1,世界1500万人が<br>グローバルスタンダード矯正システム,12万人が選んだ！<br>満足度90%,シンガポール発<br>50万人が利用！,AWARD受賞10回<br>複数プランあり
@@ -28,7 +28,7 @@ header3,詳細バナー画像パス,各クリニックの詳細バナー画像,.
 tags1,特徴タグ,案件詳細セクションの特徴タグ,# リーズナブル<br># 一律料金<br># 通院不要<br># 24時間サポート<br># 日本ブランド<br># 国内製造<br># 部分矯正<br># 全体矯正<br># ホワイトニングあり,# マウスピース矯正<br># クリニック紹介型<br># 高精度治療<br># 認定医<br># 全症例対応<br># 透明矯正<br># 取り外し可能<br># グローバル実績<br># 包括的治療,# マウスピース矯正<br># クリニック紹介型<br># 短期間<br># 前歯矯正<br># 提携医院<br># リーズナブル<br># 満足度90%,# マウスピース矯正<br># シンガポール発<br># 一律料金<br># オンライン診療<br># 50万人実績<br># 追加費用なし<br># アジア圏実績<br># 革新的技術<br># 透明矯正,# マウスピース矯正<br># クリニック紹介型<br># 初診料無料<br># 提携医院<br># 分割払い<br># 部分矯正<br># 丁寧サポート
 detail1,費用,案件詳細セクションの費用,Basicプラン33万円<br>Proプラン66万円,35万円～120万円<br>（提携医院により異なる）,5回プラン：19.8万円<br>10回プラン：33万円<br>15回プラン：46.2万円<br>追加1回：+4.4万円,上下20本（20枚）：29.7万円<br>上下全体   （30枚）：55万円<br>上下全体   （45枚）：66万円,"1回お試しコース: 1,650円<br>8回コース: 23.1万円<br>12回コース: 35.2万円<br>18回コース: 51.7万円<br>24回コース: 66万円<br>30回コース: 88万円"
 detail2,目安期間,案件詳細セクションの目安期間,Basic：平均3ヶ月<br>Pro：平均6ヶ月,6ヶ月～3年<br>（提携医院により異なる）,2.5ヶ月～1年<br>（平均6ヶ月）,部分矯正：6ヶ月<br>全体矯正：10ヶ月,2ヶ月～10ヶ月以上<br>（プランにより異なる）
-detail3,矯正範囲,案件詳細セクションの対応部位,Basic：上下前歯12本<br>Pro：上下全体24本,軽度から重度まで<br>全症例対応可能,軽度～中等度<br>前歯部中心,上下全体<br>軽度～中等度,軽度～中等度<br>部分矯正中心
+detail3,矯正範囲,案件詳細セクションの対応部位,軽度〜中等度<br>※全体矯正のプランも案内可,軽度から重度まで<br>全症例対応可能,軽度～中等度<br>前歯部中心,上下全体<br>軽度～中等度,軽度～中等度<br>部分矯正中心
 detail4,営業時間,案件詳細セクションの営業時間,平日11:00～21:00<br>土日祝10:00～19:00<br>年末年始休診,提携医院により異なる<br>多くは平日9:00～18:00<br>土曜診療対応院あり,提携医院により異なる<br>平日10:00～20:00<br>土日祝対応院あり,オンライン診療24時間<br>提携医院は各院による<br>平日中心の診療,平日10:00～19:00<br>提携医院により異なる
 detail5,店舗,案件詳細セクションの店舗,新宿／池袋／表参道／有楽町／心斎橋／梅田／名古屋／博多,全国の認定医院<br>1000院以上で対応<br>都市部から地方まで幅広く展開,全国125提携クリニック<br>主要都市を中心に展開<br>2024年時点での展開数,提携医院ネットワーク<br>主要都市を中心<br>オンライン診療で全国対応,全国提携医院ネットワーク<br>主要都市を中心に展開<br>地域密着型の医院と提携
 meta9,公式サイトURL,各クリニックの公式サイトURL,https://www.oh-my-teeth.com/,https://www.invisalign.co.jp/,https://kireilign.com/,https://zenyum.jp/,https://we-smile.jp/
