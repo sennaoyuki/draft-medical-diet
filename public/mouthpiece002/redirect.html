@@ -411,6 +411,16 @@
                 timestamp: new Date().toISOString()
             };
             
+            // 元のページのURLパラメータを取得（referrer経由）
+            let originalUrl;
+            try {
+                originalUrl = new URL(document.referrer || window.location.href);
+                console.log('🔍 元ページURL:', originalUrl.toString());
+            } catch (e) {
+                originalUrl = currentUrl;
+                console.log('⚠️ referrer取得失敗、現在URLを使用');
+            }
+            
             // 全クリニック・全ランキング位に対して動的にパラメータを追加
             // param2にutm_creativeを設定
             const utmCreative = currentUrl.searchParams.get('utm_creative') || '';
@@ -458,20 +468,20 @@
             url.searchParams.set('device', deviceType);
             console.log('📱 device設定:', deviceType);
             
-            // UTMパラメータを設定（URLにある場合は優先、ない場合はデフォルト値）
+            // UTMパラメータを設定（元ページのURLにある場合は優先、ない場合はデフォルト値）
             Object.entries(utmDefaults).forEach(([param, defaultValue]) => {
-                const urlValue = currentUrl.searchParams.get(param);
+                const urlValue = originalUrl.searchParams.get(param);
                 const finalValue = urlValue || defaultValue;
                 url.searchParams.set(param, finalValue);
-                console.log(`🏷️ ${param}設定:`, finalValue, urlValue ? '(URL由来)' : '(デフォルト)');
+                console.log(`🏷️ ${param}設定:`, finalValue, urlValue ? '(元ページURL由来)' : '(デフォルト)');
             });
             
             // その他のUTMパラメータも転送（utm_content等）
             ['utm_content'].forEach(param => {
-                const value = currentUrl.searchParams.get(param);
+                const value = originalUrl.searchParams.get(param);
                 if (value) {
                     url.searchParams.set(param, value);
-                    console.log(`🏷️ ${param}設定:`, value, '(URL由来)');
+                    console.log(`🏷️ ${param}設定:`, value, '(元ページURL由来)');
                 }
             });
             
