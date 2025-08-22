@@ -432,11 +432,46 @@
                 url.searchParams.set('region_id', regionId);
             }
             
-            // その他のUTMパラメータも転送
-            ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(param => {
+            // デバイス判定
+            function detectDevice() {
+                const userAgent = navigator.userAgent.toLowerCase();
+                if (userAgent.includes('mobile') || userAgent.includes('android') || userAgent.includes('iphone')) {
+                    return 'm'; // mobile
+                } else if (userAgent.includes('tablet') || userAgent.includes('ipad')) {
+                    return 't'; // tablet
+                } else {
+                    return 'c'; // computer/desktop
+                }
+            }
+            
+            // UTMパラメータのデフォルト値設定
+            const utmDefaults = {
+                'utm_source': 'google',
+                'utm_medium': 'cpc',
+                'utm_campaign': '{campaignid}',
+                'utm_term': '{keyword}',
+                'utm_creative': '{creative}'
+            };
+            
+            // デバイスパラメータを設定
+            const deviceType = detectDevice();
+            url.searchParams.set('device', deviceType);
+            console.log('📱 device設定:', deviceType);
+            
+            // UTMパラメータを設定（URLにある場合は優先、ない場合はデフォルト値）
+            Object.entries(utmDefaults).forEach(([param, defaultValue]) => {
+                const urlValue = currentUrl.searchParams.get(param);
+                const finalValue = urlValue || defaultValue;
+                url.searchParams.set(param, finalValue);
+                console.log(`🏷️ ${param}設定:`, finalValue, urlValue ? '(URL由来)' : '(デフォルト)');
+            });
+            
+            // その他のUTMパラメータも転送（utm_content等）
+            ['utm_content'].forEach(param => {
                 const value = currentUrl.searchParams.get(param);
                 if (value) {
                     url.searchParams.set(param, value);
+                    console.log(`🏷️ ${param}設定:`, value, '(URL由来)');
                 }
             });
             
