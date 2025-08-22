@@ -424,9 +424,9 @@
             }
             
             // 全クリニック・全ランキング位に対して動的にパラメータを追加
-            // param2にutm_creativeを設定
-            const utmCreative = currentUrl.searchParams.get('utm_creative') || '';
-            console.log('🔍 utm_creative取得:', utmCreative);
+            // param2にutm_creativeを設定（元ページURL由来）
+            const utmCreative = originalUrl.searchParams.get('utm_creative') || '';
+            console.log('🔍 utm_creative取得:', utmCreative, '(元ページURL由来)');
             if (utmCreative) {
                 url.searchParams.set('param2', utmCreative);
                 console.log('✅ param2設定:', utmCreative);
@@ -466,13 +466,12 @@
                 }
             }
             
-            // UTMパラメータのデフォルト値設定
+            // UTMパラメータのデフォルト値設定（utm_creativeはparam2で個別処理）
             const utmDefaults = {
                 'utm_source': 'google',
                 'utm_medium': 'cpc',
                 'utm_campaign': '{campaignid}',
-                'utm_term': '{keyword}',
-                'utm_creative': '{creative}'
+                'utm_term': '{keyword}'
             };
             
             // デバイスパラメータを設定
@@ -487,6 +486,15 @@
                 url.searchParams.set(param, finalValue);
                 console.log(`🏷️ ${param}設定:`, finalValue, urlValue ? '(元ページURL由来)' : '(デフォルト)');
             });
+            
+            // utm_creativeを個別に設定（param2で設定済みの値があれば優先、なければデフォルト）
+            if (utmCreative) {
+                url.searchParams.set('utm_creative', utmCreative);
+                console.log('🏷️ utm_creative設定:', utmCreative, '(元ページURL由来)');
+            } else {
+                url.searchParams.set('utm_creative', '{creative}');
+                console.log('🏷️ utm_creative設定: {creative} (デフォルト)');
+            }
             
             // その他のUTMパラメータも転送（utm_content等）
             ['utm_content'].forEach(param => {
