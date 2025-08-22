@@ -411,20 +411,65 @@
                 timestamp: new Date().toISOString()
             };
             
-            // 元のページのURLパラメータを取得（referrer経由）
+            // 元のページのURLパラメータを取得（複数の方法を試行）
             let originalUrl;
+            let originalParams = new URLSearchParams();
+            
+            // 方法1: referrer経由
             try {
-                originalUrl = new URL(document.referrer || window.location.href);
-                console.log('🔍 元ページURL:', originalUrl.toString());
+                if (document.referrer && document.referrer !== window.location.href) {
+                    originalUrl = new URL(document.referrer);
+                    console.log('🔍 元ページURL (referrer):', originalUrl.toString());
+                } else {
+                    throw new Error('referrer unavailable');
+                }
             } catch (e) {
+                console.log('⚠️ referrer取得失敗');
                 originalUrl = currentUrl;
-                console.log('⚠️ referrer取得失敗、現在URLを使用');
+            }
+            
+            // 方法2: localStorageから元URLのパラメータを復元
+            try {
+                const storedParams = localStorage.getItem('redirectParams');
+                if (storedParams) {
+                    const params = JSON.parse(storedParams);
+                    console.log('🔍 localStorage params:', params);
+                    
+                    // 元URLのパラメータを再構築
+                    if (params.original_params) {
+                        Object.entries(params.original_params).forEach(([key, value]) => {
+                            originalParams.set(key, value);
+                        });
+                        console.log('✅ 元URLパラメータ復元:', originalParams.toString());
+                    }
+                }
+            } catch (e) {
+                console.log('⚠️ localStorage パラメータ復元失敗');
+            }
+            
+            // パラメータ取得用の統合関数
+            function getOriginalParam(paramName) {
+                // 1. 復元されたパラメータから取得
+                const restoredValue = originalParams.get(paramName);
+                if (restoredValue) {
+                    console.log(`🔍 ${paramName} (復元):`, restoredValue);
+                    return restoredValue;
+                }
+                
+                // 2. referrer URLから取得
+                const referrerValue = originalUrl.searchParams.get(paramName);
+                if (referrerValue) {
+                    console.log(`🔍 ${paramName} (referrer):`, referrerValue);
+                    return referrerValue;
+                }
+                
+                console.log(`⚠️ ${paramName} 取得失敗`);
+                return '';
             }
             
             // 全クリニック・全ランキング位に対して動的にパラメータを追加
-            // param2にutm_creativeを設定（元ページURL由来）
-            const utmCreative = originalUrl.searchParams.get('utm_creative') || '';
-            console.log('🔍 utm_creative取得:', utmCreative, '(元ページURL由来)');
+            // param2にutm_creativeを設定（統合取得関数使用）
+            const utmCreative = getOriginalParam('utm_creative');
             if (utmCreative) {
                 url.searchParams.set('param2', utmCreative);
                 console.log('✅ param2設定:', utmCreative);
@@ -432,9 +477,8 @@
                 console.log('⚠️ utm_creativeが空のためparam2は設定されません');
             }
             
-            // param3とgclidパラメータを設定（元ページURL由来）
-            const gclid = originalUrl.searchParams.get('gclid') || '';
-            console.log('🔍 gclid取得:', gclid, '(元ページURL由来)');
+            // param3とgclidパラメータを設定（統合取得関数使用）
+            const gclid = getOriginalParam('gclid');
             if (gclid) {
                 url.searchParams.set('param3', gclid);
                 url.searchParams.set('gclid', gclid);
@@ -477,12 +521,12 @@
             url.searchParams.set('device', deviceType);
             console.log('📱 device設定:', deviceType);
             
-            // UTMパラメータを設定（元ページのURLにある場合は優先、ない場合はデフォルト値）
+            // UTMパラメータを設定（統合取得関数使用）
             Object.entries(utmDefaults).forEach(([param, defaultValue]) => {
-                const urlValue = originalUrl.searchParams.get(param);
+                const urlValue = getOriginalParam(param);
                 const finalValue = urlValue || defaultValue;
                 url.searchParams.set(param, finalValue);
-                console.log(`🏷️ ${param}設定:`, finalValue, urlValue ? '(元ページURL由来)' : '(デフォルト)');
+                console.log(`🏷️ ${param}設定:`, finalValue, urlValue ? '(元URLパラメータ由来)' : '(デフォルト)');
             });
             
             // utm_creativeを個別に設定（param2で設定済みの値があれば優先、なければデフォルト）

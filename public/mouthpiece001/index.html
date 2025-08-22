@@ -948,6 +948,18 @@ text-align: center;
                             const paramsJson = decodeURIComponent(hashParams.substring(7));
                             const params = JSON.parse(paramsJson);
 
+                            // 現在のページのパラメータも追加保存
+                            const currentUrl = new URL(window.location.href);
+                            const originalParams = {};
+                            for (const [key, value] of currentUrl.searchParams) {
+                                originalParams[key] = value;
+                            }
+                            
+                            // paramsに元URLパラメータを追加
+                            params.original_params = originalParams;
+                            
+                            console.log('💾 保存するパラメータ:', params);
+
                             // localStorageに保存
                             localStorage.setItem('redirectParams', JSON.stringify(params));
                             console.log('Saved redirect params to localStorage:', params);
