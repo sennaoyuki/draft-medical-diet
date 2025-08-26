@@ -145,7 +145,7 @@ class UrlParamHandler {
         // redirect.htmlへのパスを生成
         const regionId = this.getRegionId();
         // 開発/本番の両対応: /redirect or /redirect.html
-        let redirectUrl = `./redirect?clinic_id=${clinicId}&rank=${rank}`;
+        let redirectUrl = `./redirect.html?clinic_id=${clinicId}&rank=${rank}`;
         if (regionId) {
             redirectUrl += `&region_id=${regionId}`;
         }
@@ -4066,7 +4066,7 @@ class RankingApp {
                     // 直接redirect.htmlへのリンクを生成
                     const regionId = new URLSearchParams(window.location.search).get('region_id') || '000';
                     if (clinic) {
-                        generatedUrl = `./redirect?clinic_id=${clinic.id}&rank=1&region_id=${regionId}`;
+                        generatedUrl = `./redirect.html?clinic_id=${clinic.id}&rank=1&region_id=${regionId}`;
                     }
                 }
                 

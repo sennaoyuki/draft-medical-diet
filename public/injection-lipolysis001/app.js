@@ -145,7 +145,7 @@ class UrlParamHandler {
         // redirect.htmlへのパスを生成
         const regionId = this.getRegionId();
         // 開発/本番の両対応: /redirect or /redirect.html
-        let redirectUrl = `./redirect?clinic_id=${clinicId}&rank=${rank}`;
+        let redirectUrl = `./redirect.html?clinic_id=${clinicId}&rank=${rank}`;
         if (regionId) {
             redirectUrl += `&region_id=${regionId}`;
         }

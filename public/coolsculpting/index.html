@@ -1204,7 +1204,7 @@ text-align: center;
                 const regionId = new URLSearchParams(window.location.search).get('region_id') || '013';
                 const ctaUrl = window.app && window.app.urlHandler ?
                     window.app.urlHandler.getClinicUrlWithRegionId(clinicData.id) :
-                    `./redirect?clinic_id=${clinicData.id}&rank=1&region_id=${regionId}`;
+                    `./redirect.html?clinic_id=${clinicData.id}&rank=1&region_id=${regionId}`;
                 if (ctaLink) ctaLink.href = ctaUrl;
             } else {
                 // フォールバック（DataManagerが利用できない場合）
@@ -1475,7 +1475,7 @@ text-align: center;
             const regionIdForOfficial = new URLSearchParams(window.location.search).get('region_id') || '013';
             const officialUrl = (clinicData && window.app && window.app.urlHandler)
                 ? window.app.urlHandler.getClinicUrlWithRegionId(clinicData.id, clinicData.rank || 1)
-                : `./redirect?clinic_id=${clinicData?.id || 1}&rank=${clinicData?.rank || 1}&region_id=${regionIdForOfficial}`;
+                : `./redirect.html?clinic_id=${clinicData?.id || 1}&rank=${clinicData?.rank || 1}&region_id=${regionIdForOfficial}`;
             
             let html = '';
             reasons.forEach(reason => {
