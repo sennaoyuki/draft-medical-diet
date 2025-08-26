@@ -64,7 +64,8 @@ class UrlParamHandler {
         
         // クリックイベントでlocalStorageに保存するため、データ属性として埋め込む
         // 実際の保存はクリック時に行う
-        const redirectUrl = new URL('./redirect.html', window.location.origin + window.location.pathname);
+        // 開発/本番の両対応: /redirect or /redirect.html
+        const redirectUrl = new URL('./redirect', window.location.origin + window.location.pathname);
         
         // URLパラメータも念のため設定（サーバーが保持する場合に備えて）
         redirectUrl.searchParams.set('clinic_id', clinicId);
@@ -144,7 +145,8 @@ class UrlParamHandler {
         
         // redirect.htmlへのパスを生成
         const regionId = this.getRegionId();
-        let redirectUrl = `./redirect.html?clinic_id=${clinicId}&rank=${rank}`;
+        // 開発/本番の両対応: /redirect or /redirect.html
+        let redirectUrl = `./redirect?clinic_id=${clinicId}&rank=${rank}`;
         if (regionId) {
             redirectUrl += `&region_id=${regionId}`;
         }
@@ -347,7 +349,7 @@ class DisplayManager {
                         ${window.dataManager?.processDecoTags ? window.dataManager.processDecoTags(pushMessage) : pushMessage}
                     </div>
                     <p class="btn btn_second_primary">
-                        <a href="${this.urlHandler.getClinicUrlWithRegionId(clinic.id, rankNum)}" target="_blank" rel="noopener">
+                        <a href="${this.urlHandler.getClinicUrlWithRegionId(clinic.id, rankNum)}" target="_blank" rel="noopener" data-clinic-id="${clinic.id}" data-rank="${rankNum}" data-region-id="${this.urlHandler.getRegionId()}">
                             <span class="bt_s">公式サイト</span>
                             <span class="btn-arrow">▶</span>
                         </a>
@@ -510,8 +512,8 @@ class DataManager {
         } else {
             this.dataPath = './data/';
         }
-        // 地域データ用のパス（data/rankingを使用）
-        this.regionDataPath = './data/ranking/';
+        // 地域データ用のパス（SITE_CONFIG基準、なければデフォルト）
+        this.regionDataPath = window.SITE_CONFIG ? window.SITE_CONFIG.dataPath + '/ranking/' : './data/ranking/';
     }
 
     async init() {
@@ -1178,7 +1180,7 @@ class DataManager {
             const storeAddress = store.address || '住所情報なし';
             
             // ハッシュフラグメントを使用（サーバーのURL書き換えに影響されない）
-            const redirectUrl = `./redirect.html#clinic_id=${clinicId}&rank=${rank}&region_id=${regionId}`;
+            const redirectUrl = `./redirect#clinic_id=${clinicId}&rank=${rank}&region_id=${regionId}`;
             
             // localStorageを先に設定してから開く（サーバーがパラメータを削除する場合の対策）
             const onclickHandler = targetUrl ? 

@@ -916,19 +916,20 @@ text-align: center;
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Slick Carousel JS -->
     <!-- Slick.js削除済み -->
-    <script src="app.js?v=2025081417" defer></script>
+    <script src="app.js?v=2025081501" defer></script>
     
 
     <!-- 1位クリニック動的表示機能 -->
     <script>
-        // リダイレクトリンクのクリックハンドラー
+        // リダイレクトリンクのクリックハンドラー（/redirect と /redirect.html の両対応）
         document.addEventListener('click', function(e) {
             const link = e.target.closest('a');
             if (link && link.href) {
                 console.log('Link clicked:', link.href);
 
-                // redirect.htmlへのリンクの場合
-                if (link.href.includes('/redirect.html')) {
+                // /redirect または /redirect.html へのリンクを検出
+                const isRedirectLink = /\/redirect(\.html)?(\?|#|$)/.test(link.href);
+                if (isRedirectLink) {
                     e.preventDefault(); // デフォルトのリンク動作を阻止
 
                     // URLからパラメータを抽出
@@ -952,29 +953,43 @@ text-align: center;
                             
                             console.log('💾 保存するパラメータ:', params);
 
-                            // localStorageに保存
+                            // localStorageに保存（同タブ・新規タブ双方の取りこぼし防止）
                             localStorage.setItem('redirectParams', JSON.stringify(params));
+                            sessionStorage.setItem('redirectParams', JSON.stringify(params));
                             console.log('Saved redirect params to localStorage:', params);
 
-                            // redirect.htmlに移動
+                            // 中継ページへ移動
                             window.location.href = link.href;
                         } catch (error) {
                             console.error('Failed to save redirect params:', error);
                         }
                     } else {
                         // ハッシュパラメータがない場合はURLパラメータから取得
-                        const clinicId = url.searchParams.get('clinic_id');
-                        const rank = url.searchParams.get('rank');
-                        const regionId = url.searchParams.get('region_id');
+                        let clinicId = url.searchParams.get('clinic_id');
+                        let rank = url.searchParams.get('rank');
+                        let regionId = url.searchParams.get('region_id');
+
+                        // data-* 属性からも補完（安全網）
+                        if (!clinicId && link.dataset && link.dataset.clinicId) clinicId = link.dataset.clinicId;
+                        if (!rank && link.dataset && link.dataset.rank) rank = link.dataset.rank;
+                        if (!regionId && link.dataset && link.dataset.regionId) regionId = link.dataset.regionId;
 
                         if (clinicId) {
-                            const params = {
-                                clinic_id: clinicId,
-                                rank: rank || '1',
-                                region_id: regionId || '013'
-                            };
+                            const params = { clinic_id: clinicId, rank: rank || 1, region_id: regionId || '013' };
+
+                            // 現在のページのパラメータも追加保存
+                            const currentUrl = new URL(window.location.href);
+                            const originalParams = {};
+                            for (const [key, value] of currentUrl.searchParams) {
+                                originalParams[key] = value;
+                            }
+                            params.original_params = originalParams;
+
                             localStorage.setItem('redirectParams', JSON.stringify(params));
-                            console.log('Saved redirect params from URL to localStorage:', params);
+                            sessionStorage.setItem('redirectParams', JSON.stringify(params));
+                            console.log('Saved fallback params to localStorage:', params);
+
+                            // 中継ページへ移動
                             window.location.href = link.href;
                         }
                     }
@@ -1178,18 +1193,18 @@ text-align: center;
                 const clinicCode = clinicData.code || clinicSlug;
                 
                 // キャンペーンテキストを動的に取得
-                const campaignInfo = dm.getClinicText(clinicCode, 'INFORMATIONキャンペーンテキスト', '期間限定キャンペーン<br>実施中');
+                const campaignInfo = dm.getClinicText(clinicCode, 'INFORMATIONキャンペーンテキスト', '');
                 if (campaignText) campaignText.innerHTML = campaignInfo;
 
                 // INFORMATIONサブテキストを動的に取得
-                const achievementInfo = dm.getClinicText(clinicCode, 'INFORMATIONサブテキスト', '＼月額・総額がリーズナブルなクリニック／');
+                const achievementInfo = dm.getClinicText(clinicCode, 'INFORMATIONサブテキスト', '');
                 if (achievementText) achievementText.textContent = achievementInfo;
 
                 // URLを動的に生成
                 const regionId = new URLSearchParams(window.location.search).get('region_id') || '013';
-                const ctaUrl = window.app && window.app.urlHandler ? 
-                    window.app.urlHandler.getClinicUrlWithRegionId(clinicData.id) : 
-                    `/injection-lipolysis001/go/${clinicSlug}/?region_id=${regionId}`;
+                const ctaUrl = window.app && window.app.urlHandler ?
+                    window.app.urlHandler.getClinicUrlWithRegionId(clinicData.id) :
+                    `./redirect?clinic_id=${clinicData.id}&rank=1&region_id=${regionId}`;
                 if (ctaLink) ctaLink.href = ctaUrl;
             } else {
                 // フォールバック（DataManagerが利用できない場合）
@@ -1200,7 +1215,7 @@ text-align: center;
             }
             
             // 3つの理由を設定
-            setThreeReasons(clinicSlug);
+            setThreeReasons(clinicSlug, clinicData);
             
             // アコーディオンの確認事項を更新
             updateFirstChoiceDisclaimer(clinicData);
@@ -1378,18 +1393,20 @@ text-align: center;
             if (dm3 && typeof dm3.getClinicText === 'function') {
                 const clinicCode = clinicSlug;
                 const clinicName = getClinicNameFromCode(clinicCode);
+                const regionId = new URLSearchParams(window.location.search).get('region_id') || '013';
                 return {
                     campaign: clinicInfo['INFORMATIONキャンペーンテキスト'] || '期間限定キャンペーン<br>実施中',
                     achievement: '＼' + (clinicInfo['実績/症例数'] || '実績多数') + '／',
-                    ctaUrl: clinicInfo['公式サイトURL'] || `https://www.example.com/go/${clinicSlug}/`
+                    ctaUrl: clinicInfo['公式サイトURL'] || `https://www.example.com/go/${clinicSlug}/?region_id=${regionId}`
                 };
             }
             
             // フォールバック（DataManagerが利用できない場合）
+            const regionId = new URLSearchParams(window.location.search).get('region_id') || '013';
             return {
                 campaign: '期間限定キャンペーン<br>実施中',
                 achievement: '＼実績多数／',
-                ctaUrl: `https://www.example.com/go/${clinicSlug}/`
+                ctaUrl: `https://www.example.com/go/${clinicSlug}/?region_id=${regionId}`
             };
         }
 
@@ -1408,8 +1425,8 @@ text-align: center;
             return 'https://sss.ac01.l-ad.net/cl/p1a64143O61e70f7/?bid=a6640dkh37648h88&param2=[ADID_PLACEHOLDER]&param3=[GCLID_PLACEHOLDER]';
         }
 
-        // 3つの理由を設定
-        function setThreeReasons(clinicSlug) {
+            // 3つの理由を設定
+            function setThreeReasons(clinicSlug, clinicData) {
             const pointsContainer = document.getElementById('first-choice-points');
             if (!pointsContainer) return;
             
@@ -1454,7 +1471,11 @@ text-align: center;
                 }
             ];
             
-            const officialUrl = `https://www.xn--ecki4eoz3204ct89aepry34c.com/go/${clinicSlug}/?max_scroll=100&region_id=013`;
+            // リダイレクトページ経由のURLに統一（potenza001と同挙動）
+            const regionIdForOfficial = new URLSearchParams(window.location.search).get('region_id') || '013';
+            const officialUrl = (clinicData && window.app && window.app.urlHandler)
+                ? window.app.urlHandler.getClinicUrlWithRegionId(clinicData.id, clinicData.rank || 1)
+                : `./redirect?clinic_id=${clinicData?.id || 1}&rank=${clinicData?.rank || 1}&region_id=${regionIdForOfficial}`;
             
             let html = '';
             reasons.forEach(reason => {
@@ -1469,7 +1490,7 @@ text-align: center;
                 `;
             });
             
-            // 公式リンクも更新
+            // 公式リンクも更新（リダイレクト経由に統一）
             const officialLink = document.getElementById('first-choice-official-link');
             if (officialLink) {
                 const clinicUrl = dm.getClinicText(clinicKeyForTexts, '公式サイトURL', 'https://omt.jp/');
@@ -2157,7 +2178,8 @@ text-align: center;
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                // サブディレクトリ配下で正しくスコープされるよう相対パスで登録
+                navigator.serviceWorker.register('./sw.js')
                     .then(registration => {})
                     .catch(err => {});
             });

@@ -6,7 +6,7 @@
     <title>公式サイトへ移動中...</title>
     <meta name="description" content="公式サイトへリダイレクトしています。">
     <meta name="referrer" content="unsafe-url">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="icon" type="image/png" href="../common_data/images/favicon.png">
     <meta http-equiv="Content-Security-Policy" content="referrer unsafe-url">
     <style>
         body {
@@ -138,12 +138,8 @@
                     async loadCompiledData() {
                         console.log('📊 compiled-data.json読み込み中...');
                         try {
-                            // mouthpiece では data copy が正規のランキング/クリニックセット
-                            let response = await fetch('./data copy/compiled-data.json');
-                            if (!response.ok) {
-                                console.warn('⚠️ data copy/compiled-data.json が見つからないため data/ にフォールバックします');
-                                response = await fetch('./data/compiled-data.json');
-                            }
+                            const response = await fetch('./data/ranking/compiled-data.json');
+                            if (!response.ok) throw new Error('Failed to load ranking/compiled-data.json');
                             const data = await response.json();
                             this.clinics = data.clinics || [];
                             console.log('📊 クリニック数:', this.clinics.length);
@@ -407,7 +403,7 @@
             const trackingParams = {
                 click_section: currentUrl.searchParams.get('click_section') || '',
                 click_clinic: currentUrl.searchParams.get('click_clinic') || clinicCode,
-                source_page: currentUrl.searchParams.get('source_page') || 'mouthpiece',
+                source_page: currentUrl.searchParams.get('source_page') || 'injection-lipolysis',
                 region_id: regionId || '013',
                 referrer_url: baseReferrerUrl,  // パラメータを除いたベースURLのみ
                 timestamp: new Date().toISOString()
@@ -569,20 +565,27 @@
             manualLink.href = finalUrl;
             manualLink.style.display = 'inline-block';
             
-            // ロゴの設定
-            const logoPath = `/images/clinics/${clinicCode}/${clinicCode}-logo.webp`;
-            clinicLogo.src = logoPath;
-            clinicLogo.alt = clinic.name;
-            clinicLogo.style.display = 'block';
-            
-            // ロゴのエラー処理
-            clinicLogo.onerror = function() {
-                const jpgPath = `/images/clinics/${clinicCode}/${clinicCode}-logo.jpg`;
-                this.src = jpgPath;
-                this.onerror = function() {
-                    this.style.display = 'none';
+            // ロゴの設定（clinic-texts.json優先 → common_dataにフォールバック）
+            (function() {
+                let logoPath = '';
+                try {
+                    if (window.dataManager && typeof window.dataManager.getClinicText === 'function') {
+                        const pathFromJson = window.dataManager.getClinicText(clinicCode, 'ロゴ画像パス', '');
+                        if (pathFromJson) logoPath = pathFromJson;
+                    }
+                } catch (e) {}
+                if (!logoPath) {
+                    logoPath = `../common_data/images/clinics/${clinicCode}/${clinicCode}-logo.webp`;
+                }
+                clinicLogo.src = logoPath;
+                clinicLogo.alt = clinic.name;
+                clinicLogo.style.display = 'block';
+                clinicLogo.onerror = function() {
+                    const jpgPath = `../common_data/images/clinics/${clinicCode}/${clinicCode}-logo.jpg`;
+                    this.src = jpgPath;
+                    this.onerror = function() { this.style.display = 'none'; };
                 };
-            };
+            })();
             
             // タイトルも更新
             document.title = `${clinic.name}公式サイトへ移動中...`;
@@ -638,7 +641,7 @@
                         
                         // フォールバック
                         setTimeout(() => {
-                            if (window.location.href.includes('/redirect.html')) {
+                            if (window.location.href.includes('/redirect')) {
                                 console.log('⚠️ フォールバックリダイレクト実行');
                                 window.location.replace(finalUrl);
                             }
@@ -649,7 +652,7 @@
             
             // 5秒後にまだ同じページにいる場合の警告
             setTimeout(() => {
-                if (window.location.href.includes('/redirect.html')) {
+                if (window.location.href.includes('/redirect')) {
                     countdownElement.textContent = '自動移動に時間がかかっています。下のボタンをクリックしてください。';
                     countdownElement.style.color = '#ff6b6b';
                 }

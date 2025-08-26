@@ -144,7 +144,8 @@ class UrlParamHandler {
         
         // redirect.htmlへのパスを生成
         const regionId = this.getRegionId();
-        let redirectUrl = `./redirect.html?clinic_id=${clinicId}&rank=${rank}`;
+        // 開発/本番の両対応: /redirect or /redirect.html
+        let redirectUrl = `./redirect?clinic_id=${clinicId}&rank=${rank}`;
         if (regionId) {
             redirectUrl += `&region_id=${regionId}`;
         }
@@ -1178,7 +1179,7 @@ class DataManager {
             const storeAddress = store.address || '住所情報なし';
             
             // ハッシュフラグメントを使用（サーバーのURL書き換えに影響されない）
-            const redirectUrl = `./redirect.html#clinic_id=${clinicId}&rank=${rank}&region_id=${regionId}`;
+            const redirectUrl = `./redirect#clinic_id=${clinicId}&rank=${rank}&region_id=${regionId}`;
             
             // localStorageを先に設定してから開く（サーバーがパラメータを削除する場合の対策）
             const onclickHandler = targetUrl ? 
@@ -1211,7 +1212,7 @@ class DataManager {
             const storeAddress = store.address || '住所情報なし';
             
             // ハッシュフラグメントを使用（サーバーのURL書き換えに影響されない）
-            const redirectUrl = `./redirect.html#clinic_id=${clinicId}&rank=${rank}&region_id=${regionId}`;
+            const redirectUrl = `./redirect#clinic_id=${clinicId}&rank=${rank}&region_id=${regionId}`;
             
             // localStorageを先に設定してから開く（サーバーがパラメータを削除する場合の対策）
             const onclickHandler = targetUrl ? 
@@ -2545,7 +2546,7 @@ class RankingApp {
                         logoPath = `../common_data/images/clinics/${logoFolder}/${logoFolder}-logo.webp`;
                     }
                     
-                    const redirectUrl = `./redirect.html#clinic_id=${clinicId}&rank=${rankNum}&region_id=${regionId}`;
+                    const redirectUrl = `./redirect#clinic_id=${clinicId}&rank=${rankNum}&region_id=${regionId}`;
                     const clinicNameOnclick = `onclick="localStorage.setItem('redirectParams', JSON.stringify({clinic_id: '${clinicId}', rank: '${rankNum}', region_id: '${regionId}'})); setTimeout(() => { window.open('${redirectUrl}', '_blank'); }, 10); return false;"`;
                     
                     td.className = 'ranking-table_td1';
@@ -2779,7 +2780,7 @@ class RankingApp {
             }
             
             // リダイレクトURL（ハッシュフラグメント使用）
-            const redirectUrl = `./redirect.html#clinic_id=${clinicId}&rank=${rankNum}&region_id=${regionId}`;
+            const redirectUrl = `./redirect#clinic_id=${clinicId}&rank=${rankNum}&region_id=${regionId}`;
             
             // クリニック名リンクにもlocalStorageとリダイレクトを適用
             const clinicNameOnclick = `onclick="localStorage.setItem('redirectParams', JSON.stringify({clinic_id: '${clinicId}', rank: '${rankNum}', region_id: '${regionId}'})); setTimeout(() => { window.open('${redirectUrl}', '_blank'); }, 10); return false;"`;
@@ -4065,7 +4066,7 @@ class RankingApp {
                     // 直接redirect.htmlへのリンクを生成
                     const regionId = new URLSearchParams(window.location.search).get('region_id') || '000';
                     if (clinic) {
-                        generatedUrl = `./redirect.html?clinic_id=${clinic.id}&rank=1&region_id=${regionId}`;
+                        generatedUrl = `./redirect?clinic_id=${clinic.id}&rank=1&region_id=${regionId}`;
                     }
                 }
                 

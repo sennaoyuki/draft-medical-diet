@@ -6,7 +6,7 @@
     <title>公式サイトへ移動中...</title>
     <meta name="description" content="公式サイトへリダイレクトしています。">
     <meta name="referrer" content="unsafe-url">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="icon" type="image/png" href="../common_data/images/favicon.png">
     <meta http-equiv="Content-Security-Policy" content="referrer unsafe-url">
     <style>
         body {
@@ -138,12 +138,9 @@
                     async loadCompiledData() {
                         console.log('📊 compiled-data.json読み込み中...');
                         try {
-                            // mouthpiece では data copy が正規のランキング/クリニックセット
-                            let response = await fetch('./data copy/compiled-data.json');
-                            if (!response.ok) {
-                                console.warn('⚠️ data copy/compiled-data.json が見つからないため data/ にフォールバックします');
-                                response = await fetch('./data/compiled-data.json');
-                            }
+                            // SITE_CONFIG基準のパスを使用（potenza001と同様）
+                            const dataPath = window.SITE_CONFIG ? window.SITE_CONFIG.dataPath + '/ranking/' : './data/ranking/';
+                            const response = await fetch(dataPath + 'compiled-data.json');
                             const data = await response.json();
                             this.clinics = data.clinics || [];
                             console.log('📊 クリニック数:', this.clinics.length);
@@ -229,8 +226,6 @@
                 } catch (e) {
                     console.error('localStorage解析エラー:', e);
                 }
-            } else {
-                console.log('方法1 localStorage: データなし');
             }
             
             // 方法2: ハッシュからパラメータを取得（新形式）
@@ -257,7 +252,7 @@
                 }
             }
             
-            // 方法3: 標準的なURLSearchParams
+            // 方法3: 標準的なURLSearchParams（/redirect と /redirect.html の両方に対応）
             if (!clinicId) {
                 const searchParams = new URLSearchParams(window.location.search);
                 clinicId = searchParams.get('clinic_id');
@@ -297,7 +292,7 @@
                 }
             }
             
-            // 方法5: sessionStorageから取得（同一タブ内）
+            // 方法5: sessionStorageから取得（同一タブ内の直遷移対策）
             if (!clinicId) {
                 const storedParams = sessionStorage.getItem('redirectParams');
                 if (storedParams) {
@@ -331,8 +326,7 @@
                 console.error('❌ clinic_idが見つかりません');
                 console.error('  URL:', window.location.href);
                 console.error('  Search:', window.location.search);
-                
-                // フォールバック：デフォルト値を設定
+                // potenza001 と同様にフォールバック: clinic_id=1 を使用
                 clinicId = '1';
                 rank = 1;
                 console.log('⚠️ フォールバック: clinic_id=1を使用');
@@ -401,13 +395,13 @@
             
             // region_idは既に上で取得済み
             
-            // 追跡用パラメータをparam4に統合（medical-diet001と同じ形式）
+            // 追跡用パラメータをparam4に統合（potenza002用）
             const currentPageWithParams = window.location.href;
             const baseReferrerUrl = currentPageWithParams.split('?')[0];
             const trackingParams = {
                 click_section: currentUrl.searchParams.get('click_section') || '',
                 click_clinic: currentUrl.searchParams.get('click_clinic') || clinicCode,
-                source_page: currentUrl.searchParams.get('source_page') || 'mouthpiece',
+                source_page: currentUrl.searchParams.get('source_page') || 'coolsculpting',
                 region_id: regionId || '013',
                 referrer_url: baseReferrerUrl,  // パラメータを除いたベースURLのみ
                 timestamp: new Date().toISOString()
@@ -416,7 +410,7 @@
             // 元のページのURLパラメータを取得（複数の方法を試行）
             let originalUrl;
             let originalParams = new URLSearchParams();
-            
+
             // 方法1: referrer経由
             try {
                 if (document.referrer && document.referrer !== window.location.href) {
@@ -429,14 +423,14 @@
                 console.log('⚠️ referrer取得失敗');
                 originalUrl = currentUrl;
             }
-            
+
             // 方法2: localStorageから元URLのパラメータを復元
             try {
                 const storedParams = localStorage.getItem('redirectParams');
                 if (storedParams) {
                     const params = JSON.parse(storedParams);
                     console.log('🔍 localStorage params:', params);
-                    
+
                     // 元URLのパラメータを再構築
                     if (params.original_params) {
                         Object.entries(params.original_params).forEach(([key, value]) => {
@@ -448,7 +442,7 @@
             } catch (e) {
                 console.log('⚠️ localStorage パラメータ復元失敗');
             }
-            
+
             // パラメータ取得用の統合関数
             function getOriginalParam(paramName) {
                 // 1. 復元されたパラメータから取得
@@ -457,19 +451,18 @@
                     console.log(`🔍 ${paramName} (復元):`, restoredValue);
                     return restoredValue;
                 }
-                
+
                 // 2. referrer URLから取得
                 const referrerValue = originalUrl.searchParams.get(paramName);
                 if (referrerValue) {
                     console.log(`🔍 ${paramName} (referrer):`, referrerValue);
                     return referrerValue;
                 }
-                
+
                 console.log(`⚠️ ${paramName} 取得失敗`);
                 return '';
             }
-            
-            // 全クリニック・全ランキング位に対して動的にパラメータを追加
+
             // param2にutm_creativeを設定（統合取得関数使用）
             const utmCreative = getOriginalParam('utm_creative');
             if (utmCreative) {
@@ -478,7 +471,7 @@
             } else {
                 console.log('⚠️ utm_creativeが空のためparam2は設定されません');
             }
-            
+
             // param3とgclidパラメータを設定（統合取得関数使用）
             const gclid = getOriginalParam('gclid');
             if (gclid) {
@@ -497,7 +490,7 @@
             if (regionId) {
                 url.searchParams.set('region_id', regionId);
             }
-            
+
             // デバイス判定
             function detectDevice() {
                 const userAgent = navigator.userAgent.toLowerCase();
@@ -509,7 +502,7 @@
                     return 'c'; // computer/desktop
                 }
             }
-            
+
             // UTMパラメータのデフォルト値設定（utm_creativeはparam2で個別処理）
             const utmDefaults = {
                 'utm_source': 'google',
@@ -517,12 +510,12 @@
                 'utm_campaign': '{campaignid}',
                 'utm_term': '{keyword}'
             };
-            
+
             // デバイスパラメータを設定
             const deviceType = detectDevice();
             url.searchParams.set('device', deviceType);
             console.log('📱 device設定:', deviceType);
-            
+
             // UTMパラメータを設定（統合取得関数使用）
             Object.entries(utmDefaults).forEach(([param, defaultValue]) => {
                 const urlValue = getOriginalParam(param);
@@ -530,7 +523,7 @@
                 url.searchParams.set(param, finalValue);
                 console.log(`🏷️ ${param}設定:`, finalValue, urlValue ? '(元URLパラメータ由来)' : '(デフォルト)');
             });
-            
+
             // utm_creativeを個別に設定（param2で設定済みの値があれば優先、なければデフォルト）
             if (utmCreative) {
                 url.searchParams.set('utm_creative', utmCreative);
@@ -539,7 +532,7 @@
                 url.searchParams.set('utm_creative', '{creative}');
                 console.log('🏷️ utm_creative設定: {creative} (デフォルト)');
             }
-            
+
             // その他のUTMパラメータも転送（utm_content等）
             ['utm_content'].forEach(param => {
                 const value = originalUrl.searchParams.get(param);
@@ -550,12 +543,6 @@
             });
             
             const finalUrl = url.toString();
-            
-            console.log('🎯 最終リダイレクトURL:', finalUrl);
-            console.log('🔍 param2確認:', finalUrl.includes('param2=') ? 'あり' : 'なし');
-            console.log('🔍 param3確認:', finalUrl.includes('param3=') ? 'あり' : 'なし');
-            console.log('🔍 param4確認:', finalUrl.includes('param4=') ? 'あり' : 'なし');
-            console.log('🔍 gclid確認:', finalUrl.includes('gclid=') ? 'あり' : 'なし');
             
             // UI要素を更新
             const clinicLogo = document.getElementById('clinic-logo');
@@ -569,20 +556,35 @@
             manualLink.href = finalUrl;
             manualLink.style.display = 'inline-block';
             
-            // ロゴの設定
-            const logoPath = `/images/clinics/${clinicCode}/${clinicCode}-logo.webp`;
-            clinicLogo.src = logoPath;
-            clinicLogo.alt = clinic.name;
-            clinicLogo.style.display = 'block';
-            
-            // ロゴのエラー処理
-            clinicLogo.onerror = function() {
-                const jpgPath = `/images/clinics/${clinicCode}/${clinicCode}-logo.jpg`;
-                this.src = jpgPath;
-                this.onerror = function() {
-                    this.style.display = 'none';
+            // ロゴの設定（clinic-texts.json のパスを優先、なければcommon_data配下にフォールバック）
+            (function() {
+                let logoPath = '';
+                try {
+                    if (window.dataManager && typeof window.dataManager.getClinicText === 'function') {
+                        const pathFromJson = window.dataManager.getClinicText(clinicCode, 'ロゴ画像パス', '');
+                        if (pathFromJson) {
+                            logoPath = pathFromJson;
+                        }
+                    }
+                } catch (e) {
+                    // noop
+                }
+                if (!logoPath) {
+                    logoPath = `../common_data/images/clinics/${clinicCode}/${clinicCode}-logo.webp`;
+                }
+                clinicLogo.src = logoPath;
+                clinicLogo.alt = clinic.name;
+                clinicLogo.style.display = 'block';
+
+                // ロゴのエラー処理（webp→jpg→非表示）
+                clinicLogo.onerror = function() {
+                    const jpgPath = `../common_data/images/clinics/${clinicCode}/${clinicCode}-logo.jpg`;
+                    this.src = jpgPath;
+                    this.onerror = function() {
+                        this.style.display = 'none';
+                    };
                 };
-            };
+            })();
             
             // タイトルも更新
             document.title = `${clinic.name}公式サイトへ移動中...`;

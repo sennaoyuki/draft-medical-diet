@@ -6,7 +6,7 @@
     <title>公式サイトへ移動中...</title>
     <meta name="description" content="公式サイトへリダイレクトしています。">
     <meta name="referrer" content="unsafe-url">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="icon" type="image/png" href="../common_data/images/favicon.png">
     <meta http-equiv="Content-Security-Policy" content="referrer unsafe-url">
     <style>
         body {
@@ -407,7 +407,7 @@
             const trackingParams = {
                 click_section: currentUrl.searchParams.get('click_section') || '',
                 click_clinic: currentUrl.searchParams.get('click_clinic') || clinicCode,
-                source_page: currentUrl.searchParams.get('source_page') || 'mouthpiece',
+                source_page: currentUrl.searchParams.get('source_page') || 'draft',
                 region_id: regionId || '013',
                 referrer_url: baseReferrerUrl,  // パラメータを除いたベースURLのみ
                 timestamp: new Date().toISOString()

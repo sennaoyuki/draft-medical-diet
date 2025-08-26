@@ -6,7 +6,7 @@
     <title>公式サイトへ移動中...</title>
     <meta name="description" content="公式サイトへリダイレクトしています。">
     <meta name="referrer" content="unsafe-url">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="icon" type="image/png" href="../common_data/images/favicon.png">
     <meta http-equiv="Content-Security-Policy" content="referrer unsafe-url">
     <style>
         body {
@@ -138,12 +138,8 @@
                     async loadCompiledData() {
                         console.log('📊 compiled-data.json読み込み中...');
                         try {
-                            // mouthpiece では data copy が正規のランキング/クリニックセット
-                            let response = await fetch('./data copy/compiled-data.json');
-                            if (!response.ok) {
-                                console.warn('⚠️ data copy/compiled-data.json が見つからないため data/ にフォールバックします');
-                                response = await fetch('./data/compiled-data.json');
-                            }
+                            const response = await fetch('./data/ranking/compiled-data.json');
+                            if (!response.ok) throw new Error('Failed to load ranking/compiled-data.json');
                             const data = await response.json();
                             this.clinics = data.clinics || [];
                             console.log('📊 クリニック数:', this.clinics.length);
@@ -407,7 +403,7 @@
             const trackingParams = {
                 click_section: currentUrl.searchParams.get('click_section') || '',
                 click_clinic: currentUrl.searchParams.get('click_clinic') || clinicCode,
-                source_page: currentUrl.searchParams.get('source_page') || 'mouthpiece',
+                source_page: currentUrl.searchParams.get('source_page') || 'cryolipolysis',
                 region_id: regionId || '013',
                 referrer_url: baseReferrerUrl,  // パラメータを除いたベースURLのみ
                 timestamp: new Date().toISOString()
