@@ -4066,7 +4066,7 @@ class RankingApp {
                     // 直接redirect.htmlへのリンクを生成
                     const regionId = new URLSearchParams(window.location.search).get('region_id') || '000';
                     if (clinic) {
-                        generatedUrl = `./redirect?clinic_id=${clinic.id}&rank=1&region_id=${regionId}`;
+                        generatedUrl = `./redirect.html?clinic_id=${clinic.id}&rank=1&region_id=${regionId}`;
                     }
                 }
                 
