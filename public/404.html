@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ページが見つかりません | 医療ダイエット比較.com</title>
+    <meta name="description" content="お探しのページは見つかりませんでした。医療ダイエット比較.comのトップページへお戻りください。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="/common_data/images/favicon.png">
+    <!-- Analytics -->
+    <script src="/analytics.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9f2f9 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .error-container {
+            text-align: center;
+            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 背景の装飾 */
+        .error-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(75, 192, 192, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        /* 404アイコン */
+        .error-icon {
+            font-size: 120px;
+            color: #4bc0c0;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* 404数字 */
+        .error-code {
+            font-size: 72px;
+            font-weight: 700;
+            color: #4bc0c0;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* エラーメッセージ */
+        .error-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .error-message {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* ボタンコンテナ */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        /* メインボタン */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #4bc0c0 0%, #3da9a9 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(75, 192, 192, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(75, 192, 192, 0.4);
+        }
+
+        /* サブボタン */
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 30px;
+            background: white;
+            color: #4bc0c0;
+            text-decoration: none;
+            border: 2px solid #4bc0c0;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #4bc0c0;
+            color: white;
+        }
+
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 56px;
+            }
+
+            .error-title {
+                font-size: 20px;
+            }
+
+            .error-message {
+                font-size: 14px;
+            }
+
+            .btn-primary {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+        }
+
+        /* アニメーション */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container fade-in">
+        <div class="error-icon">
+            <i class="fas fa-stethoscope"></i>
+        </div>
+        
+        <div class="error-code">404</div>
+        
+        <h1 class="error-title">ページが見つかりません</h1>
+        
+        <p class="error-message">
+            申し訳ございません。お探しのページは見つかりませんでした。<br>
+            URLが変更されたか、ページが削除された可能性があります。
+        </p>
+        
+        
+    </div>
+
+    <script>
+        // 全てのパラメータを引き継ぐ
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentParams = new URLSearchParams(window.location.search);
+            
+            if (currentParams.toString()) {
+                // すべてのリンクに全パラメータを追加
+                const links = document.querySelectorAll('a[href^="/"], a[href^="./"], a[href^="../"], a[href]:not([href^="http"]):not([href^="#"])');
+                links.forEach(link => {
+                    try {
+                        const url = new URL(link.href, window.location.origin);
+                        // 既存のパラメータを保持しつつ、現在のパラメータを追加
+                        for (const [key, value] of currentParams) {
+                            if (!url.searchParams.has(key)) {
+                                url.searchParams.set(key, value);
+                            }
+                        }
+                        link.href = url.toString();
+                    } catch (e) {
+                        // 相対URLの場合
+                        const separator = link.href.includes('?') ? '&' : '?';
+                        link.href = link.href + separator + currentParams.toString();
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="/tracking-params.js"></script>
+</body>
+</html>
