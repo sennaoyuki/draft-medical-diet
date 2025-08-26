@@ -1,20 +1,16 @@
 {
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/public/medical-diet001/index.html"
-    },
-    {
       "source": "/common_data/(.*)",
-      "destination": "/public/common_data/$1"
+      "destination": "/common_data/$1"
     },
     {
       "source": "/medical-diet001/(.*)",
-      "destination": "/public/medical-diet001/$1"
+      "destination": "/medical-diet001/$1"
     },
     {
       "source": "/((?!api|_next|favicon.ico|robots.txt|manifest.json|common_data|medical-diet001).*)",
-      "destination": "/public/medical-diet001/$1"
+      "destination": "/medical-diet001/$1"
     }
   ]
 }
