@@ -1,0 +1,21 @@
+項目名,説明,値
+MV画像パス,メインビジュアルの背景画像,./images/mv.webp
+MVアピールテキスト1,メインビジュアルの左側テキスト,コスパ×通いやすさで選ぶ
+MVアピールテキスト2,メインビジュアルの右側テキスト,
+MVSVGテキスト1,メインビジュアルの大きなSVGテキスト,脂肪冷却おすすめ
+MVSVGテキスト2,メインビジュアルの小さなSVGテキスト,人気クリニック{{RANK_COUNT}}選
+ランキングバナー画像パス,ランキングセクションのバナー画像,./images/ranking_header_banner.webp
+ランキング地域名テキスト,ランキングセクション上部の地域名に続くテキスト,で人気の脂肪冷却はココ！
+Tipsタブ1タイトル,Tipsセクションの1つ目のタブ,脂肪冷却の効果
+Tips1内容,Tips1の説明文,脂肪冷却で<deco>切らない部分痩せが実現！</deco>メスを使わず、<deco>脂肪細胞を凍らせて破壊</deco>する次世代技術。数日間患部が赤くなる場合がありますがダウンタイムもほとんどなく、施術後すぐに日常生活に戻れます。約2〜3ヶ月で自然に脂肪が減少し、リバウンドしにくいのが特徴です。
+Tips1画像パス,Tips1セクションの画像,./images/Tips1.webp
+Tipsタブ2タイトル,Tipsセクションの2つ目のタブ,リスクと副作用
+Tips2内容,Tips2の説明文,脂肪冷却は安全性の面でも信頼性が高く、<deco>副作用のリスクが極めて低い</deco>のが特徴。施術中は冷たさを感じますが、痛みはほとんどありません。
+Tips2画像パス,Tips2セクションの画像,./images/Tips2.webp
+Tipsタブ3タイトル,Tipsセクションの3つ目のタブ,今がおすすめ
+Tips3内容,Tips3の説明文,夏本番になると予約が取りにくくなり、料金も高くなりがち。今なら<deco>夏直前キャンペーン</deco>でお得に始められて、予約もスムーズ！理想の体型で夏を迎えるなら今がラストチャンスです。
+Tips3画像パス,Tips3セクションの画像,./images/Tips3.webp
+比較表タイトル,比較表セクションの見出し,で人気の脂肪冷却
+比較表サブタイトル,比較表のサブタイトル,クリニックを<span class="accent-text">徹底比較</span>
+詳細バナー画像パス,詳細セクションのバナー画像,./images/details_header_bannar3.webp
+注意事項HTML,詳細セクションの注意事項HTML,<div class="main-disclaimer"><span id="main-arrow" style="font-size: 8px; color: rgb(153, 153, 153); transition: transform 0.2s; transform: rotate(180deg);">▼</span><div id="main-content" class="main-disclaimer-content" style="display: block; padding: 5px; background-color: rgb(252, 252, 252); border-right: 1px solid rgb(240, 240, 240); border-bottom: 1px solid rgb(240, 240, 240); border-left: 1px solid rgb(240, 240, 240);"><p>「12ヶ月分 0円」※支払総額193,000円に分割し、12ヶ月分（12回分）の分割金が減額されます。※他キャンペーンとの併用不可※当社指定の信販会社で契約をした方限定※コースのみ契約者適用※契約時の申し出のみ有効。</p></div></div>

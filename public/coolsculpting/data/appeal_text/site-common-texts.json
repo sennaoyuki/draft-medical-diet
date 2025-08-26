@@ -1,0 +1,22 @@
+{
+  "MV画像パス": "./images/mv.webp",
+  "MVアピールテキスト1": "コスパ×通いやすさで選ぶ",
+  "MVアピールテキスト2": "",
+  "MVSVGテキスト1": "クールスカルプティング",
+  "MVSVGテキスト2": "人気クリニック{{RANK_COUNT}}選",
+  "ランキングバナー画像パス": "./images/ranking_header_banner.webp",
+  "ランキング地域名テキスト": "で人気のクールスカルプティングはココ！",
+  "Tipsタブ1タイトル": "期間と効果",
+  "Tips1内容": "クールスカルプティング（脂肪冷却）で<deco>切らない部分痩せが実現！</deco>メスを使わず、<deco>脂肪細胞を凍らせて破壊</deco>する先端技術。数日間患部が赤くなる場合がありますが、ダウンタイムもほとんどなく、施術後すぐに日常生活に戻れます。約2〜3ヶ月で自然に脂肪が減少し、リバウンドしにくいのが特徴です。",
+  "Tips1画像パス": "./images/Tips1.webp",
+  "Tipsタブ2タイトル": "リスクと副作用",
+  "Tips2内容": "クールスカルプティング（脂肪冷却）は安全性の面でも信頼性が高く、<deco>副作用のリスクが極めて低い</deco>のが特徴。施術中は冷たさを感じますが、痛みはほとんどありません。",
+  "Tips2画像パス": "./images/Tips2.webp",
+  "Tipsタブ3タイトル": "今がおすすめ",
+  "Tips3内容": "夏本番になると予約が取りにくくなり、料金も高くなりがち。今なら<deco>夏直前キャンペーン</deco>でお得に始められて、予約もスムーズ！理想の体型で夏を迎えるなら今がラストチャンスです。",
+  "Tips3画像パス": "./images/Tips3.webp",
+  "比較表タイトル": "で人気のクールスカルプティング",
+  "比較表サブタイトル": "クリニックを<span class=accent-text>徹底比較</span>",
+  "詳細バナー画像パス": "./images/details_header_bannar3.webp",
+  "注意事項HTML": "<div class=main-disclaimer><span id=main-arrow style=font-size: 8px; color: rgb(153, 153, 153); transition: transform 0.2s; transform: rotate(180deg);>▼</span><div id=main-content class=main-disclaimer-content style=display: block; padding: 5px; background-color: rgb(252, 252, 252); border-right: 1px solid rgb(240, 240, 240); border-bottom: 1px solid rgb(240, 240, 240); border-left: 1px solid rgb(240, 240, 240);><p>「12ヶ月分 0円」※支払総額193"
+}

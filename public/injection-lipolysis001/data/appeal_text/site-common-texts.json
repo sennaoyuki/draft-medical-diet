@@ -1,0 +1,22 @@
+{
+  "MV画像パス": "./images/mv.webp",
+  "MVアピールテキスト1": "コスパ×通いやすさで選ぶ",
+  "MVアピールテキスト2": "",
+  "MVSVGテキスト1": "脂肪溶解注射",
+  "MVSVGテキスト2": "人気クリニック{{RANK_COUNT}}選",
+  "ランキングバナー画像パス": "./images/ranking_header_banner.webp",
+  "ランキング地域名テキスト": "で人気の脂肪溶解注射はココ！",
+  "Tipsタブ1タイトル": "部分痩せと効果",
+  "Tips1内容": "脂肪溶解注射で<deco>部分痩せの夢が現実に！</deco>顔のフェイスライン、二の腕、お腹周りなど、ダイエットでは落ちにくい<deco>「気になる部分」だけを集中的にケア。</deco>数日間腫れることもありますが、1ヶ月程度で効果を実感する方が多く、リバウンドしにくいのが最大の魅力です。",
+  "Tips1画像パス": "./images/Tips1.webp",
+  "Tipsタブ2タイトル": "リスクと副作用",
+  "Tips2内容": "脂肪溶解注射は、施術後の<deco>ダウンタイムが少ない</deco>ため、日常生活への影響を最小限に抑えながら理想のボディラインを目指せます。一時的な腫れや内出血はありますが、それは脂肪細胞が減少している証拠。施術後の経過やアフターケアについて事前にしっかり確認しましょう。",
+  "Tips2画像パス": "./images/Tips2.webp",
+  "Tipsタブ3タイトル": "今がおすすめ",
+  "Tips3内容": "夏本番になると予約が取りにくくなり、料金も高くなりがち。今なら<deco>夏直前キャンペーン</deco>でお得に始められて、予約もスムーズ！理想の体型で夏を迎えるなら今がラストチャンスです。",
+  "Tips3画像パス": "./images/Tips3.webp",
+  "比較表タイトル": "で人気の脂肪溶解注射",
+  "比較表サブタイトル": "クリニックを<span class=accent-text>徹底比較</span>",
+  "詳細バナー画像パス": "./images/details_header_bannar3.webp",
+  "注意事項HTML": "<div class=main-disclaimer><span id=main-arrow style=font-size: 8px; color: rgb(153, 153, 153); transition: transform 0.2s; transform: rotate(180deg);>▼</span><div id=main-content class=main-disclaimer-content style=display: block; padding: 5px; background-color: rgb(252, 252, 252); border-right: 1px solid rgb(240, 240, 240); border-bottom: 1px solid rgb(240, 240, 240); border-left: 1px solid rgb(240, 240, 240);><p>「12ヶ月分 0円」※支払総額193"
+}
